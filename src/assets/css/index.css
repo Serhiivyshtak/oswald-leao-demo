@@ -1,0 +1,31 @@
+@import 'tailwindcss';
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap');
+
+@theme {
+    --font-primary: 'Playfair Display SC', serif;
+    --font-secondary: 'Julius Sans One', sans-serif;
+    --font-additional: 'Kanit', sans-serif;
+
+    --color-dark: #383838;
+    --color-gray: #6b6b6b;
+    --color-light: #fdfdfd;
+
+    --spacing-small: 8px;
+    --spacing-compact: 16px;
+    --spacing-middle: 24px;
+    --spacing-big: 32px;
+    --spacing-large: 40px;
+    --spacing-huge: 64px;
+
+    --text-small: 11.3px;
+    --text-base: 16px;
+    --text-middle: 22.6px;
+    --text-large: 31.9px;
+    --text-huge: 64px;
+
+    --leading-huge: 64px;
+}
+
+body {
+    overflow: hidden;
+}

@@ -1,0 +1,44 @@
+[
+    {
+        "id": 1,
+        "title": "Who am I",
+        "positioningStyings": "row-span-1 col-span-4",
+        "isVertical": false,
+        "html": "<div><p>I am a 25-year-old freelance photographer based in Singapore, specializing in portrait, lifestyle, and street photography. When I’m not behind the camera, you’ll most likely find me hiking through the countryside, exploring quiet forests or hidden trails just outside the city.</p></div>"
+    },
+    {
+        "id": 2,
+        "title": "What do I do",
+        "positioningStyings": "row-span-1 col-span-6",
+        "isVertical": false,
+        "html": "I work across portrait, lifestyle, editorial, and street photography. I collaborate with creative agencies, independent brands, musicians, and magazines to produce images that feel natural, honest, and visually striking."
+    },
+    {
+        "id": 3,
+        "title": "Where to find me",
+        "isVertical": true,
+        "positioningStyings": "row-span-1 col-span-2",
+        "html": "Alo"
+    },
+    {
+        "id": 4,
+        "title": "My rewards",
+        "positioningStyings": "row-span-1 col-span-4",
+        "isVertical": false,
+        "html": "1x Tokyo International Foto Awards, Japan"
+    },
+    {
+        "id": 5,
+        "title": "My portfolio",
+        "positioningStyings": "row-span-1 col-span-6",
+        "isVertical": false,
+        "html": "Abobakar"
+    },
+    {
+        "id": 6,
+        "title": "Testimonials",
+        "positioningStyings": "row-span-1 col-span-2",
+        "isVertical": true,
+        "html": "\"Oswald has a rare talent for making every shot feel natural and honest.\" - Leah Kessler from Urban Bloom Agency."
+    }
+]
