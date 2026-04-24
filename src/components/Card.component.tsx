@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState, type JSX } from "react";
 
 
-export default function Card({children, identifier, title, positioningStylings, isVertical}: any) {
+export default function Card({children, identifier, title, positioningStylings, isVertical}: any): JSX.Element {
     const componentClassList: string = `relative ring-[0.5px] ring-gray duration-300 hover:bg-gray/50 ${positioningStylings}`;
 
 
