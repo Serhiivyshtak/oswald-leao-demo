@@ -1,13 +1,17 @@
-import { useEffect, useRef, useState, type JSX } from "react";
+import { useEffect, useRef, useState, type JSX } from 'react';
 
-
-export default function Card({children, identifier, title, positioningStylings, isVertical}: any): JSX.Element {
+export default function Card({
+    children,
+    identifier,
+    title,
+    positioningStylings,
+    isVertical,
+}: any): JSX.Element {
     const componentClassList: string = `relative ring-[0.5px] ring-gray duration-300 hover:bg-gray/50 ${positioningStylings}`;
-
 
     //region Main heading return
     function renderMainHeading(): JSX.Element {
-        const mainHeading = useRef<HTMLDivElement|null>(null);
+        const mainHeading = useRef<HTMLDivElement | null>(null);
         const mainHeadingStylings: React.CSSProperties = {};
 
         if (isVertical) {
@@ -16,22 +20,21 @@ export default function Card({children, identifier, title, positioningStylings, 
         }
 
         return (
-            <h2 ref={mainHeading} style={mainHeadingStylings} className="absolute text-gray font-secondary bottom-compact right-compact">
-                <span className="text-small">
-                    {"0" + identifier + " "}
-                </span>
-                <span className="text-base">
-                    {title}
-                </span>
+            <h2
+                ref={mainHeading}
+                style={mainHeadingStylings}
+                className="absolute text-gray font-secondary bottom-compact right-compact"
+            >
+                <span className="text-small">{'0' + identifier + ' '}</span>
+                <span className="text-base">{title}</span>
             </h2>
         );
     }
 
-
     //region Head return
     function renderHead(): JSX.Element {
-        const head = useRef<HTMLDivElement|null>(null);
-        const [headHeight, setHeadHeight] = useState<number|undefined>(0);
+        const head = useRef<HTMLDivElement | null>(null);
+        const [headHeight, setHeadHeight] = useState<number | undefined>(0);
         const headStylings: React.CSSProperties = {};
         let headingClassList: string = 'font-primary font-normal text-huge text-light leading-huge';
 
@@ -49,36 +52,35 @@ export default function Card({children, identifier, title, positioningStylings, 
         }
 
         return (
-            <div ref={head} style={headStylings} className="h-max w-full flex flex-col px-compact pt-compact">
+            <div
+                ref={head}
+                style={headStylings}
+                className="h-max w-full flex flex-col px-compact pt-compact"
+            >
                 <p className="font-additional font-black text-huge text-gray leading-huge">
-                    {"0" + identifier}
+                    {'0' + identifier}
                 </p>
-                <p className={headingClassList}>
-                    {title}
-                </p>
+                <p className={headingClassList}>{title}</p>
             </div>
         );
     }
 
-
     //region onMouseEnter handler
-    function componentOnMouseEnterHandler() {
-        
-    }
-
+    function componentOnMouseEnterHandler() {}
 
     //region onMouseLeaveHandler
-    function componentOnMouseLeaveHandler() {
-
-    }
-
+    function componentOnMouseLeaveHandler() {}
 
     //region Component return
     return (
-        <div className={componentClassList} onMouseEnter={componentOnMouseEnterHandler} onMouseLeave={componentOnMouseLeaveHandler}>
+        <div
+            className={componentClassList}
+            onMouseEnter={componentOnMouseEnterHandler}
+            onMouseLeave={componentOnMouseLeaveHandler}
+        >
             {renderMainHeading()}
             {renderHead()}
-            <div dangerouslySetInnerHTML={{__html: children}}/>
+            <div dangerouslySetInnerHTML={{ __html: children }} />
         </div>
     );
 }

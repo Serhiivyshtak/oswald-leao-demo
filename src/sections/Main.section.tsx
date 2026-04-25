@@ -1,4 +1,4 @@
-import type { JSX } from "react";
+import type { JSX } from 'react';
 import CardComponent from '../components/Card.component';
 import cardsContent from '../assets/json/cardsContent.json';
 
@@ -11,7 +11,8 @@ export default function MainSection(): JSX.Element {
                     identifier={cardContent.id}
                     title={cardContent.title}
                     positioningStylings={cardContent.positioningStyings}
-                    isVertical={cardContent.isVertical}>
+                    isVertical={cardContent.isVertical}
+                >
                     {cardContent.html}
                 </CardComponent>
             ))}
