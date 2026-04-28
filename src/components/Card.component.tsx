@@ -1,13 +1,15 @@
 import { useEffect, useRef, useState, type JSX } from 'react';
+import {gsap} from 'gsap';
+import { useGSAP } from '@gsap/react';
 
-export default function Card({
-    children,
-    identifier,
-    title,
-    positioningStylings,
-    isVertical,
-}: any): JSX.Element {
-    const componentClassList: string = `relative ring-[0.5px] ring-gray duration-300 hover:bg-gray/50 ${positioningStylings}`;
+
+export default function Card({children, identifier, title, positioningStylings, isVertical}: any): JSX.Element {
+    const component = useRef<HTMLDivElement | null>(null);
+    const {contextSafe} = useGSAP({scope: component});
+
+
+    const componentClassList: string = `relative ring-[0.5px] ring-gray overflow-hidden duration-300 hover:bg-gray/50 ${positioningStylings}`;
+
 
     //region Main heading return
     function renderMainHeading(): JSX.Element {
@@ -20,26 +22,34 @@ export default function Card({
         }
 
         return (
-            <h2
-                ref={mainHeading}
-                style={mainHeadingStylings}
-                className="absolute text-gray font-secondary bottom-compact right-compact"
-            >
+            <h2 ref={mainHeading} style={mainHeadingStylings} className="main_heading absolute text-gray font-secondary bottom-compact right-compact">
                 <span className="text-small">{'0' + identifier + ' '}</span>
                 <span className="text-base">{title}</span>
             </h2>
         );
     }
 
+
     //region Head return
     function renderHead(): JSX.Element {
         const head = useRef<HTMLDivElement | null>(null);
         const [headHeight, setHeadHeight] = useState<number | undefined>(0);
         const headStylings: React.CSSProperties = {};
-        let headingClassList: string = 'font-primary font-normal text-huge text-light leading-huge';
+        let secondHeadingClassList: string = 'head__second_heading font-primary font-normal text-huge text-light leading-huge';
 
         useEffect(() => {
             setHeadHeight(head.current?.parentElement?.offsetHeight);
+
+            gsap.context(() => {
+                if (isVertical) {
+                    gsap.to('.head__first_heading', {yPercent: -100, y: -16});
+                    gsap.to('.head__second_heading', {xPercent: 100, x: 16});
+                    return;
+                }
+
+                gsap.to('.head__first_heading', {yPercent: -100, y: -16});
+                gsap.to('.head__second_heading', {xPercent: -100, x: -16});
+            }, component);
         }, []);
 
         if (isVertical) {
@@ -48,39 +58,56 @@ export default function Card({
             headStylings.width = `${headHeight}px`;
             headStylings.alignItems = 'end';
 
-            headingClassList += ' ' + 'text-right';
+            secondHeadingClassList += ' ' + 'text-right';
         }
 
         return (
-            <div
-                ref={head}
-                style={headStylings}
-                className="h-max w-full flex flex-col px-compact pt-compact"
-            >
-                <p className="font-additional font-black text-huge text-gray leading-huge">
+            <div ref={head} style={headStylings} className="h-max w-full flex flex-col px-compact pt-compact">
+                <p className="head__first_heading font-additional font-black text-huge text-gray leading-huge">
                     {'0' + identifier}
                 </p>
-                <p className={headingClassList}>{title}</p>
+                <p className={secondHeadingClassList}>{title}</p>
             </div>
         );
     }
 
-    //region onMouseEnter handler
-    function componentOnMouseEnterHandler() {}
 
+    //region onMouseEnterHandler
+    const componentOnMouseEnterHandler = contextSafe(() => {
+        if (isVertical) {
+            gsap.to('.main_heading', {xPercent: 100, x: 16});
+            gsap.to('.head__first_heading', {yPercent: 0, y: 0});
+            gsap.to('.head__second_heading', {xPercent: 0, x: 0});
+            return;
+        }
+
+        gsap.to('.main_heading', {yPercent: 100, y: 16});
+        gsap.to('.head__first_heading', {yPercent: 0, y: 0});
+        gsap.to('.head__second_heading', {xPercent: 0, x: 0});
+    });
+
+    
     //region onMouseLeaveHandler
-    function componentOnMouseLeaveHandler() {}
+    const componentOnMouseLeaveHandler = contextSafe(() => {
+        if (isVertical) {
+            gsap.to('.main_heading', {xPercent: 0, x: 0});
+            gsap.to('.head__first_heading', {yPercent: -100, y: -16});
+            gsap.to('.head__second_heading', {xPercent: 100, x: 16});
+            return;
+        }
+
+        gsap.to('.main_heading', {yPercent: 0, y: 0});
+        gsap.to('.head__first_heading', {yPercent: -100, y: -16});
+        gsap.to('.head__second_heading', {xPercent: -100, x: -16});
+    });
+
 
     //region Component return
     return (
-        <div
-            className={componentClassList}
-            onMouseEnter={componentOnMouseEnterHandler}
-            onMouseLeave={componentOnMouseLeaveHandler}
-        >
+        <div ref={component} className={componentClassList} onMouseEnter={componentOnMouseEnterHandler} onMouseLeave={componentOnMouseLeaveHandler}>
             {renderMainHeading()}
             {renderHead()}
-            <div dangerouslySetInnerHTML={{ __html: children }} />
+            {/* <div dangerouslySetInnerHTML={{ __html: children }} /> */}
         </div>
     );
 }
