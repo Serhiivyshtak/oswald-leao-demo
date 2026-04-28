@@ -1,11 +1,13 @@
 import { useEffect, useRef, useState, type JSX } from 'react';
 import {gsap} from 'gsap';
 import { useGSAP } from '@gsap/react';
+import cssPropertiesService from '../services/cssProperties.service';
 
 
-export default function Card({children, identifier, title, positioningStylings, isVertical}: any): JSX.Element {
+export default function Card({identifier, title, positioningStylings, isVertical}: any): JSX.Element {
     const component = useRef<HTMLDivElement | null>(null);
     const {contextSafe} = useGSAP({scope: component});
+    const cardPadding: number = parseInt(cssPropertiesService.get('--spacing-compact'));
 
 
     const componentClassList: string = `relative ring-[0.5px] ring-gray overflow-hidden duration-300 hover:bg-gray/50 ${positioningStylings}`;
@@ -41,14 +43,14 @@ export default function Card({children, identifier, title, positioningStylings, 
             setHeadHeight(head.current?.parentElement?.offsetHeight);
 
             gsap.context(() => {
+                gsap.to('.head__first_heading', {yPercent: -100, y: cardPadding * -1});
+
                 if (isVertical) {
-                    gsap.to('.head__first_heading', {yPercent: -100, y: -16});
-                    gsap.to('.head__second_heading', {xPercent: 100, x: 16});
+                    gsap.to('.head__second_heading', {xPercent: 100, x: cardPadding});
                     return;
                 }
 
-                gsap.to('.head__first_heading', {yPercent: -100, y: -16});
-                gsap.to('.head__second_heading', {xPercent: -100, x: -16});
+                gsap.to('.head__second_heading', {xPercent: -100, x: cardPadding * -1});
             }, component);
         }, []);
 
@@ -74,16 +76,15 @@ export default function Card({children, identifier, title, positioningStylings, 
 
     //region onMouseEnterHandler
     const componentOnMouseEnterHandler = contextSafe(() => {
+        gsap.to('.head__first_heading', {yPercent: 0, y: 0});
+        gsap.to('.head__second_heading', {xPercent: 0, x: 0});
+
         if (isVertical) {
-            gsap.to('.main_heading', {xPercent: 100, x: 16});
-            gsap.to('.head__first_heading', {yPercent: 0, y: 0});
-            gsap.to('.head__second_heading', {xPercent: 0, x: 0});
+            gsap.to('.main_heading', {xPercent: 100, x: cardPadding});
             return;
         }
 
-        gsap.to('.main_heading', {yPercent: 100, y: 16});
-        gsap.to('.head__first_heading', {yPercent: 0, y: 0});
-        gsap.to('.head__second_heading', {xPercent: 0, x: 0});
+        gsap.to('.main_heading', {yPercent: 100, y: cardPadding});
     });
 
     
@@ -91,14 +92,14 @@ export default function Card({children, identifier, title, positioningStylings, 
     const componentOnMouseLeaveHandler = contextSafe(() => {
         if (isVertical) {
             gsap.to('.main_heading', {xPercent: 0, x: 0});
-            gsap.to('.head__first_heading', {yPercent: -100, y: -16});
-            gsap.to('.head__second_heading', {xPercent: 100, x: 16});
+            gsap.to('.head__first_heading', {yPercent: -100, y: cardPadding * -1});
+            gsap.to('.head__second_heading', {xPercent: 100, x: cardPadding});
             return;
         }
 
         gsap.to('.main_heading', {yPercent: 0, y: 0});
-        gsap.to('.head__first_heading', {yPercent: -100, y: -16});
-        gsap.to('.head__second_heading', {xPercent: -100, x: -16});
+        gsap.to('.head__first_heading', {yPercent: -100, y: cardPadding * -1});
+        gsap.to('.head__second_heading', {xPercent: -100, x: cardPadding * -1});
     });
 
 
@@ -107,7 +108,6 @@ export default function Card({children, identifier, title, positioningStylings, 
         <div ref={component} className={componentClassList} onMouseEnter={componentOnMouseEnterHandler} onMouseLeave={componentOnMouseLeaveHandler}>
             {renderMainHeading()}
             {renderHead()}
-            {/* <div dangerouslySetInnerHTML={{ __html: children }} /> */}
         </div>
     );
 }

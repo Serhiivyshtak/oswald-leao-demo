@@ -13,7 +13,6 @@ export default function MainSection(): JSX.Element {
                     positioningStylings={cardContent.positioningStyings}
                     isVertical={cardContent.isVertical}
                 >
-                    {cardContent.html}
                 </CardComponent>
             ))}
         </section>
