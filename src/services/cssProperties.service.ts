@@ -1,9 +1,11 @@
 class CssPropertiesService {
     private rootElement: HTMLElement;
 
+
     constructor(rootElement: HTMLElement = document.documentElement) {
         this.rootElement = rootElement;
     }
+
 
     public get(cssPropertyName: string): string {
         const cssPropertyValue: string = window.getComputedStyle(this.rootElement).getPropertyValue(cssPropertyName).trim();
@@ -15,5 +17,6 @@ class CssPropertiesService {
         return cssPropertyValue;
     }
 }
+
 
 export default new CssPropertiesService();
