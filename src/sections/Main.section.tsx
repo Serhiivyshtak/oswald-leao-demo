@@ -1,21 +1,31 @@
 import type { JSX } from 'react';
 import CardComponent from '../components/Card.component';
-import cardsContent from '../assets/json/cardsContent.json';
+import { useTranslation } from 'react-i18next';
+import type { CardComponentProps } from '../types/CardComponentProps.type';
 
 
 export default function MainSection(): JSX.Element {
+    const { t } = useTranslation();
+    const cards: Array<CardComponentProps> = t('cards', {returnObjects: true}) as Array<CardComponentProps>;
+
+
+    function renderCards(): JSX.Element[] {
+        return cards.map((card: CardComponentProps) => 
+            <CardComponent 
+                key={card.id} 
+                id={card.id} 
+                title={card.title} 
+                positioningStylings={card.positioningStylings} 
+                childComponentName={card.childComponentName} 
+                isVertical={card.isVertical}
+            />
+        );
+    }
+
+    
     return (
         <section className="w-screen h-screen grid grid-rows-2 grid-cols-12">
-            {cardsContent.map((cardContent: any) => (
-                <CardComponent
-                    key={cardContent.id}
-                    identifier={cardContent.id}
-                    title={cardContent.title}
-                    positioningStylings={cardContent.positioningStyings}
-                    childComponentName={cardContent.childComponentName}
-                    isVertical={cardContent.isVertical}
-                ></CardComponent>
-            ))}
+            {renderCards()}
         </section>
     );
 }

@@ -1,6 +1,7 @@
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Route, Routes } from 'react-router';
 import { ErrorBoundary } from "react-error-boundary";
+import './services/i18n.service';
 import './assets/css/index.css';
 import MainView from './views/Main.view';
 import AboutView from './views/About.view';

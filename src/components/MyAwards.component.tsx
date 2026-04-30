@@ -2,9 +2,12 @@ import { useEffect, useRef, type JSX } from "react";
 import {gsap} from 'gsap';
 import type { CardChildComponentProps } from "../types/CardChildComponentProps.type";
 import cssPropertiesService from "../services/cssProperties.service";
+import { useTranslation } from "react-i18next";
 
 
-export default function MyRewardsComponent({mouseOver}: CardChildComponentProps): JSX.Element {
+export default function MyAwardsComponent({mouseOver}: CardChildComponentProps): JSX.Element {
+    const {t} = useTranslation();
+    const awards: Array<Object> = t('awards', {returnObjects: true}) as Array<Object>;
     const component = useRef<HTMLDivElement|null>(null);
     const spacingCompact: number = parseInt(cssPropertiesService.get('--spacing-compact'));
     const animationDuration: number = 0.6;
@@ -21,21 +24,15 @@ export default function MyRewardsComponent({mouseOver}: CardChildComponentProps)
     }, [mouseOver]);
 
 
+    function renderAwards(): JSX.Element[] {
+        return awards.map((award: any) => <li key={award.title}>{award.amount}x {award.title}</li>);
+    }
+
+
     return (
         <div ref={component}>
             <ul className="container text-light font-secondary font-base mt-large ml-compact mr-compact list-decimal list-inside list-image-[url(/list_bullet.png)]">
-                <li>
-                    1x Tokyo International Foto Awards, Japan
-                </li>
-                <li>
-                    3x Photographic Society of Japan awards, Japan
-                </li>
-                <li>
-                    1x Photo City Sagamihara, Japan
-                </li>
-                <li>
-                    1x Paris Photo–Aperture Foundation PhotoBook Awards, France
-                </li>
+                {renderAwards()}
             </ul>
         </div>
     );

@@ -1,0 +1,109 @@
+{
+    "cards": [
+        {
+            "id": 1,
+            "title": "Who am I",
+            "positioningStylings": "row-span-1 col-span-4",
+            "isVertical": false,
+            "childComponentName": "whoAmI"
+        },
+        {
+            "id": 2,
+            "title": "What do I do",
+            "positioningStylings": "row-span-1 col-span-6",
+            "isVertical": false,
+            "childComponentName": "whatDoIDo"
+        },
+        {
+            "id": 3,
+            "title": "Where to find me",
+            "isVertical": true,
+            "positioningStylings": "row-span-1 col-span-2",
+            "childComponentName": "whereToFindMe"
+        },
+        {
+            "id": 4,
+            "title": "My awards",
+            "positioningStylings": "row-span-1 col-span-4",
+            "isVertical": false,
+            "childComponentName": "myAwards"
+        },
+        {
+            "id": 5,
+            "title": "My portfolio",
+            "positioningStylings": "row-span-1 col-span-6",
+            "isVertical": false,
+            "childComponentName": "myPortfolio"
+        },
+        {
+            "id": 6,
+            "title": "Testimonials",
+            "positioningStylings": "row-span-1 col-span-2",
+            "isVertical": true,
+            "childComponentName": "testimonials"
+        }
+    ],
+    "socialMediaLinks": [
+        {
+            "id": 1,
+            "href": "/",
+            "icon": "ph:tiktok-logo-light"
+        },
+        {
+            "id": 2,
+            "href": "/",
+            "icon": "ph:instagram-logo-light"
+        },
+        {
+            "id": 3,
+            "href": "/",
+            "icon": "ph:linkedin-logo-light"
+        },
+        {
+            "id": 4,
+            "href": "/",
+            "icon": "ph:twitter-logo-light"
+        }
+    ],  
+    "awards": [
+        {
+            "id": 1,
+            "title": "Tokyo International Foto Awards, Japan",
+            "amount": 1
+        },
+        {
+            "id": 1,
+            "title": "Photographic Society of Japan awards, Japan",
+            "amount": 3
+        },
+        {
+            "id": 1,
+            "title": "Photo City Sagamihara, Japan",
+            "amount": 1
+        },
+        {
+            "id": 1,
+            "title": "Paris Photo–Aperture Foundation PhotoBook Awards, France",
+            "amount": 1
+        }
+    ],
+    "testimonials": [
+        {
+            "id": 1,
+            "text": "Oswald has a rare talent for making every shot feel natural and honest.",
+            "author": "Leah Kessler from Urban Bloom Agency."
+        },
+        {
+            "id": 2,
+            "text": "His eye for mood and detail is simply next level.",
+            "author": "Marco Nguyen from Sonder Coffee Co."
+        },
+        {
+            "id": 3,
+            "text": "Fast, professional, and the results were stunning.",
+            "author": "Emily Zhao from Verge Magazine"
+        }
+    ],
+    "whoAmICardText": "I am a 25-year-old freelance photographer based in Singapore, specializing in portrait, lifestyle, and street photography. When I’m not behind the camera, you’ll most likely find me hiking through the countryside, exploring quiet forests or hidden trails just outside the city.",
+    "whatDoIDoCardText": "I work across portrait, lifestyle, editorial, and street photography. I collaborate with creative agencies, independent brands, musicians, and magazines to produce images that feel natural, honest, and visually striking."
+}

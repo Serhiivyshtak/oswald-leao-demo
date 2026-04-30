@@ -6,20 +6,12 @@ import type {CardComponentProps} from '../types/CardComponentProps.type';
 import WhoAmIComponent from './WhoAmI.component';
 import WhatDoIDoComponent from './WhatDoIDo.component';
 import WhereToFindMeComponent from './WhereToFindMe.component';
-import MyRewardsComponent from './MyRewards.component';
+import MyAwardsComponent from './MyAwards.component';
 import MyPortfolioComponent from './MyPortfolio.component';
 import TestimonialsComponent from './Testimonials.component';
 
 
-export default function Card({identifier, title, positioningStylings, childComponentName, isVertical}: CardComponentProps): JSX.Element {
-    if (!title.trim()) {
-        throw new Error('No title were specified');
-    } else if (!positioningStylings.trim()) {
-        throw new Error('No positionStylings were specified');
-    } else if (!childComponentName.trim()) {
-        throw new Error('No childComponentName were specified');
-    }
-
+export default function Card({id, title, positioningStylings, childComponentName, isVertical}: CardComponentProps): JSX.Element {
     const component = useRef<HTMLDivElement | null>(null);
     const {contextSafe} = useGSAP({scope: component});
     const [mouseOver, setMouseOver] = useState<boolean>(false);
@@ -40,7 +32,7 @@ export default function Card({identifier, title, positioningStylings, childCompo
 
         return (
             <h2 ref={mainHeading} style={mainHeadingStylings} className="main_heading absolute text-gray font-secondary bottom-compact right-compact">
-                <span className="text-small">{'0' + identifier + ' '}</span>
+                <span className="text-small">{'0' + id + ' '}</span>
                 <span className="text-base">{title}</span>
             </h2>
         );
@@ -81,7 +73,7 @@ export default function Card({identifier, title, positioningStylings, childCompo
         return (
             <div ref={head} style={headStylings} className="h-max w-full flex flex-col px-compact pt-compact">
                 <p className="head__first_heading font-additional font-black text-huge text-gray leading-huge">
-                    {'0' + identifier}
+                    {'0' + id}
                 </p>
                 <p className={secondHeadingClassList}>{title}</p>
             </div>
@@ -95,7 +87,7 @@ export default function Card({identifier, title, positioningStylings, childCompo
             whoAmI: <WhoAmIComponent mouseOver={mouseOver}/>,
             whatDoIDo: <WhatDoIDoComponent mouseOver={mouseOver}/>,
             whereToFindMe: <WhereToFindMeComponent mouseOver={mouseOver}/>,
-            myRewards: <MyRewardsComponent mouseOver={mouseOver}/>,
+            myAwards: <MyAwardsComponent mouseOver={mouseOver}/>,
             myPortfolio: <MyPortfolioComponent mouseOver={mouseOver}/>,
             testimonials: <TestimonialsComponent mouseOver={mouseOver}/>,
             test: <></>

@@ -1,5 +1,5 @@
 export type CardComponentProps = {
-    identifier: number, 
+    id: number, 
     title: string, 
     positioningStylings: string,
     childComponentName: string, 
