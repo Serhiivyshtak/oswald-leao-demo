@@ -1,16 +1,31 @@
-import { useEffect, useRef, useState, type JSX } from 'react';
+import {useEffect, useRef, useState, type JSX} from 'react';
 import {gsap} from 'gsap';
-import { useGSAP } from '@gsap/react';
+import {useGSAP} from '@gsap/react';
 import cssPropertiesService from '../services/cssProperties.service';
+import type {CardComponentProps} from '../types/CardComponentProps.type';
+import WhoAmIComponent from './WhoAmI.component';
+import WhatDoIDoComponent from './WhatDoIDo.component';
+import WhereToFindMeComponent from './WhereToFindMe.component';
+import MyRewardsComponent from './MyRewards.component';
+import MyPortfolioComponent from './MyPortfolio.component';
+import TestimonialsComponent from './Testimonials.component';
 
 
-export default function Card({identifier, title, positioningStylings, isVertical}: any): JSX.Element {
+export default function Card({identifier, title, positioningStylings, childComponentName, isVertical}: CardComponentProps): JSX.Element {
+    if (!title.trim()) {
+        throw new Error('No title were specified');
+    } else if (!positioningStylings.trim()) {
+        throw new Error('No positionStylings were specified');
+    } else if (!childComponentName.trim()) {
+        throw new Error('No childComponentName were specified');
+    }
+
     const component = useRef<HTMLDivElement | null>(null);
     const {contextSafe} = useGSAP({scope: component});
-    const cardPadding: number = parseInt(cssPropertiesService.get('--spacing-compact'));
-
-
+    const [mouseOver, setMouseOver] = useState<boolean>(false);
+    const spacingCompact: number = parseInt(cssPropertiesService.get('--spacing-compact'));
     const componentClassList: string = `relative ring-[0.5px] ring-gray overflow-hidden duration-300 hover:bg-gray/50 ${positioningStylings}`;
+    const animationDuration: number = 0.4;
 
 
     //region Main heading return
@@ -43,14 +58,14 @@ export default function Card({identifier, title, positioningStylings, isVertical
             setHeadHeight(head.current?.parentElement?.offsetHeight);
 
             gsap.context(() => {
-                gsap.to('.head__first_heading', {yPercent: -100, y: cardPadding * -1});
+                gsap.to('.head__first_heading', {yPercent: -100, y: spacingCompact * -1});
 
                 if (isVertical) {
-                    gsap.to('.head__second_heading', {xPercent: 100, x: cardPadding});
+                    gsap.to('.head__second_heading', {xPercent: 100, x: spacingCompact});
                     return;
                 }
 
-                gsap.to('.head__second_heading', {xPercent: -100, x: cardPadding * -1});
+                gsap.to('.head__second_heading', {xPercent: -100, x: spacingCompact * -1});
             }, component);
         }, []);
 
@@ -74,32 +89,56 @@ export default function Card({identifier, title, positioningStylings, isVertical
     }
 
 
+    //region child component return
+    function renderChildComponent(): JSX.Element {
+        const childComponents: Record<string, JSX.Element> = {
+            whoAmI: <WhoAmIComponent mouseOver={mouseOver}/>,
+            whatDoIDo: <WhatDoIDoComponent mouseOver={mouseOver}/>,
+            whereToFindMe: <WhereToFindMeComponent mouseOver={mouseOver}/>,
+            myRewards: <MyRewardsComponent mouseOver={mouseOver}/>,
+            myPortfolio: <MyPortfolioComponent mouseOver={mouseOver}/>,
+            testimonials: <TestimonialsComponent mouseOver={mouseOver}/>,
+            test: <></>
+        }
+
+        if (!childComponents[childComponentName]) {
+            throw new Error('childComponentName doesn\'t exist');
+        }
+
+        return childComponents[childComponentName];
+    }
+
+
     //region onMouseEnterHandler
     const componentOnMouseEnterHandler = contextSafe(() => {
-        gsap.to('.head__first_heading', {yPercent: 0, y: 0});
-        gsap.to('.head__second_heading', {xPercent: 0, x: 0});
+        setMouseOver(true);
+
+        gsap.to('.head__first_heading', {yPercent: 0, y: 0, duration: animationDuration});
+        gsap.to('.head__second_heading', {xPercent: 0, x: 0, duration: animationDuration});
 
         if (isVertical) {
-            gsap.to('.main_heading', {xPercent: 100, x: cardPadding});
+            gsap.to('.main_heading', {xPercent: 100, x: spacingCompact, duration: animationDuration});
             return;
         }
 
-        gsap.to('.main_heading', {yPercent: 100, y: cardPadding});
+        gsap.to('.main_heading', {yPercent: 100, y: spacingCompact, duration: animationDuration});
     });
 
     
     //region onMouseLeaveHandler
     const componentOnMouseLeaveHandler = contextSafe(() => {
+        setMouseOver(false);
+
         if (isVertical) {
-            gsap.to('.main_heading', {xPercent: 0, x: 0});
-            gsap.to('.head__first_heading', {yPercent: -100, y: cardPadding * -1});
-            gsap.to('.head__second_heading', {xPercent: 100, x: cardPadding});
+            gsap.to('.main_heading', {xPercent: 0, x: 0, duration: animationDuration});
+            gsap.to('.head__first_heading', {yPercent: -100, y: spacingCompact * -1, duration: animationDuration});
+            gsap.to('.head__second_heading', {xPercent: 100, x: spacingCompact, duration: animationDuration});
             return;
         }
 
-        gsap.to('.main_heading', {yPercent: 0, y: 0});
-        gsap.to('.head__first_heading', {yPercent: -100, y: cardPadding * -1});
-        gsap.to('.head__second_heading', {xPercent: -100, x: cardPadding * -1});
+        gsap.to('.main_heading', {yPercent: 0, y: 0, duration: animationDuration});
+        gsap.to('.head__first_heading', {yPercent: -100, y: spacingCompact * -1, duration: animationDuration});
+        gsap.to('.head__second_heading', {xPercent: -100, x: spacingCompact * -1, duration: animationDuration});
     });
 
 
@@ -108,6 +147,7 @@ export default function Card({identifier, title, positioningStylings, isVertical
         <div ref={component} className={componentClassList} onMouseEnter={componentOnMouseEnterHandler} onMouseLeave={componentOnMouseLeaveHandler}>
             {renderMainHeading()}
             {renderHead()}
+            {renderChildComponent()}
         </div>
     );
 }
