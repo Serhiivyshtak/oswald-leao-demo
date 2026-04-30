@@ -6,7 +6,7 @@ import MainSection from '../sections/Main.section';
 export default function MainView(): JSX.Element {
     return (
         <>
-            <FixedBackground backgroundImageUrl="test_image.png" />
+            <FixedBackground backgroundImageUrl="fixed_background_image.png" />
             <MainSection />
         </>
     );
