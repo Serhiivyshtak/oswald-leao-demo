@@ -1,14 +1,15 @@
-import { useEffect, useRef, type JSX } from "react";
+import { useEffect, useRef, type JSX } from 'react';
+import { useTranslation } from 'react-i18next';
 import {gsap} from 'gsap';
 import { Icon } from "@iconify/react";
-import type { CardChildComponentProps } from "../types/CardChildComponentProps.type";
+import type { CardChildObjectType } from '../types/CardChildObject.type';
+import type {SocialMediaLinkObjectType} from '../types/SocialMediaLinkObject.type';
 import cssPropertiesService from '../services/cssProperties.service';
-import { useTranslation } from "react-i18next";
 
 
-export default function WhereToFindMeComponent({mouseOver}: CardChildComponentProps): JSX.Element {
+export default function WhereToFindMeComponent({mouseOver}: CardChildObjectType): JSX.Element {
     const {t} = useTranslation();
-    const socialMediaLinks: Array<Object> = t('socialMediaLinks', {returnObjects: true}) as Array<Object>;
+    const socialMediaLinks: Array<SocialMediaLinkObjectType> = t('socialMediaLinks', {returnObjects: true}) as Array<SocialMediaLinkObjectType>;
     const component = useRef<HTMLDivElement|null>(null);
     const spacingCompact: number = parseInt(cssPropertiesService.get('--spacing-compact'));
     const spacingBig: number = parseInt(cssPropertiesService.get('--spacing-big'));
@@ -27,7 +28,7 @@ export default function WhereToFindMeComponent({mouseOver}: CardChildComponentPr
 
 
     function renderSocialMediaLinks(): JSX.Element[] {
-        return socialMediaLinks.map((socialMediaLink: any) => 
+        return socialMediaLinks.map((socialMediaLink: SocialMediaLinkObjectType) => 
             <a key={socialMediaLink.id} href={socialMediaLink.href}>
                 <Icon icon={socialMediaLink.icon} width={`${spacingBig}px`} height={`${spacingBig}px`} className="text-light"/>
             </a>

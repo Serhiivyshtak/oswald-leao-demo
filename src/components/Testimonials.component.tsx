@@ -1,13 +1,14 @@
-import { useEffect, useRef, type JSX } from "react";
+import {useEffect, useRef, type JSX} from "react";
+import {useTranslation} from "react-i18next";
 import {gsap} from 'gsap';
-import type { CardChildComponentProps } from "../types/CardChildComponentProps.type";
+import type {CardChildObjectType} from "../types/CardChildObject.type";
+import type {TestimonialObjectType} from "../types/TestimonialObject.type";
 import cssPropertiesService from "../services/cssProperties.service";
-import { useTranslation } from "react-i18next";
 
 
-export default function TestimonialsComponent({mouseOver}: CardChildComponentProps): JSX.Element {
+export default function TestimonialsComponent({mouseOver}: CardChildObjectType): JSX.Element {
     const {t} = useTranslation();
-    const testimonials: Array<any> = t('testimonials', {returnObjects: true}) as Array<any>;
+    const testimonials: Array<TestimonialObjectType> = t('testimonials', {returnObjects: true}) as Array<TestimonialObjectType>;
     const component = useRef(null);
     const spacingCompact: number = parseInt(cssPropertiesService.get('--spacing-compact'));
     const animationDuration: number = 0.6;

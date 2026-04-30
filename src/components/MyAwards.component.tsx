@@ -1,13 +1,14 @@
-import { useEffect, useRef, type JSX } from "react";
+import {useEffect, useRef, type JSX} from "react";
+import {useTranslation} from "react-i18next";
 import {gsap} from 'gsap';
-import type { CardChildComponentProps } from "../types/CardChildComponentProps.type";
+import type {CardChildObjectType} from "../types/CardChildObject.type";
+import type {AwardObjectType} from "../types/AwardObject.type";
 import cssPropertiesService from "../services/cssProperties.service";
-import { useTranslation } from "react-i18next";
 
 
-export default function MyAwardsComponent({mouseOver}: CardChildComponentProps): JSX.Element {
+export default function MyAwardsComponent({mouseOver}: CardChildObjectType): JSX.Element {
     const {t} = useTranslation();
-    const awards: Array<Object> = t('awards', {returnObjects: true}) as Array<Object>;
+    const awards: Array<AwardObjectType> = t('awards', {returnObjects: true}) as Array<AwardObjectType>;
     const component = useRef<HTMLDivElement|null>(null);
     const spacingCompact: number = parseInt(cssPropertiesService.get('--spacing-compact'));
     const animationDuration: number = 0.6;
@@ -25,7 +26,7 @@ export default function MyAwardsComponent({mouseOver}: CardChildComponentProps):
 
 
     function renderAwards(): JSX.Element[] {
-        return awards.map((award: any) => <li key={award.title}>{award.amount}x {award.title}</li>);
+        return awards.map((award: AwardObjectType) => <li key={award.id}>{award.amount}x {award.title}</li>);
     }
 
 

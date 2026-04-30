@@ -1,11 +1,11 @@
 import { useEffect, useRef, type JSX } from "react";
 import {gsap} from 'gsap';
-import type { CardChildComponentProps } from "../types/CardChildComponentProps.type";
+import type { CardChildObjectType } from "../types/CardChildObject.type";
 import cssPropertiesService from "../services/cssProperties.service";
 import { Icon } from "@iconify/react";
 
 
-export default function MyPortfolioComponent({mouseOver}: CardChildComponentProps): JSX.Element {
+export default function MyPortfolioComponent({mouseOver}: CardChildObjectType): JSX.Element {
     const component = useRef<HTMLDivElement|null>(null);
     const spacingCompact: number = parseInt(cssPropertiesService.get('--spacing-compact'));
     const spacingLarge: number = parseInt(cssPropertiesService.get('--spacing-large'));

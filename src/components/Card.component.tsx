@@ -2,7 +2,7 @@ import {useEffect, useRef, useState, type JSX} from 'react';
 import {gsap} from 'gsap';
 import {useGSAP} from '@gsap/react';
 import cssPropertiesService from '../services/cssProperties.service';
-import type {CardComponentProps} from '../types/CardComponentProps.type';
+import type {CardObjectType} from '../types/CardObject.type';
 import WhoAmIComponent from './WhoAmI.component';
 import WhatDoIDoComponent from './WhatDoIDo.component';
 import WhereToFindMeComponent from './WhereToFindMe.component';
@@ -11,7 +11,7 @@ import MyPortfolioComponent from './MyPortfolio.component';
 import TestimonialsComponent from './Testimonials.component';
 
 
-export default function Card({id, title, positioningStylings, childComponentName, isVertical}: CardComponentProps): JSX.Element {
+export default function Card({id, title, positioningStylings, childComponentName, isVertical}: CardObjectType): JSX.Element {
     const component = useRef<HTMLDivElement | null>(null);
     const {contextSafe} = useGSAP({scope: component});
     const [mouseOver, setMouseOver] = useState<boolean>(false);

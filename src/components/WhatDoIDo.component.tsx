@@ -1,11 +1,11 @@
 import { useEffect, useRef, type JSX } from "react";
-import type { CardChildComponentProps } from "../types/CardChildComponentProps.type";
+import type { CardChildObjectType } from "../types/CardChildObject.type";
 import {gsap} from 'gsap';
 import cssPropertiesService from "../services/cssProperties.service";
 import { useTranslation } from "react-i18next";
 
 
-export default function WhatDoIDoComponent({mouseOver}: CardChildComponentProps): JSX.Element {
+export default function WhatDoIDoComponent({mouseOver}: CardChildObjectType): JSX.Element {
     const {t} = useTranslation();
     const textContent = t('whatDoIDoCardText');
     const component = useRef<HTMLDivElement|null>(null);

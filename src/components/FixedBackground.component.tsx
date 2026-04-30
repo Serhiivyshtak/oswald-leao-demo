@@ -1,7 +1,7 @@
 import type { JSX } from 'react';
-import type { FixedBackgroundComponentProps } from '../types/FixedBackgroundComponentProps.type';
+import type { FixedBackgroundObjectType } from '../types/FixedBackgroundObject.type';
 
-export default function FixedBackground({ backgroundImageUrl }: FixedBackgroundComponentProps): JSX.Element {
+export default function FixedBackground({ backgroundImageUrl }: FixedBackgroundObjectType): JSX.Element {
     const componentStylings: React.CSSProperties = { backgroundImage: `url(${backgroundImageUrl})` };
     return (
         <div 

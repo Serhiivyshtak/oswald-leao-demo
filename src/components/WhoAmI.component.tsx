@@ -1,12 +1,12 @@
 import { useEffect, useRef, type JSX } from "react";
 import {gsap} from 'gsap';
 import { Icon } from "@iconify/react";
-import type { CardChildComponentProps } from "../types/CardChildComponentProps.type";
+import type { CardChildObjectType } from "../types/CardChildObject.type";
 import cssPropertiesService from '../services/cssProperties.service';
 import { useTranslation } from "react-i18next";
 
 
-export default function WhoAmIComponent({mouseOver}: CardChildComponentProps): JSX.Element {
+export default function WhoAmIComponent({mouseOver}: CardChildObjectType): JSX.Element {
     const {t} = useTranslation();
     const textContent: string = t('whoAmICardText');
     const component = useRef<HTMLDivElement|null>(null);
