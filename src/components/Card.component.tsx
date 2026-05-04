@@ -1,6 +1,7 @@
 import {useEffect, useRef, useState, type JSX} from 'react';
 import {gsap} from 'gsap';
 import {useGSAP} from '@gsap/react';
+import { t } from 'i18next';
 import cssPropertiesService from '../services/cssProperties.service';
 import type {CardObjectType} from '../types/CardObject.type';
 import WhoAmIComponent from './WhoAmI.component';
@@ -11,16 +12,16 @@ import MyPortfolioComponent from './MyPortfolio.component';
 import TestimonialsComponent from './Testimonials.component';
 
 
-export default function Card({id, title, positioningStylings, childComponentName, isVertical}: CardObjectType): JSX.Element {
+export default function Card({id, title, positioningStylings, childComponentName, isVertical, hasLogo}: CardObjectType): JSX.Element {
     const component = useRef<HTMLDivElement | null>(null);
     const {contextSafe} = useGSAP({scope: component});
     const [mouseOver, setMouseOver] = useState<boolean>(false);
     const spacingCompact: number = parseInt(cssPropertiesService.get('--spacing-compact'));
-    const componentClassList: string = `relative ring-[0.5px] ring-gray overflow-hidden duration-300 hover:bg-gray/50 ${positioningStylings}`;
+    const componentClassList: string = `relative ring-[0.5px] ring-gray overflow-hidden duration-300 ${positioningStylings}`;
     const animationDuration: number = 0.4;
 
 
-    //region Main heading return
+    //region main heading return
     function renderMainHeading(): JSX.Element {
         const mainHeading = useRef<HTMLDivElement | null>(null);
         const mainHeadingStylings: React.CSSProperties = {};
@@ -39,7 +40,7 @@ export default function Card({id, title, positioningStylings, childComponentName
     }
 
 
-    //region Head return
+    //region head return
     function renderHead(): JSX.Element {
         const head = useRef<HTMLDivElement | null>(null);
         const [headHeight, setHeadHeight] = useState<number | undefined>(0);
@@ -101,6 +102,22 @@ export default function Card({id, title, positioningStylings, childComponentName
     }
 
 
+    //region logo return
+    function renderLogo(): JSX.Element|null {
+        if (!hasLogo) {
+            return null;
+        }
+
+        const textContent = t('logoText');
+
+        return (
+            <p className="logo absolute font-primary font-normal text-huge top-compact left-compact text-light flex">
+                {textContent}
+            </p>
+        );
+    }
+
+
     //region onMouseEnterHandler
     const componentOnMouseEnterHandler = contextSafe(() => {
         setMouseOver(true);
@@ -110,10 +127,13 @@ export default function Card({id, title, positioningStylings, childComponentName
 
         if (isVertical) {
             gsap.to('.main_heading', {xPercent: 100, x: spacingCompact, duration: animationDuration});
-            return;
+        } else {
+            gsap.to('.main_heading', {yPercent: 100, y: spacingCompact, duration: animationDuration});
         }
 
-        gsap.to('.main_heading', {yPercent: 100, y: spacingCompact, duration: animationDuration});
+        if (hasLogo) {
+            gsap.to('.logo', {yPercent: -100, y: spacingCompact * -1, duration: animationDuration});
+        }
     });
 
     
@@ -125,18 +145,22 @@ export default function Card({id, title, positioningStylings, childComponentName
             gsap.to('.main_heading', {xPercent: 0, x: 0, duration: animationDuration});
             gsap.to('.head__first_heading', {yPercent: -100, y: spacingCompact * -1, duration: animationDuration});
             gsap.to('.head__second_heading', {xPercent: 100, x: spacingCompact, duration: animationDuration});
-            return;
+        } else {
+            gsap.to('.main_heading', {yPercent: 0, y: 0, duration: animationDuration});
+            gsap.to('.head__first_heading', {yPercent: -100, y: spacingCompact * -1, duration: animationDuration});
+            gsap.to('.head__second_heading', {xPercent: -100, x: spacingCompact * -1, duration: animationDuration});
         }
 
-        gsap.to('.main_heading', {yPercent: 0, y: 0, duration: animationDuration});
-        gsap.to('.head__first_heading', {yPercent: -100, y: spacingCompact * -1, duration: animationDuration});
-        gsap.to('.head__second_heading', {xPercent: -100, x: spacingCompact * -1, duration: animationDuration});
+        if (hasLogo) {
+            gsap.to('.logo', {yPercent: 0, y: spacingCompact, duration: animationDuration});
+        }
     });
 
 
-    //region Component return
+    //region component return
     return (
         <div ref={component} className={componentClassList} onMouseEnter={componentOnMouseEnterHandler} onMouseLeave={componentOnMouseLeaveHandler}>
+            {renderLogo()}
             {renderMainHeading()}
             {renderHead()}
             {renderChildComponent()}

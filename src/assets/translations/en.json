@@ -5,42 +5,48 @@
             "title": "Who am I",
             "positioningStylings": "row-span-1 col-span-4",
             "isVertical": false,
-            "childComponentName": "whoAmI"
+            "childComponentName": "whoAmI",
+            "hasLogo": false
         },
         {
             "id": 2,
             "title": "What do I do",
             "positioningStylings": "row-span-1 col-span-6",
             "isVertical": false,
-            "childComponentName": "whatDoIDo"
+            "childComponentName": "whatDoIDo",
+            "hasLogo": true
         },
         {
             "id": 3,
             "title": "Where to find me",
             "isVertical": true,
             "positioningStylings": "row-span-1 col-span-2",
-            "childComponentName": "whereToFindMe"
+            "childComponentName": "whereToFindMe",
+            "hasLogo": false
         },
         {
             "id": 4,
             "title": "My awards",
             "positioningStylings": "row-span-1 col-span-4",
             "isVertical": false,
-            "childComponentName": "myAwards"
+            "childComponentName": "myAwards",
+            "hasLogo": false
         },
         {
             "id": 5,
             "title": "My portfolio",
             "positioningStylings": "row-span-1 col-span-6",
             "isVertical": false,
-            "childComponentName": "myPortfolio"
+            "childComponentName": "myPortfolio",
+            "hasLogo": false
         },
         {
             "id": 6,
             "title": "Testimonials",
             "positioningStylings": "row-span-1 col-span-2",
             "isVertical": true,
-            "childComponentName": "testimonials"
+            "childComponentName": "testimonials",
+            "hasLogo": false
         }
     ],
     "socialMediaLinks": [
@@ -72,17 +78,17 @@
             "amount": 1
         },
         {
-            "id": 1,
+            "id": 2,
             "title": "Photographic Society of Japan awards, Japan",
             "amount": 3
         },
         {
-            "id": 1,
+            "id": 3,
             "title": "Photo City Sagamihara, Japan",
             "amount": 1
         },
         {
-            "id": 1,
+            "id": 4,
             "title": "Paris Photo–Aperture Foundation PhotoBook Awards, France",
             "amount": 1
         }
@@ -105,5 +111,6 @@
         }
     ],
     "whoAmICardText": "I am a 25-year-old freelance photographer based in Singapore, specializing in portrait, lifestyle, and street photography. When I’m not behind the camera, you’ll most likely find me hiking through the countryside, exploring quiet forests or hidden trails just outside the city.",
-    "whatDoIDoCardText": "I work across portrait, lifestyle, editorial, and street photography. I collaborate with creative agencies, independent brands, musicians, and magazines to produce images that feel natural, honest, and visually striking."
+    "whatDoIDoCardText": "I work across portrait, lifestyle, editorial, and street photography. I collaborate with creative agencies, independent brands, musicians, and magazines to produce images that feel natural, honest, and visually striking.",
+    "logoText": "Oswald Leao"
 }

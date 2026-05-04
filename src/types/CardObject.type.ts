@@ -4,4 +4,5 @@ export type CardObjectType = {
     positioningStylings: string,
     childComponentName: string, 
     isVertical: boolean,
+    hasLogo: boolean
 }

@@ -18,6 +18,7 @@ export default function MainSection(): JSX.Element {
                 positioningStylings={card.positioningStylings} 
                 childComponentName={card.childComponentName} 
                 isVertical={card.isVertical}
+                hasLogo={card.hasLogo}
             />
         );
     }
