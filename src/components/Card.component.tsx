@@ -1,24 +1,31 @@
+// External packages
 import {useEffect, useRef, useState, type JSX} from 'react';
 import {gsap} from 'gsap';
 import { t } from 'i18next';
-import domService from '../services/dom.service';
+
+// Custom hooks
+import useDomInfo from '../hooks/useDomInfo';
+import {useCssProperty} from '../hooks/useCssPropery.hook';
+
+// Custom types
 import type {CardObjectType} from '../types/CardObject.type';
+import type {DomInfoObjectType} from '../types/DomInfoObject.type';
+
+// Custom components
 import WhoAmIComponent from './WhoAmI.component';
 import WhatDoIDoComponent from './WhatDoIDo.component';
 import WhereToFindMeComponent from './WhereToFindMe.component';
 import MyAwardsComponent from './MyAwards.component';
 import MyPortfolioComponent from './MyPortfolio.component';
 import TestimonialsComponent from './Testimonials.component';
-import { useDomInfo } from '../services/useDomInfo';
-import type { DomInfoObjectType } from '../types/DomInfoObject.type';
 
 
 export default function Card({id, title, positioningStylings, childComponentName, hasLogo}: CardObjectType): JSX.Element {
     const component = useRef<HTMLDivElement | null>(null);
     const [mouseOver, setMouseOver] = useState<boolean>(false);
     const {windowWidth, isMobile} = useDomInfo() as DomInfoObjectType;
-    const spacingBig: number = parseInt(domService.getCssProperty('--spacing-big'));
-    const breakpoint768: number = parseInt(domService.getCssProperty('--breakpoint-768'));
+    const spacingBig: number = useCssProperty('--spacing-big') as number;
+    const breakpoint768 = useCssProperty('--breakpoint-768') as number;
     const componentClassList: string = `relative ring-[0.5px] ring-gray overflow-hidden duration-300 ${positioningStylings}`;
     const animationDuration: number = 0.4;
 

@@ -1,16 +1,21 @@
-import {useEffect, useRef, type JSX} from "react";
-import {useTranslation} from "react-i18next";
+// External packages
+import {useEffect, useRef, type JSX} from 'react';
+import {useTranslation} from 'react-i18next';
 import {gsap} from 'gsap';
-import type {CardChildObjectType} from "../types/CardChildObject.type";
-import type {AwardObjectType} from "../types/AwardObject.type";
-import domService from "../services/dom.service";
+
+// Custom hooks
+import {useCssProperty} from '../hooks/useCssPropery.hook';
+
+// Custom types
+import type {CardChildObjectType} from '../types/CardChildObject.type';
+import type {AwardObjectType} from '../types/AwardObject.type';
 
 
 export default function MyAwardsComponent({mouseOver}: CardChildObjectType): JSX.Element {
     const {t} = useTranslation();
     const awards: Array<AwardObjectType> = t('awards', {returnObjects: true}) as Array<AwardObjectType>;
     const component = useRef<HTMLDivElement|null>(null);
-    const spacingBig: number = parseInt(domService.getCssProperty('--spacing-big'));
+    const spacingBig: number = useCssProperty('--spacing-big') as number;
     const animationDuration: number = 0.6;
 
 

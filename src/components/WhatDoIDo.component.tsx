@@ -1,15 +1,20 @@
-import { useEffect, useRef, type JSX } from "react";
-import type { CardChildObjectType } from "../types/CardChildObject.type";
+// External packages
+import {useEffect, useRef, type JSX} from 'react';
 import {gsap} from 'gsap';
-import domService from "../services/dom.service";
-import { useTranslation } from "react-i18next";
+import {useTranslation} from 'react-i18next';
+
+// Custom hooks
+import {useCssProperty} from '../hooks/useCssPropery.hook';
+
+// Custom types
+import type {CardChildObjectType} from '../types/CardChildObject.type';
 
 
 export default function WhatDoIDoComponent({mouseOver}: CardChildObjectType): JSX.Element {
     const {t} = useTranslation();
     const textContent = t('whatDoIDoCardText');
     const component = useRef<HTMLDivElement|null>(null);
-    const spacingBig: number = parseInt(domService.getCssProperty('--spacing-big'));
+    const spacingBig: number = useCssProperty('--spacing-big') as number;
     const animationDuration: number = 0.6;
 
     

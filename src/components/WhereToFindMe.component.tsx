@@ -1,17 +1,22 @@
-import { useEffect, useRef, type JSX } from 'react';
-import { useTranslation } from 'react-i18next';
+// Custom packages
+import {useEffect, useRef, type JSX} from 'react';
+import {useTranslation} from 'react-i18next';
 import {gsap} from 'gsap';
-import { Icon } from "@iconify/react";
-import type { CardChildObjectType } from '../types/CardChildObject.type';
+import {Icon} from '@iconify/react';
+
+// Custom hooks
+import {useCssProperty} from '../hooks/useCssPropery.hook';
+
+// Custom types
+import type {CardChildObjectType} from '../types/CardChildObject.type';
 import type {SocialMediaLinkObjectType} from '../types/SocialMediaLinkObject.type';
-import domService from '../services/dom.service';
 
 
 export default function WhereToFindMeComponent({mouseOver}: CardChildObjectType): JSX.Element {
     const {t} = useTranslation();
     const socialMediaLinks: Array<SocialMediaLinkObjectType> = t('socialMediaLinks', {returnObjects: true}) as Array<SocialMediaLinkObjectType>;
     const component = useRef<HTMLDivElement|null>(null);
-    const spacingBig: number = parseInt(domService.getCssProperty('--spacing-big'));
+    const spacingBig: number = useCssProperty('--spacing-big') as number;
     const animationDuration: number = 0.6;
 
     

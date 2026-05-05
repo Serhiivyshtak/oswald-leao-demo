@@ -1,14 +1,19 @@
-import { useEffect, useRef, type JSX } from "react";
+// Extermal packages
+import {useEffect, useRef, type JSX} from 'react';
 import {gsap} from 'gsap';
-import type { CardChildObjectType } from "../types/CardChildObject.type";
-import domService from "../services/dom.service";
-import { Icon } from "@iconify/react";
+import {Icon} from '@iconify/react';
+
+// Custom hooks
+import {useCssProperty} from '../hooks/useCssPropery.hook';
+
+// Custom types
+import type { CardChildObjectType } from '../types/CardChildObject.type';
 
 
 export default function MyPortfolioComponent({mouseOver}: CardChildObjectType): JSX.Element {
     const component = useRef<HTMLDivElement|null>(null);
-    const spacingBig: number = parseInt(domService.getCssProperty('--spacing-big'));
-    const spacingLarge: number = parseInt(domService.getCssProperty('--spacing-large'));
+    const spacingBig: number = useCssProperty('--spacing-big') as number;
+    const spacingLarge: number = useCssProperty('--spacing-large') as number;
     const animationDuration: number = 0.6;
 
 
