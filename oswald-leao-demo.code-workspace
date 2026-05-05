@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+		"path": "."
+		}
+	],
+	"settings": {
+		"editor.tabSize": 4,
+		"files.autoSave": "afterDelay"
+	},
+	"extensions": {
+		"recommendations": [
+		"bradlc.vscode-tailwindcss"
+		]
+	}
+}
