@@ -4,15 +4,14 @@ import {gsap} from 'gsap';
 import { Icon } from "@iconify/react";
 import type { CardChildObjectType } from '../types/CardChildObject.type';
 import type {SocialMediaLinkObjectType} from '../types/SocialMediaLinkObject.type';
-import cssPropertiesService from '../services/cssProperties.service';
+import domService from '../services/dom.service';
 
 
 export default function WhereToFindMeComponent({mouseOver}: CardChildObjectType): JSX.Element {
     const {t} = useTranslation();
     const socialMediaLinks: Array<SocialMediaLinkObjectType> = t('socialMediaLinks', {returnObjects: true}) as Array<SocialMediaLinkObjectType>;
     const component = useRef<HTMLDivElement|null>(null);
-    const spacingCompact: number = parseInt(cssPropertiesService.get('--spacing-compact'));
-    const spacingBig: number = parseInt(cssPropertiesService.get('--spacing-big'));
+    const spacingBig: number = parseInt(domService.getCssProperty('--spacing-big'));
     const animationDuration: number = 0.6;
 
     
@@ -21,7 +20,7 @@ export default function WhereToFindMeComponent({mouseOver}: CardChildObjectType)
             if (mouseOver) {
                 gsap.to('.container', {xPercent: 0, x: 0, duration: animationDuration});
             } else {
-                gsap.to('.container', {xPercent: 100, x: spacingCompact, duration: animationDuration});
+                gsap.to('.container', {xPercent: 100, x: spacingBig, duration: animationDuration});
             }
         }, component);
     }, [mouseOver]);
@@ -38,7 +37,7 @@ export default function WhereToFindMeComponent({mouseOver}: CardChildObjectType)
 
     return (
         <div ref={component}>
-            <div className="container absolute bottom-compact right-compact h-max w-max flex flex-col gap-small">
+            <div className="container absolute bottom-big right-big h-max w-max flex gap-small 768:flex-col">
                 {renderSocialMediaLinks()}
             </div>
         </div>

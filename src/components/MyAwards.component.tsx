@@ -3,14 +3,14 @@ import {useTranslation} from "react-i18next";
 import {gsap} from 'gsap';
 import type {CardChildObjectType} from "../types/CardChildObject.type";
 import type {AwardObjectType} from "../types/AwardObject.type";
-import cssPropertiesService from "../services/cssProperties.service";
+import domService from "../services/dom.service";
 
 
 export default function MyAwardsComponent({mouseOver}: CardChildObjectType): JSX.Element {
     const {t} = useTranslation();
     const awards: Array<AwardObjectType> = t('awards', {returnObjects: true}) as Array<AwardObjectType>;
     const component = useRef<HTMLDivElement|null>(null);
-    const spacingCompact: number = parseInt(cssPropertiesService.get('--spacing-compact'));
+    const spacingBig: number = parseInt(domService.getCssProperty('--spacing-big'));
     const animationDuration: number = 0.6;
 
 
@@ -19,7 +19,7 @@ export default function MyAwardsComponent({mouseOver}: CardChildObjectType): JSX
             if (mouseOver) {
                 gsap.to('.container', {xPercent: 0, x: 0, duration: animationDuration});
             } else {
-                gsap.to('.container', {xPercent: -100, x: spacingCompact * -1, duration: animationDuration});
+                gsap.to('.container', {xPercent: -100, x: spacingBig * -1, duration: animationDuration});
             }
         }, component);
     }, [mouseOver]);
@@ -31,8 +31,13 @@ export default function MyAwardsComponent({mouseOver}: CardChildObjectType): JSX
 
 
     return (
-        <div ref={component}>
-            <ul className="container text-light font-secondary font-base mt-large ml-compact mr-compact list-decimal list-inside list-image-[url(/list_bullet.png)]">
+        <div ref={component} className="px-big pt-compact pb-big">
+            <ul 
+                className="container block text-light font-secondary list-decimal list-inside list-image-[url(/list_bullet.png)]
+                    text-base_1270 leading-base_1270 
+                    1440:text-base_1440 1440:leading-base_1440 
+                    1920:text-base_1920 1920:leading-base_1920"
+                >
                 {renderAwards()}
             </ul>
         </div>

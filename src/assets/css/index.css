@@ -17,15 +17,28 @@
     --spacing-large: 40px;
     --spacing-huge: 64px;
 
-    --text-small: 11.3px;
-    --text-base: 16px;
-    --text-middle: 22.6px;
-    --text-large: 31.9px;
-    --text-huge: 64px;
+    --text-base_1920: 16px;
+    --text-h1_1920: 60px;
+    --text-small_1920: 14px;
+    --text-base_1440: 14px;
+    --text-h1_1440: 48px;
+    --text-small_1440: 12px;
+    --text-base_1270: 13px;
+    --text-h1_1270: 36px;
+    --text-small_1270: 11px;
 
-    --leading-huge: 64px;
-}
+    --leading-base_1920: 20px;
+    --leading-h1_1920: 52px;
+    --leading-base_1440: 17px;
+    --leading-h1_1440: 40px;
+    --leading-base_1270: 16px;
+    --leading-h1_1270: 30px;
 
-body {
-    overflow: hidden;
+    /* Breakpoints are calculated by substracting 5% of the screen size */
+    --breakpoint-1920: 1824px;
+    --breakpoint-1440: 1368px;
+    --breakpoint-1270: 1206px;
+    --breakpoint-1024: 973px;
+    --breakpoint-768: 730px;
+    --breakpoint-430: 408px;
 }

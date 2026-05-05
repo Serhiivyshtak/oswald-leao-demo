@@ -2,7 +2,7 @@ import { useEffect, useRef, type JSX } from "react";
 import {gsap} from 'gsap';
 import { Icon } from "@iconify/react";
 import type { CardChildObjectType } from "../types/CardChildObject.type";
-import cssPropertiesService from '../services/cssProperties.service';
+import domService from '../services/dom.service';
 import { useTranslation } from "react-i18next";
 
 
@@ -10,8 +10,8 @@ export default function WhoAmIComponent({mouseOver}: CardChildObjectType): JSX.E
     const {t} = useTranslation();
     const textContent: string = t('whoAmICardText');
     const component = useRef<HTMLDivElement|null>(null);
-    const spacingCompact: number = parseInt(cssPropertiesService.get('--spacing-compact'));
-    const spacingLarge: number = parseInt(cssPropertiesService.get('--spacing-large'));
+    const spacingBig: number = parseInt(domService.getCssProperty('--spacing-big'));
+    const spacingLarge: number = parseInt(domService.getCssProperty('--spacing-large'));
     const animationDuration: number = 0.6;
 
     
@@ -21,19 +21,25 @@ export default function WhoAmIComponent({mouseOver}: CardChildObjectType): JSX.E
                 gsap.to('.text', {xPercent: 0, x: 0, duration: animationDuration});
                 gsap.to('.redirection_link', {yPercent: 0, y: 0, duration: animationDuration});
             } else {
-                gsap.to('.text', {xPercent: -100, x: spacingCompact * -1, duration: animationDuration});
-                gsap.to('.redirection_link', {yPercent: 100, y: spacingCompact, duration: animationDuration});
+                gsap.to('.text', {xPercent: -100, x: spacingBig * -1, duration: animationDuration});
+                gsap.to('.redirection_link', {yPercent: 100, y: spacingBig, duration: animationDuration});
             }
         }, component);
     }, [mouseOver]);
 
 
     return (
-        <div ref={component}>
-            <p className="text text-light font-secondary font-base mt-large ml-compact mr-compact">
+        <div ref={component} className="flex flex-col items-end pt-compact px-big pb-big gap-small 768:pb-0">
+            <p 
+                className="
+                    text text-light font-secondary font-base
+                    text-base_1270 leading-base_1270 
+                    1440:text-base_1440 1440:leading-base_1440 
+                    1920:text-base_1920 1920:leading-base_1920"
+                >
                 {textContent}
             </p>
-            <a className="redirection_link absolute text-light right-compact bottom-compact" href="/about">
+            <a className="redirection_link 768:absolute text-light right-compact bottom-compact" href="/about">
                 <Icon icon="guidance:left-arrow" width={`${spacingLarge}px`} height={`${spacingLarge}px`} />
             </a>
         </div>

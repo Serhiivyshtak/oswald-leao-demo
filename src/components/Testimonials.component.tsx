@@ -3,14 +3,14 @@ import {useTranslation} from "react-i18next";
 import {gsap} from 'gsap';
 import type {CardChildObjectType} from "../types/CardChildObject.type";
 import type {TestimonialObjectType} from "../types/TestimonialObject.type";
-import cssPropertiesService from "../services/cssProperties.service";
+import domService from "../services/dom.service";
 
 
 export default function TestimonialsComponent({mouseOver}: CardChildObjectType): JSX.Element {
     const {t} = useTranslation();
     const testimonials: Array<TestimonialObjectType> = t('testimonials', {returnObjects: true}) as Array<TestimonialObjectType>;
     const component = useRef(null);
-    const spacingCompact: number = parseInt(cssPropertiesService.get('--spacing-compact'));
+    const spacingBig: number = parseInt(domService.getCssProperty('--spacing-big'));
     const animationDuration: number = 0.6;
 
 
@@ -19,7 +19,7 @@ export default function TestimonialsComponent({mouseOver}: CardChildObjectType):
             if (mouseOver) {
                 gsap.to('.text', {xPercent: 0, x: 0, duration: animationDuration});
             } else {
-                gsap.to('.text', {xPercent: 100, x: spacingCompact, duration: animationDuration});
+                gsap.to('.text', {xPercent: 100, x: spacingBig, duration: animationDuration});
             }
         }, component);
     }, [mouseOver]);
@@ -29,17 +29,24 @@ export default function TestimonialsComponent({mouseOver}: CardChildObjectType):
         const randomTestimonialIndex: number = Math.floor(Math.random() * testimonials.length);
 
         return (
-            <p className="text absolute font-secondary font-base w-1/2 h-max text-right bottom-compact right-compact">
-                <span className="text-light">
-                    {testimonials[randomTestimonialIndex].text}
-                </span>
-                <span className="text-light">
-                    -
-                </span>
-                <span className="text-gray">
-                    {testimonials[randomTestimonialIndex].author}
-                </span>
-            </p>
+            <div ref={component}>
+                <p 
+                    className="text absolute font-secondary w-1/2 h-max text-right bottom-big right-big
+                        text-base_1270 leading-base_1270 
+                        1440:text-base_1440 1440:leading-base_1440 
+                        1920:text-base_1920 1920:leading-base_1920"
+                    >
+                    <span className="text-light">
+                        {testimonials[randomTestimonialIndex].text}
+                    </span>
+                    <span className="text-light">
+                        -
+                    </span>
+                    <span className="text-gray">
+                        {testimonials[randomTestimonialIndex].author}
+                    </span>
+                </p>
+            </div>
         );
     }
     

@@ -3,8 +3,7 @@
         {
             "id": 1,
             "title": "Who am I",
-            "positioningStylings": "row-span-1 col-span-4",
-            "isVertical": false,
+            "positioningStylings": "row-span-1 landscape:col-span-4 portrait:col-span-6",
             "childComponentName": "whoAmI",
             "hasLogo": false
         },
@@ -12,39 +11,34 @@
             "id": 2,
             "title": "What do I do",
             "positioningStylings": "row-span-1 col-span-6",
-            "isVertical": false,
             "childComponentName": "whatDoIDo",
             "hasLogo": true
         },
         {
             "id": 3,
             "title": "Where to find me",
-            "isVertical": true,
-            "positioningStylings": "row-span-1 col-span-2",
+            "positioningStylings": "row-span-1 landscape:col-span-2 portrait:col-span-5",
             "childComponentName": "whereToFindMe",
             "hasLogo": false
         },
         {
             "id": 4,
-            "title": "My awards",
-            "positioningStylings": "row-span-1 col-span-4",
-            "isVertical": false,
-            "childComponentName": "myAwards",
+            "title": "My portfolio",
+            "positioningStylings": "row-span-1 landscape:col-span-5 portrait:col-span-7",
+            "childComponentName": "myPortfolio",
             "hasLogo": false
         },
         {
             "id": 5,
-            "title": "My portfolio",
-            "positioningStylings": "row-span-1 col-span-6",
-            "isVertical": false,
-            "childComponentName": "myPortfolio",
+            "title": "My awards",
+            "positioningStylings": "row-span-1 landscape:col-span-4 portrait:col-span-7",
+            "childComponentName": "myAwards",
             "hasLogo": false
         },
         {
             "id": 6,
             "title": "Testimonials",
-            "positioningStylings": "row-span-1 col-span-2",
-            "isVertical": true,
+            "positioningStylings": "row-span-1 landscape:col-span-3 portrait:col-span-5",
             "childComponentName": "testimonials",
             "hasLogo": false
         }

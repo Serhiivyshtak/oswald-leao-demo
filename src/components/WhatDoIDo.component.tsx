@@ -1,7 +1,7 @@
 import { useEffect, useRef, type JSX } from "react";
 import type { CardChildObjectType } from "../types/CardChildObject.type";
 import {gsap} from 'gsap';
-import cssPropertiesService from "../services/cssProperties.service";
+import domService from "../services/dom.service";
 import { useTranslation } from "react-i18next";
 
 
@@ -9,7 +9,7 @@ export default function WhatDoIDoComponent({mouseOver}: CardChildObjectType): JS
     const {t} = useTranslation();
     const textContent = t('whatDoIDoCardText');
     const component = useRef<HTMLDivElement|null>(null);
-    const spacingCompact: number = parseInt(cssPropertiesService.get('--spacing-compact'));
+    const spacingBig: number = parseInt(domService.getCssProperty('--spacing-big'));
     const animationDuration: number = 0.6;
 
     
@@ -18,15 +18,20 @@ export default function WhatDoIDoComponent({mouseOver}: CardChildObjectType): JS
             if (mouseOver) {
                 gsap.to('.text', {xPercent: 0, x: 0, duration: animationDuration});
             } else {
-                gsap.to('.text', {xPercent: -100, x: spacingCompact * -1, duration: animationDuration});
+                gsap.to('.text', {xPercent: -100, x: spacingBig * -1, duration: animationDuration});
             }
         }, component);
     }, [mouseOver]);
 
 
     return ( 
-        <div ref={component}>
-            <p className="text text-light font-secondary font-base mt-large ml-compact mr-compact">
+        <div ref={component} className="pt-compact px-big pb-big">
+            <p 
+                className="text text-light font-secondary font-base
+                    text-base_1270 leading-base_1270 
+                    1440:text-base_1440 1440:leading-base_1440 
+                    1920:text-base_1920 1920:leading-base_1920"
+                >
                 {textContent}
             </p>
         </div>             
