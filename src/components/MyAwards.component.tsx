@@ -11,7 +11,7 @@ import type {CardChildObjectType} from '../types/CardChildObject.type';
 import type {AwardObjectType} from '../types/AwardObject.type';
 
 
-export default function MyAwardsComponent({mouseOver}: CardChildObjectType): JSX.Element {
+export function MyAwardsComponent({mouseOver}: CardChildObjectType): JSX.Element {
     const {t} = useTranslation();
     const awards: Array<AwardObjectType> = t('awards', {returnObjects: true}) as Array<AwardObjectType>;
     const component = useRef<HTMLDivElement|null>(null);

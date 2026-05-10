@@ -10,7 +10,7 @@ import {useCssProperty} from '../hooks/useCssPropery.hook';
 import type {CardChildObjectType} from '../types/CardChildObject.type';
 
 
-export default function WhatDoIDoComponent({mouseOver}: CardChildObjectType): JSX.Element {
+export function WhatDoIDoComponent({mouseOver}: CardChildObjectType): JSX.Element {
     const {t} = useTranslation();
     const textContent = t('whatDoIDoCardText');
     const component = useRef<HTMLDivElement|null>(null);

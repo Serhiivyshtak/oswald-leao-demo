@@ -11,7 +11,7 @@ import {useCssProperty} from '../hooks/useCssPropery.hook';
 import type {CardChildObjectType} from '../types/CardChildObject.type';
 
 
-export default function WhoAmIComponent({mouseOver}: CardChildObjectType): JSX.Element {
+export function WhoAmIComponent({mouseOver}: CardChildObjectType): JSX.Element {
     const {t} = useTranslation();
     const textContent: string = t('whoAmICardText');
     const component = useRef<HTMLDivElement|null>(null);

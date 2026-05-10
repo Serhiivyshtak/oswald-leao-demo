@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import type { DomInfoObjectType } from "../types/DomInfoObject.type";
 
 
-export default function useDomInfo(): DomInfoObjectType {
+export function useDomInfo(): DomInfoObjectType {
     const [windowWidth, setWindowWidth] = useState<number>(0);
     const [windowHeight, setWindowHeight] = useState<number>(0);
     const isMobile: boolean = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);

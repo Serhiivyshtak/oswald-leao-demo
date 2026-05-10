@@ -13,7 +13,7 @@ import type {CardChildObjectType} from '../types/CardChildObject.type';
 import type {PortfolioImageObjectType} from '../types/PortfolioImageObject.type';
 
 
-export default function MyPortfolioComponent({mouseOver, cardHeight, windowWidth, headHeight}: CardChildObjectType): JSX.Element {
+export function MyPortfolioComponent({mouseOver, cardHeight, windowWidth, headHeight}: CardChildObjectType): JSX.Element {
     const {t} = useTranslation();
     const component = useRef<HTMLDivElement|null>(null);
     const redirectionButton = useRef<HTMLAnchorElement>(null);

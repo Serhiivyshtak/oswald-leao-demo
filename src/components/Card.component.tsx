@@ -1,10 +1,10 @@
 // External packages
 import {useEffect, useRef, useState, type JSX} from 'react';
 import {gsap} from 'gsap';
-import { t } from 'i18next';
+import {t} from 'i18next';
 
 // Custom hooks
-import useDomInfo from '../hooks/useDomInfo';
+import {useDomInfo} from '../hooks/useDomInfo';
 import {useCssProperty} from '../hooks/useCssPropery.hook';
 
 // Custom types
@@ -12,15 +12,15 @@ import type {CardObjectType} from '../types/CardObject.type';
 import type {DomInfoObjectType} from '../types/DomInfoObject.type';
 
 // Custom components
-import WhoAmIComponent from './WhoAmI.component';
-import WhatDoIDoComponent from './WhatDoIDo.component';
-import WhereToFindMeComponent from './WhereToFindMe.component';
-import MyAwardsComponent from './MyAwards.component';
-import MyPortfolioComponent from './MyPortfolio.component';
-import TestimonialsComponent from './Testimonials.component';
+import {WhoAmIComponent} from './WhoAmI.component';
+import {WhatDoIDoComponent} from './WhatDoIDo.component';
+import {WhereToFindMeComponent} from './WhereToFindMe.component';
+import {MyAwardsComponent} from './MyAwards.component';
+import {MyPortfolioComponent} from './MyPortfolio.component';
+import {TestimonialsComponent} from './Testimonials.component';
 
 
-export default function Card({id, title, positioningStylings, childComponentName, hasLogo}: CardObjectType): JSX.Element {
+export function CardComponent({id, title, positioningStylings, childComponentName, hasLogo}: CardObjectType): JSX.Element {
     const component = useRef<HTMLDivElement | null>(null);
     const head = useRef<HTMLDivElement | null>(null);
     const [mouseOver, setMouseOver] = useState<boolean>(false);

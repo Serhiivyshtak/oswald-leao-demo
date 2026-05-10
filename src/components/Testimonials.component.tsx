@@ -11,7 +11,7 @@ import type {CardChildObjectType} from '../types/CardChildObject.type';
 import type {TestimonialObjectType} from '../types/TestimonialObject.type';
 
 
-export default function TestimonialsComponent({mouseOver}: CardChildObjectType): JSX.Element {
+export function TestimonialsComponent({mouseOver}: CardChildObjectType): JSX.Element {
     const {t} = useTranslation();
     const testimonials = t('testimonials', {returnObjects: true}) as Array<TestimonialObjectType>;
     const component = useRef<HTMLDivElement | null>(null);

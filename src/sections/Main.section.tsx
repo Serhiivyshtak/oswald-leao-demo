@@ -1,10 +1,10 @@
-import type { JSX } from 'react';
-import CardComponent from '../components/Card.component';
-import { useTranslation } from 'react-i18next';
-import type { CardObjectType } from '../types/CardObject.type';
+import type {JSX} from 'react';
+import {CardComponent} from '../components/Card.component';
+import {useTranslation} from 'react-i18next';
+import type {CardObjectType} from '../types/CardObject.type';
 
 
-export default function MainSection(): JSX.Element {
+export function MainSection(): JSX.Element {
     const { t } = useTranslation();
     const cards: Array<CardObjectType> = t('cards', {returnObjects: true}) as Array<CardObjectType>;
 

@@ -12,7 +12,7 @@ import type {CardChildObjectType} from '../types/CardChildObject.type';
 import type {SocialMediaLinkObjectType} from '../types/SocialMediaLinkObject.type';
 
 
-export default function WhereToFindMeComponent({mouseOver}: CardChildObjectType): JSX.Element {
+export function WhereToFindMeComponent({mouseOver}: CardChildObjectType): JSX.Element {
     const {t} = useTranslation();
     const socialMediaLinks: Array<SocialMediaLinkObjectType> = t('socialMediaLinks', {returnObjects: true}) as Array<SocialMediaLinkObjectType>;
     const component = useRef<HTMLDivElement|null>(null);
