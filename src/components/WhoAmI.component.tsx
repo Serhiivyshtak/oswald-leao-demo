@@ -1,7 +1,6 @@
 // External packages
 import {useEffect, useRef, type JSX} from 'react';
 import {gsap} from 'gsap';
-import {Icon} from '@iconify/react';
 import {useTranslation} from 'react-i18next';
 
 // Custom hooks
@@ -9,6 +8,9 @@ import {useCssProperty} from '../hooks/useCssPropery.hook';
 
 // Custom types
 import type {CardChildObjectType} from '../types/CardChildObject.type';
+
+// Custom components
+import {RedirectionLinkWithIconComponent} from './RedirectionLinkWithIcon.component';
 
 
 export function WhoAmIComponent({mouseOver}: CardChildObjectType): JSX.Element {
@@ -44,9 +46,12 @@ export function WhoAmIComponent({mouseOver}: CardChildObjectType): JSX.Element {
                 >
                 {textContent}
             </p>
-            <a className="redirection_link 768:absolute text-light right-compact bottom-compact" href="/about">
-                <Icon icon="guidance:left-arrow" width={`${spacingLarge}px`} height={`${spacingLarge}px`} />
-            </a>
+            <RedirectionLinkWithIconComponent
+                href="/about" 
+                size={spacingLarge}
+                icon="guidance:left-arrow"
+                className="redirection_link absolute right-big bottom-big" 
+            />
         </div>
     );
 }

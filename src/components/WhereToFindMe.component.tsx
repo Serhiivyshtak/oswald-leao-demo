@@ -1,8 +1,7 @@
-// Custom packages
+// External packages
 import {useEffect, useRef, type JSX} from 'react';
 import {useTranslation} from 'react-i18next';
 import {gsap} from 'gsap';
-import {Icon} from '@iconify/react';
 
 // Custom hooks
 import {useCssProperty} from '../hooks/useCssPropery.hook';
@@ -10,6 +9,9 @@ import {useCssProperty} from '../hooks/useCssPropery.hook';
 // Custom types
 import type {CardChildObjectType} from '../types/CardChildObject.type';
 import type {SocialMediaLinkObjectType} from '../types/SocialMediaLinkObject.type';
+
+// Custom components
+import {RedirectionLinkWithIconComponent} from './RedirectionLinkWithIcon.component';
 
 
 export function WhereToFindMeComponent({mouseOver}: CardChildObjectType): JSX.Element {
@@ -33,9 +35,12 @@ export function WhereToFindMeComponent({mouseOver}: CardChildObjectType): JSX.El
 
     function renderSocialMediaLinks(): JSX.Element[] {
         return socialMediaLinks.map((socialMediaLink: SocialMediaLinkObjectType) => 
-            <a key={socialMediaLink.id} href={socialMediaLink.href}>
-                <Icon icon={socialMediaLink.icon} width={`${spacingBig}px`} height={`${spacingBig}px`} className="text-light"/>
-            </a>
+            <RedirectionLinkWithIconComponent
+                href={socialMediaLink.href} 
+                key={socialMediaLink.id}
+                size={spacingBig}
+                icon={socialMediaLink.icon}
+            />
         )
     }
 

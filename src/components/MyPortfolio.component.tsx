@@ -1,8 +1,7 @@
-// Extermal packages
+// External packages
 import {useEffect, useRef, useState, useLayoutEffect, type JSX} from 'react';
 import {useTranslation} from 'react-i18next';
 import {gsap} from 'gsap';
-import {Icon} from '@iconify/react';
 
 // Custom hooks
 import {useCssProperty} from '../hooks/useCssPropery.hook';
@@ -12,11 +11,14 @@ import {useRandom} from '../hooks/useRandom.hook';
 import type {CardChildObjectType} from '../types/CardChildObject.type';
 import type {PortfolioImageObjectType} from '../types/PortfolioImageObject.type';
 
+// Custom components
+import {RedirectionLinkWithIconComponent} from './RedirectionLinkWithIcon.component';
+
 
 export function MyPortfolioComponent({mouseOver, cardHeight, windowWidth, headHeight}: CardChildObjectType): JSX.Element {
     const {t} = useTranslation();
     const component = useRef<HTMLDivElement|null>(null);
-    const redirectionButton = useRef<HTMLAnchorElement>(null);
+    const redirectionButton = useRef<HTMLAnchorElement|null>(null);
     const [redirectionButtonHeight, setRedirectionButtonHeight] = useState<number>(0);
     const [imagesContainerHeight, setImagesContainerHeight] = useState<number>(0);
     const spacingBig: number = useCssProperty('--spacing-big') as number;
@@ -118,9 +120,13 @@ export function MyPortfolioComponent({mouseOver, cardHeight, windowWidth, headHe
                 >
                     {renderSelectedPortfolioImages()}
             </div>
-            <a ref={redirectionButton} className="redirection_link 768:absolute text-light right-big bottom-big" href="/portfolio">
-                <Icon icon="guidance:left-arrow" width={`${spacingLarge}px`} height={`${spacingLarge}px`} />
-            </a>
+            <RedirectionLinkWithIconComponent
+                href="/about" 
+                ref={redirectionButton}
+                size={spacingLarge}
+                icon="guidance:left-arrow" 
+                className="redirection_link 768:absolute right-big bottom-big" 
+            />
         </div>
     );
 }
