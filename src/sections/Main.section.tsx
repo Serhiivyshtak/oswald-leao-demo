@@ -16,8 +16,7 @@ export default function MainSection(): JSX.Element {
                 id={card.id} 
                 title={card.title} 
                 positioningStylings={card.positioningStylings} 
-                childComponentName={card.childComponentName} 
-                isVertical={card.isVertical}
+                childComponentName={card.childComponentName}
                 hasLogo={card.hasLogo}
             />
         );

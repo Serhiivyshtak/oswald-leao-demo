@@ -104,6 +104,43 @@
             "author": "Emily Zhao from Verge Magazine"
         }
     ],
+    "portfolioImages": [
+        {
+            "id": 1,
+            "src": "portfolio_image_1.png",
+            "orientation": "portrait"
+        },
+        {
+            "id": 2,
+            "src": "portfolio_image_2.png",
+            "orientation": "portrait"
+        },
+        {
+            "id": 3,
+            "src": "portfolio_image_3.png",
+            "orientation": "landscape"
+        },
+        {
+            "id": 4,
+            "src": "portfolio_image_4.png",
+            "orientation": "portrait"
+        },
+        {
+            "id": 5,
+            "src": "portfolio_image_5.png",
+            "orientation": "portrait"
+        },
+        {
+            "id": 6,
+            "src": "portfolio_image_6.png",
+            "orientation": "portrait"
+        },
+        {
+            "id": 7,
+            "src": "portfolio_image_7.png",
+            "orientation": "landscape"
+        }
+    ],
     "whoAmICardText": "I am a 25-year-old freelance photographer based in Singapore, specializing in portrait, lifestyle, and street photography. When I’m not behind the camera, you’ll most likely find me hiking through the countryside, exploring quiet forests or hidden trails just outside the city.",
     "whatDoIDoCardText": "I work across portrait, lifestyle, editorial, and street photography. I collaborate with creative agencies, independent brands, musicians, and magazines to produce images that feel natural, honest, and visually striking.",
     "logoText": "Oswald Leao"

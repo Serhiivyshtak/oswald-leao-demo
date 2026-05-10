@@ -1,3 +1,6 @@
 export type CardChildObjectType = {
-    mouseOver: boolean
+    mouseOver: boolean,
+    windowWidth?: number,
+    headHeight?: number,
+    cardHeight?: number
 }

@@ -22,8 +22,11 @@ import TestimonialsComponent from './Testimonials.component';
 
 export default function Card({id, title, positioningStylings, childComponentName, hasLogo}: CardObjectType): JSX.Element {
     const component = useRef<HTMLDivElement | null>(null);
+    const head = useRef<HTMLDivElement | null>(null);
     const [mouseOver, setMouseOver] = useState<boolean>(false);
-    const {windowWidth, isMobile} = useDomInfo() as DomInfoObjectType;
+    const [cardHeight, setCardHeight] = useState<number>(0);
+    const [headHeight, setHeadHeight] = useState<number>(0);
+    const {windowWidth, windowHeight, isMobile} = useDomInfo() as DomInfoObjectType;
     const spacingBig: number = useCssProperty('--spacing-big') as number;
     const breakpoint768 = useCssProperty('--breakpoint-768') as number;
     const componentClassList: string = `relative ring-[0.5px] ring-gray overflow-hidden duration-300 ${positioningStylings}`;
@@ -50,7 +53,7 @@ export default function Card({id, title, positioningStylings, childComponentName
     //region head return
     function renderHead(): JSX.Element {
         return (
-            <div className="h-max w-full flex flex-col gap-small px-big pt-big">
+            <div ref={head} className="h-max w-full flex flex-col gap-small px-big pt-big">
                 <p 
                     className="head__first_heading font-additional font-black text-gray 
                         text-h1_1270 leading-h1_1270 
@@ -80,7 +83,7 @@ export default function Card({id, title, positioningStylings, childComponentName
             whatDoIDo: <WhatDoIDoComponent mouseOver={mouseOver}/>,
             whereToFindMe: <WhereToFindMeComponent mouseOver={mouseOver}/>,
             myAwards: <MyAwardsComponent mouseOver={mouseOver}/>,
-            myPortfolio: <MyPortfolioComponent mouseOver={mouseOver}/>,
+            myPortfolio: <MyPortfolioComponent mouseOver={mouseOver} windowWidth={windowWidth} cardHeight={cardHeight} headHeight={headHeight}/>,
             testimonials: <TestimonialsComponent mouseOver={mouseOver}/>,
             test: <></>
         }
@@ -112,6 +115,12 @@ export default function Card({id, title, positioningStylings, childComponentName
             </p>
         );
     }
+
+
+    useEffect(() => {
+        setCardHeight(component.current?.offsetHeight as number);
+        setHeadHeight(head.current?.offsetHeight as number);
+    }, [windowWidth, windowHeight]);
 
 
     useEffect(() => {

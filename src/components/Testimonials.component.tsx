@@ -13,8 +13,8 @@ import type {TestimonialObjectType} from '../types/TestimonialObject.type';
 
 export default function TestimonialsComponent({mouseOver}: CardChildObjectType): JSX.Element {
     const {t} = useTranslation();
-    const testimonials: Array<TestimonialObjectType> = t('testimonials', {returnObjects: true}) as Array<TestimonialObjectType>;
-    const component = useRef(null);
+    const testimonials = t('testimonials', {returnObjects: true}) as Array<TestimonialObjectType>;
+    const component = useRef<HTMLDivElement | null>(null);
     const spacingBig: number = useCssProperty('--spacing-big') as number;
     const animationDuration: number = 0.6;
     const [testimonialIndex, setTestimonialIndex] = useState<number>(0);
