@@ -35,6 +35,7 @@ export function WhereToFindMeComponent({mouseOver}: CardChildObjectType): JSX.El
     function renderSocialMediaLinks(): JSX.Element[] {
         return socialMediaLinks.map((socialMediaLink: SocialMediaLinkObjectType) => 
             <RedirectionLinkWithIconComponent
+                isInternal={false}
                 href={socialMediaLink.href} 
                 key={socialMediaLink.id}
                 size={spacingBig}

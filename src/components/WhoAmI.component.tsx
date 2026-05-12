@@ -47,6 +47,7 @@ export function WhoAmIComponent({mouseOver}: CardChildObjectType): JSX.Element {
             </p>
             <RedirectionLinkWithIconComponent
                 href="/about" 
+                isInternal={true}
                 size={spacingLarge}
                 icon="guidance:left-arrow"
                 className="redirection_link absolute right-big bottom-big" 

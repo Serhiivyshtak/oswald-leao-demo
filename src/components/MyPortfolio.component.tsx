@@ -121,6 +121,7 @@ export function MyPortfolioComponent({mouseOver, cardHeight, windowWidth, headHe
             </div>
             <RedirectionLinkWithIconComponent
                 href="/about" 
+                isInternal={true}
                 ref={redirectionButton}
                 size={spacingLarge}
                 icon="guidance:left-arrow" 
