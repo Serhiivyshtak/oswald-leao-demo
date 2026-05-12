@@ -1,7 +1,6 @@
 // External packages
 import {useEffect, useRef, useState, type JSX} from 'react';
 import {gsap} from 'gsap';
-import {t} from 'i18next';
 
 // Custom hooks
 import {useDomInfo} from '../hooks/useDomInfo';

@@ -1,10 +1,14 @@
-import type { JSX } from 'react';
+// External packages
+import type {JSX} from 'react';
+
+// Custom components
+import {HeaderSection} from '../sections/Header.section';
 
 
 export function AboutView(): JSX.Element {
     return (
-        <>
-            <h1>Hello from about page</h1>
-        </>
+        <div className="w-screen h-max min-h-screen bg-gray">
+            <HeaderSection />
+        </div>
     );
 }
