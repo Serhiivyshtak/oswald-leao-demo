@@ -27,6 +27,7 @@ export const RedirectionLinkWithIconComponent = forwardRef(({href, icon, size, c
         );
     }
 
+    
     useEffect(() => {
         gsap.context(() => {
             if (mouseOver) {
