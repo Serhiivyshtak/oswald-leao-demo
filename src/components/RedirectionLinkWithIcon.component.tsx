@@ -3,8 +3,12 @@ import {forwardRef, useEffect, useImperativeHandle, useRef, useState, type JSX} 
 import {Icon} from '@iconify/react';
 import {gsap} from 'gsap';
 
+// Custom hooks
+import {useDomInfo} from '../hooks/useDomInfo';
+
 // Custom types
 import type {RedirectionLinkObjectType} from '../types/RedirectionLinkWithIconObject.type';
+import type {DomInfoObjectType} from '../types/DomInfoObject.type';
 
 
 export const RedirectionLinkWithIconComponent = forwardRef(({href, icon, size, className}: RedirectionLinkObjectType, forwardRef): JSX.Element => {
@@ -13,6 +17,7 @@ export const RedirectionLinkWithIconComponent = forwardRef(({href, icon, size, c
     const [mouseOver, setMouseOver] = useState<boolean>(false);
     const component = useRef<HTMLAnchorElement|null>(null);
     const animationDuration: number = 0.4;
+    const {isMobile} = useDomInfo() as DomInfoObjectType;
 
 
     useImperativeHandle(forwardRef, () => component.current);
@@ -30,10 +35,10 @@ export const RedirectionLinkWithIconComponent = forwardRef(({href, icon, size, c
     
     useEffect(() => {
         gsap.context(() => {
-            if (mouseOver) {
-                gsap.to('.icon', {y: size as number * -1, duration: animationDuration});
+            if (mouseOver && !isMobile) {
+                gsap.to('.icon', {yPercent: 100 as number * -1, duration: animationDuration});
             } else {
-                gsap.to('.icon', {y: 0, duration: animationDuration});
+                gsap.to('.icon', {yPercent: 0, duration: animationDuration});
             }
         }, component)
     }, [mouseOver]);

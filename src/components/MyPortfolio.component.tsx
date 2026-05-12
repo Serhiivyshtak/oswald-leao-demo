@@ -1,6 +1,6 @@
 // External packages
 import {useEffect, useRef, useState, useLayoutEffect, type JSX} from 'react';
-import {useTranslation} from 'react-i18next';
+import {t} from 'i18next';
 import {gsap} from 'gsap';
 
 // Custom hooks
@@ -16,7 +16,6 @@ import {RedirectionLinkWithIconComponent} from './RedirectionLinkWithIcon.compon
 
 
 export function MyPortfolioComponent({mouseOver, cardHeight, windowWidth, headHeight}: CardChildObjectType): JSX.Element {
-    const {t} = useTranslation();
     const component = useRef<HTMLDivElement|null>(null);
     const redirectionButton = useRef<HTMLAnchorElement|null>(null);
     const [redirectionButtonHeight, setRedirectionButtonHeight] = useState<number>(0);

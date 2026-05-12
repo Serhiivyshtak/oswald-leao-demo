@@ -1,6 +1,6 @@
 // External packages
 import {useEffect, useRef, type JSX} from 'react';
-import {useTranslation} from 'react-i18next';
+import {t} from 'i18next';
 import {gsap} from 'gsap';
 
 // Custom hooks
@@ -12,7 +12,6 @@ import type {AwardObjectType} from '../types/AwardObject.type';
 
 
 export function MyAwardsComponent({mouseOver}: CardChildObjectType): JSX.Element {
-    const {t} = useTranslation();
     const awards: Array<AwardObjectType> = t('awards', {returnObjects: true}) as Array<AwardObjectType>;
     const component = useRef<HTMLDivElement|null>(null);
     const spacingBig: number = useCssProperty('--spacing-big') as number;

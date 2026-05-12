@@ -1,11 +1,10 @@
 import {useEffect, useLayoutEffect, useRef, useState, type JSX} from 'react';
 import {gsap} from 'gsap';
 import {useCssProperty} from '../hooks/useCssPropery.hook';
-import {useTranslation} from 'react-i18next';
+import {t} from 'i18next';
 
 
 export function IntroComponent(): JSX.Element {
-    const {t} = useTranslation();
     const component = useRef<HTMLDivElement|null>(null);
     const [showIntro, setShowIntro] = useState<boolean>(true);
     const colorLight: string = useCssProperty('--color-light') as string;

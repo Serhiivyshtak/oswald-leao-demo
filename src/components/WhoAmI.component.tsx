@@ -1,7 +1,7 @@
 // External packages
 import {useEffect, useRef, type JSX} from 'react';
 import {gsap} from 'gsap';
-import {useTranslation} from 'react-i18next';
+import {t} from 'i18next';
 
 // Custom hooks
 import {useCssProperty} from '../hooks/useCssPropery.hook';
@@ -14,7 +14,6 @@ import {RedirectionLinkWithIconComponent} from './RedirectionLinkWithIcon.compon
 
 
 export function WhoAmIComponent({mouseOver}: CardChildObjectType): JSX.Element {
-    const {t} = useTranslation();
     const textContent: string = t('whoAmICardText');
     const component = useRef<HTMLDivElement|null>(null);
     const spacingBig: number = useCssProperty('--spacing-big') as number;

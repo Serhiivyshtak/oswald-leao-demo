@@ -1,6 +1,6 @@
 // External packages
 import {useEffect, useRef, useState, type JSX} from 'react';
-import {useTranslation} from 'react-i18next';
+import {t} from 'i18next';
 import {gsap} from 'gsap';
 
 // Custom hooks
@@ -12,7 +12,6 @@ import type {TestimonialObjectType} from '../types/TestimonialObject.type';
 
 
 export function TestimonialsComponent({mouseOver}: CardChildObjectType): JSX.Element {
-    const {t} = useTranslation();
     const testimonials = t('testimonials', {returnObjects: true}) as Array<TestimonialObjectType>;
     const component = useRef<HTMLDivElement | null>(null);
     const spacingBig: number = useCssProperty('--spacing-big') as number;

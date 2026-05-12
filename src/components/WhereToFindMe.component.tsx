@@ -1,6 +1,6 @@
 // External packages
 import {useEffect, useRef, type JSX} from 'react';
-import {useTranslation} from 'react-i18next';
+import {t} from 'i18next';
 import {gsap} from 'gsap';
 
 // Custom hooks
@@ -15,7 +15,6 @@ import {RedirectionLinkWithIconComponent} from './RedirectionLinkWithIcon.compon
 
 
 export function WhereToFindMeComponent({mouseOver}: CardChildObjectType): JSX.Element {
-    const {t} = useTranslation();
     const socialMediaLinks: Array<SocialMediaLinkObjectType> = t('socialMediaLinks', {returnObjects: true}) as Array<SocialMediaLinkObjectType>;
     const component = useRef<HTMLDivElement|null>(null);
     const spacingBig: number = useCssProperty('--spacing-big') as number;

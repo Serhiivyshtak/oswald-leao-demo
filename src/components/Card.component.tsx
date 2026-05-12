@@ -18,6 +18,7 @@ import {WhereToFindMeComponent} from './WhereToFindMe.component';
 import {MyAwardsComponent} from './MyAwards.component';
 import {MyPortfolioComponent} from './MyPortfolio.component';
 import {TestimonialsComponent} from './Testimonials.component';
+import {LogoComponent} from './Logo.component';
 
 
 export function CardComponent({id, title, positioningStylings, childComponentName, hasLogo}: CardObjectType): JSX.Element {
@@ -102,18 +103,7 @@ export function CardComponent({id, title, positioningStylings, childComponentNam
             return null;
         }
 
-        const textContent = t('logoText');
-
-        return (
-            <p 
-                className="logo absolute font-primary font-normal top-compact left-compact text-light flex 
-                    text-h1_1270 leading-h1_1270
-                    1440:text-h1_1440 1440:leading-h1_1440 
-                    1920:text-h1_1920 1920:leading-h1_1920"
-                >
-                {textContent}
-            </p>
-        );
+        return <LogoComponent className="logo absolute top-compact left-compact"/>;
     }
 
 

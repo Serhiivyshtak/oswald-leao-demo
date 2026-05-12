@@ -30,9 +30,9 @@
     --leading-base_1920: 20px;
     --leading-h1_1920: 52px;
     --leading-base_1440: 17px;
-    --leading-h1_1440: 40px;
+    --leading-h1_1440: 42px;
     --leading-base_1270: 16px;
-    --leading-h1_1270: 30px;
+    --leading-h1_1270: 32px;
 
     /* Breakpoints are calculated by substracting 5% of the screen size */
     --breakpoint-1920: 1824px;
