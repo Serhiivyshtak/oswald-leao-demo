@@ -6,7 +6,7 @@ import {t} from 'i18next';
 
 
 export function HeaderSection(): JSX.Element {
-    const navigationLinkClassList: string = 'w-max h-max font-additional font-light hover:text-light duration-100';
+    const navigationLinkClassList: string = 'w-max h-max font-additional font-light hover:text-light duration-150';
     const whoAmILinkText: string = t('whoAmILinkText');
     const myPortfolioLinkText: string = t('myPortfolioLinkText');
     

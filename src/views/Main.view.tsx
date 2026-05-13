@@ -7,7 +7,7 @@ import {IntroComponent} from '../components/Intro.component';
 export function MainView(): JSX.Element {
     return (
         <div className="w-screen h-screen">
-            <FixedBackground backgroundImageUrl="fixed_background_image.png" />
+            <FixedBackground backgroundImageUrl="background_image_1.png" />
             <MainSection />
             <IntroComponent />
         </div>
