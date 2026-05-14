@@ -11,7 +11,7 @@ import type {CardChildObjectType} from '../types/CardChildObject.type';
 
 
 export function WhatDoIDoComponent({mouseOver}: CardChildObjectType): JSX.Element {
-    const textContent = t('whatDoIDoCardText');
+    const textContent = t('mainView.mainSection.whatDoIDoComponent.text');
     const component = useRef<HTMLDivElement|null>(null);
     const spacingBig: number = useCssProperty('--spacing-big') as number;
     const animationDuration: number = 0.6;

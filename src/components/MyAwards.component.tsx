@@ -12,7 +12,7 @@ import type {AwardObjectType} from '../types/AwardObject.type';
 
 
 export function MyAwardsComponent({mouseOver}: CardChildObjectType): JSX.Element {
-    const awards: Array<AwardObjectType> = t('awards', {returnObjects: true}) as Array<AwardObjectType>;
+    const awards: Array<AwardObjectType> = t('mainView.mainSection.myAwardsComponent.awards', {returnObjects: true}) as Array<AwardObjectType>;
     const component = useRef<HTMLDivElement|null>(null);
     const spacingBig: number = useCssProperty('--spacing-big') as number;
     const animationDuration: number = 0.6;

@@ -26,7 +26,7 @@ export function MyPortfolioComponent({mouseOver, cardHeight, windowWidth, headHe
     const spacingHuge: number = useCssProperty('--spacing-huge') as number;
     const breakpoint768 = useCssProperty('--breakpoint-768') as number;
     const animationDuration: number = 0.6;
-    const portfolioImages = t('portfolioImages', {returnObjects: true}) as Array<PortfolioImageObjectType>;
+    const portfolioImages = t('globalScope.portfolioImages', {returnObjects: true}) as Array<PortfolioImageObjectType>;
     const [selectedPortfolioImages, setSelectedPortfolioImages] = useState<Array<PortfolioImageObjectType>>([]);
     const {nextUniqueRandom} = useRandom(0, portfolioImages.length - 1);
 

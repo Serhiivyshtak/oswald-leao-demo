@@ -7,8 +7,8 @@ import {t} from 'i18next';
 
 export function HeaderSection(): JSX.Element {
     const navigationLinkClassList: string = 'w-max h-max font-additional font-light hover:text-light duration-150';
-    const whoAmILinkText: string = t('whoAmILinkText');
-    const myPortfolioLinkText: string = t('myPortfolioLinkText');
+    const whoAmILinkText: string = t('headerSection.whoAmILink');
+    const myPortfolioLinkText: string = t('headerSection.myPortfolioLink');
     
     return (
         <header className="w-screen h-max border-b border-light py-compact px-huge flex justify-between items-center">

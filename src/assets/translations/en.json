@@ -1,152 +1,172 @@
 {
-    "cards": [
-        {
-            "id": 1,
-            "title": "Who am I",
-            "positioningStylings": "row-span-1 landscape:col-span-4 portrait:col-span-6",
-            "childComponentName": "whoAmI",
-            "hasLogo": false
-        },
-        {
-            "id": 2,
-            "title": "What do I do",
-            "positioningStylings": "row-span-1 col-span-6",
-            "childComponentName": "whatDoIDo",
-            "hasLogo": true
-        },
-        {
-            "id": 3,
-            "title": "Where to find me",
-            "positioningStylings": "row-span-1 landscape:col-span-2 portrait:col-span-5",
-            "childComponentName": "whereToFindMe",
-            "hasLogo": false
-        },
-        {
-            "id": 4,
-            "title": "My portfolio",
-            "positioningStylings": "row-span-1 landscape:col-span-5 portrait:col-span-7",
-            "childComponentName": "myPortfolio",
-            "hasLogo": false
-        },
-        {
-            "id": 5,
-            "title": "My awards",
-            "positioningStylings": "row-span-1 landscape:col-span-4 portrait:col-span-7",
-            "childComponentName": "myAwards",
-            "hasLogo": false
-        },
-        {
-            "id": 6,
-            "title": "Testimonials",
-            "positioningStylings": "row-span-1 landscape:col-span-3 portrait:col-span-5",
-            "childComponentName": "testimonials",
-            "hasLogo": false
+    "globalScope": {
+        "socialMediaLinks": [
+            {
+                "id": 1,
+                "href": "/",
+                "icon": "ph:tiktok-logo-light"
+            },
+            {
+                "id": 2,
+                "href": "/",
+                "icon": "ph:instagram-logo-light"
+            },
+            {
+                "id": 3,
+                "href": "/",
+                "icon": "ph:linkedin-logo-light"
+            },
+            {
+                "id": 4,
+                "href": "/",
+                "icon": "ph:twitter-logo-light"
+            }
+        ],
+        "portfolioImages": [
+            {
+                "id": 1,
+                "src": "portfolio_image_1.png",
+                "orientation": "portrait"
+            },
+            {
+                "id": 2,
+                "src": "portfolio_image_2.png",
+                "orientation": "portrait"
+            },
+            {
+                "id": 3,
+                "src": "portfolio_image_3.png",
+                "orientation": "landscape"
+            },
+            {
+                "id": 4,
+                "src": "portfolio_image_4.png",
+                "orientation": "portrait"
+            },
+            {
+                "id": 5,
+                "src": "portfolio_image_5.png",
+                "orientation": "portrait"
+            },
+            {
+                "id": 6,
+                "src": "portfolio_image_6.png",
+                "orientation": "portrait"
+            },
+            {
+                "id": 7,
+                "src": "portfolio_image_7.png",
+                "orientation": "landscape"
+            }
+        ]
+    },
+    "introComponent": {
+        "text": "Loading a masterpiece"
+    },
+    "logoComponent": {
+        "text": "Oswald Leao"
+    },
+    "headerSection": {
+        "whoAmILink": "Who Am I",
+        "myPortfolioLink": "My Portfolio"
+    },
+    "mainView": {
+        "mainSection": {
+            "whatDoIDoComponent": {
+                "text": "I work across portrait, lifestyle, editorial, and street photography. I collaborate with creative agencies, independent brands, musicians, and magazines to produce images that feel natural, honest, and visually striking."
+            },
+            "whoAmIComponent": {
+                "text": "I am a 25-year-old freelance photographer based in Singapore, specializing in portrait, lifestyle, and street photography. When I’m not behind the camera, you’ll most likely find me hiking through the countryside, exploring quiet forests or hidden trails just outside the city."
+            },
+            "myAwardsComponent": {
+                "awards": [
+                    {
+                        "id": 1,
+                        "title": "Tokyo International Foto Awards, Japan",
+                        "amount": 1
+                    },
+                    {
+                        "id": 2,
+                        "title": "Photographic Society of Japan awards, Japan",
+                        "amount": 3
+                    },
+                    {
+                        "id": 3,
+                        "title": "Photo City Sagamihara, Japan",
+                        "amount": 1
+                    },
+                    {
+                        "id": 4,
+                        "title": "Paris Photo–Aperture Foundation PhotoBook Awards, France",
+                        "amount": 1
+                    }
+                ]
+            },
+            "testimonialsComponent": {
+                "testimonials": [
+                    {
+                        "id": 1,
+                        "text": "Oswald has a rare talent for making every shot feel natural and honest.",
+                        "author": "Leah Kessler from Urban Bloom Agency."
+                    },
+                    {
+                        "id": 2,
+                        "text": "His eye for mood and detail is simply next level.",
+                        "author": "Marco Nguyen from Sonder Coffee Co."
+                    },
+                    {
+                        "id": 3,
+                        "text": "Fast, professional, and the results were stunning.",
+                        "author": "Emily Zhao from Verge Magazine"
+                    }
+                ]
+            },
+            "cards": [
+                {
+                    "id": 1,
+                    "title": "Who am I",
+                    "positioningStylings": "row-span-1 landscape:col-span-4 portrait:col-span-6",
+                    "childComponentName": "whoAmI",
+                    "hasLogo": false
+                },
+                {
+                    "id": 2,
+                    "title": "What do I do",
+                    "positioningStylings": "row-span-1 col-span-6",
+                    "childComponentName": "whatDoIDo",
+                    "hasLogo": true
+                },
+                {
+                    "id": 3,
+                    "title": "Where to find me",
+                    "positioningStylings": "row-span-1 landscape:col-span-2 portrait:col-span-5",
+                    "childComponentName": "whereToFindMe",
+                    "hasLogo": false
+                },
+                {
+                    "id": 4,
+                    "title": "My portfolio",
+                    "positioningStylings": "row-span-1 landscape:col-span-5 portrait:col-span-7",
+                    "childComponentName": "myPortfolio",
+                    "hasLogo": false
+                },
+                {
+                    "id": 5,
+                    "title": "My awards",
+                    "positioningStylings": "row-span-1 landscape:col-span-4 portrait:col-span-7",
+                    "childComponentName": "myAwards",
+                    "hasLogo": false
+                },
+                {
+                    "id": 6,
+                    "title": "Testimonials",
+                    "positioningStylings": "row-span-1 landscape:col-span-3 portrait:col-span-5",
+                    "childComponentName": "testimonials",
+                    "hasLogo": false
+                }
+            ]
         }
-    ],
-    "socialMediaLinks": [
-        {
-            "id": 1,
-            "href": "/",
-            "icon": "ph:tiktok-logo-light"
-        },
-        {
-            "id": 2,
-            "href": "/",
-            "icon": "ph:instagram-logo-light"
-        },
-        {
-            "id": 3,
-            "href": "/",
-            "icon": "ph:linkedin-logo-light"
-        },
-        {
-            "id": 4,
-            "href": "/",
-            "icon": "ph:twitter-logo-light"
-        }
-    ],  
-    "awards": [
-        {
-            "id": 1,
-            "title": "Tokyo International Foto Awards, Japan",
-            "amount": 1
-        },
-        {
-            "id": 2,
-            "title": "Photographic Society of Japan awards, Japan",
-            "amount": 3
-        },
-        {
-            "id": 3,
-            "title": "Photo City Sagamihara, Japan",
-            "amount": 1
-        },
-        {
-            "id": 4,
-            "title": "Paris Photo–Aperture Foundation PhotoBook Awards, France",
-            "amount": 1
-        }
-    ],
-    "testimonials": [
-        {
-            "id": 1,
-            "text": "Oswald has a rare talent for making every shot feel natural and honest.",
-            "author": "Leah Kessler from Urban Bloom Agency."
-        },
-        {
-            "id": 2,
-            "text": "His eye for mood and detail is simply next level.",
-            "author": "Marco Nguyen from Sonder Coffee Co."
-        },
-        {
-            "id": 3,
-            "text": "Fast, professional, and the results were stunning.",
-            "author": "Emily Zhao from Verge Magazine"
-        }
-    ],
-    "portfolioImages": [
-        {
-            "id": 1,
-            "src": "portfolio_image_1.png",
-            "orientation": "portrait"
-        },
-        {
-            "id": 2,
-            "src": "portfolio_image_2.png",
-            "orientation": "portrait"
-        },
-        {
-            "id": 3,
-            "src": "portfolio_image_3.png",
-            "orientation": "landscape"
-        },
-        {
-            "id": 4,
-            "src": "portfolio_image_4.png",
-            "orientation": "portrait"
-        },
-        {
-            "id": 5,
-            "src": "portfolio_image_5.png",
-            "orientation": "portrait"
-        },
-        {
-            "id": 6,
-            "src": "portfolio_image_6.png",
-            "orientation": "portrait"
-        },
-        {
-            "id": 7,
-            "src": "portfolio_image_7.png",
-            "orientation": "landscape"
-        }
-    ],
-    "whoAmICardText": "I am a 25-year-old freelance photographer based in Singapore, specializing in portrait, lifestyle, and street photography. When I’m not behind the camera, you’ll most likely find me hiking through the countryside, exploring quiet forests or hidden trails just outside the city.",
-    "whatDoIDoCardText": "I work across portrait, lifestyle, editorial, and street photography. I collaborate with creative agencies, independent brands, musicians, and magazines to produce images that feel natural, honest, and visually striking.",
-    "logoText": "Oswald Leao",
-    "introText": "Loading a masterpiece",
-    "whoAmILinkText": "Who Am I",
-    "myPortfolioLinkText": "My Portfolio",
+    },
     "aboutView": {
         "satisfyingFactsSection": {
             "heading": "Some Satisfying Facts",

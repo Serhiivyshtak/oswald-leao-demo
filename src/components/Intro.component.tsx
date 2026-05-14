@@ -10,7 +10,7 @@ export function IntroComponent(): JSX.Element {
     const colorLight: string = useCssProperty('--color-light') as string;
     const colorGray: string = useCssProperty('--color-gray') as string;
     const loadingBarStylings: React.CSSProperties = {background: `linear-gradient(90deg, ${colorGray} 1%, ${colorLight} 1%)`};
-    const introText: string = t('introText');
+    const textContent: string = t('introComponent.text');
 
 
     useLayoutEffect(() => {
@@ -35,7 +35,7 @@ export function IntroComponent(): JSX.Element {
             <div className="h-max w-max flex flex-col items-end gap-small">
                 <div style={loadingBarStylings} className="loading_bar w-70 h-3.5 border border-light"></div>
                 <p className="text-light font-secondary text-base_1270 leading-base_1270 1440:text-base_1440 1440:leading-base_1440 1920:text-base_1920 1920:leading-base_1920">
-                    {introText}...
+                    {textContent}...
                 </p>
             </div>
         </div>   
