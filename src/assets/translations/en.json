@@ -233,6 +233,24 @@
                     "subheading": "Practical skills in communication and photography"
                 }
             ]
+        },
+        "myExperienceSection": {
+            "heading": "My experience",
+            "description": "My goal is to add one more company to this list called “Leao” — my future global photography agency, bringing together many creative souls under one roof and winning various prestigious awards",
+            "table": [
+                {
+                    "id": 1,
+                    "timePeriod": "2021-2023",
+                    "heading": "Abc photography",
+                    "subheading": "Full time photographer"
+                },
+                {
+                    "id": 2,
+                    "timePeriod": "2023-NOW",
+                    "heading": "Freelancer",
+                    "subheading": "Working with clients all around the globe"
+                }
+            ]
         }
     }
 }

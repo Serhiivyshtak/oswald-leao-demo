@@ -5,6 +5,7 @@ import type {JSX} from 'react';
 import {HeaderSection} from '../sections/Header.section';
 import {SatisfyingFactsSection} from '../sections/SatisfyingFacts.section';
 import {MyEducationSection} from '../sections/MyEducation.section';
+import { MyExperienceSection } from '../sections/MyExperience.section';
 
 
 
@@ -14,6 +15,7 @@ export function AboutView(): JSX.Element {
             <HeaderSection />
             <SatisfyingFactsSection />
             <MyEducationSection />
+            <MyExperienceSection />
         </div>
     );
 }
