@@ -14,7 +14,7 @@ import {RedirectionLinkWithIconComponent} from './RedirectionLinkWithIcon.compon
 
 
 export function WhoAmIComponent({mouseOver}: CardChildObjectType): JSX.Element {
-    const textContent: string = t('whoAmICardText');
+    const textContent: string = t('mainView.mainSection.whoAmIComponent.text');
     const component = useRef<HTMLDivElement|null>(null);
     const spacingBig: number = useCssProperty('--spacing-big') as number;
     const spacingLarge: number = useCssProperty('--spacing-large') as number;

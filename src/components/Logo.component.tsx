@@ -14,7 +14,7 @@ import type {DomInfoObjectType} from '../types/DomInfoObject.type';
 export function LogoComponent({className}: LogoObjectType): JSX.Element {
     const component = useRef<HTMLAnchorElement|null>(null);
     const singleLineLogoText = useRef<HTMLParagraphElement|null>(null);
-    const logoText: string = t('logoText');
+    const textContent: string = t('logoComponent.text');
     const logoClassList: string = 'font-primary font-normal text-light flex flex-col overflow-hidden w-max text-h1_1270 leading-h1_1270 1440:text-h1_1440 1440:leading-h1_1440 1920:text-h1_1920 1920:leading-h1_1920' + ' ' + className;
     const [logoHeight, setLogoHeight] = useState<number>(0);
     const [mouseOver, setMouseOver] = useState<boolean>(false);
@@ -53,8 +53,8 @@ export function LogoComponent({className}: LogoObjectType): JSX.Element {
                 onMouseEnter={() => setMouseOver(true)} 
                 onMouseLeave={() => setMouseOver(false)}
                 >
-                <p ref={singleLineLogoText} className="logo_text">{logoText}</p>
-                <p className="logo_text">{logoText}</p>
+                <p ref={singleLineLogoText} className="logo_text">{textContent}</p>
+                <p className="logo_text">{textContent}</p>
             </a>
         </>
     );

@@ -12,7 +12,7 @@ import type {TestimonialObjectType} from '../types/TestimonialObject.type';
 
 
 export function TestimonialsComponent({mouseOver}: CardChildObjectType): JSX.Element {
-    const testimonials = t('testimonials', {returnObjects: true}) as Array<TestimonialObjectType>;
+    const testimonials = t('mainView.mainSection.testimonialsComponent.testimonials', {returnObjects: true}) as Array<TestimonialObjectType>;
     const component = useRef<HTMLDivElement | null>(null);
     const spacingBig: number = useCssProperty('--spacing-big') as number;
     const animationDuration: number = 0.6;

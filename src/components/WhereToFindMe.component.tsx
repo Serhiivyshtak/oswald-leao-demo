@@ -15,7 +15,7 @@ import {RedirectionLinkWithIconComponent} from './RedirectionLinkWithIcon.compon
 
 
 export function WhereToFindMeComponent({mouseOver}: CardChildObjectType): JSX.Element {
-    const socialMediaLinks: Array<SocialMediaLinkObjectType> = t('socialMediaLinks', {returnObjects: true}) as Array<SocialMediaLinkObjectType>;
+    const socialMediaLinks: Array<SocialMediaLinkObjectType> = t('globalScope.socialMediaLinks', {returnObjects: true}) as Array<SocialMediaLinkObjectType>;
     const component = useRef<HTMLDivElement|null>(null);
     const spacingBig: number = useCssProperty('--spacing-big') as number;
     const animationDuration: number = 0.6;

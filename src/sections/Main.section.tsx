@@ -6,7 +6,7 @@ import type {CardObjectType} from '../types/CardObject.type';
 
 export function MainSection(): JSX.Element {
     const { t } = useTranslation();
-    const cards: Array<CardObjectType> = t('cards', {returnObjects: true}) as Array<CardObjectType>;
+    const cards: Array<CardObjectType> = t('mainView.mainSection.cards', {returnObjects: true}) as Array<CardObjectType>;
 
 
     function renderCards(): JSX.Element[] {
