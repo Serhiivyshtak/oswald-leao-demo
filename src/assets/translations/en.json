@@ -183,6 +183,36 @@
                     "imageSrc": "portfolio_image_6.png"
                 }
             ]
+        },
+        "myEducationSection": {
+            "heading": "My education",
+            "description": "Education gave me the tools to express my feelings through my passion",
+            "table": [
+                {
+                    "id": 1,
+                    "timePeriod": "2008-2019",
+                    "heading": "Jurong Pioneer Junior College",
+                    "subheading": "Humanities and the Arts programme"
+                },
+                {
+                    "id": 2,
+                    "timePeriod": "2019",
+                    "heading": "Nanyang Academy of Fine Arts",
+                    "subheading": "Certificate in Photography"
+                },
+                {
+                    "id": 3,
+                    "timePeriod": "2020",
+                    "heading": "Portrait online skillshare course",
+                    "subheading": "Self-paced online learning to refine style, lighting, and editing skills"
+                },
+                {
+                    "id": 4,
+                    "timePeriod": "2020-2021",
+                    "heading": "Internship at exxposures Photography",
+                    "subheading": "Practical skills in communication and photography"
+                }
+            ]
         }
     }
 }

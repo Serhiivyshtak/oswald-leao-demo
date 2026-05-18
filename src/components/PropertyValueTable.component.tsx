@@ -3,12 +3,12 @@ import {t} from 'i18next';
 import {type JSX} from 'react';
 
 // Custom types
-import type {PropertyValueTableObjectType} from '../types/PropertyValueTableObject.type';
+import type {AnyTableObjectType} from '../types/AnyTableObject.type';
 import type {PropertyValueTableItemObjectType} from '../types/PropertyValueTableItemObject.type';
 import {PropertyValueTableItemComponent} from './PropertyValueTableItem.component';
 
 
-export function PropertyValueTableComponent({tableDataLocation}: PropertyValueTableObjectType): JSX.Element {
+export function PropertyValueTableComponent({tableDataLocation}: AnyTableObjectType): JSX.Element {
     const tableData = t(tableDataLocation, {returnObjects: true}) as Array<PropertyValueTableItemObjectType>;
 
 

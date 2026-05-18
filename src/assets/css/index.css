@@ -26,16 +26,19 @@
     /*  */
     --text-base_1920: 16px;
     --text-h1_1920: 60px;
+    --text-h2_1920: 40px;
     --text-small_1920: 14px;
     --text-big_1920: 22px;
 
     --text-base_1440: 14px;
     --text-h1_1440: 48px;
+    --text-h2_1440: 32px;
     --text-small_1440: 12px;
     --text-big_1440: 20px;
 
     --text-base_1270: 13px;
     --text-h1_1270: 36px;
+    --text-h2_1270: 24px;
     --text-small_1270: 11px;
     --text-big_1270: 19px;
 
@@ -43,14 +46,17 @@
     /*  */
     --leading-base_1920: 20px;
     --leading-h1_1920: 52px;
+    --leading-h2_1920: 32px;
     --leading-big_1920: 26px;
 
     --leading-base_1440: 17px;
     --leading-h1_1440: 42px;
+    --leading-h2_1440: 28px;
     --leading-big_1440: 24px;
 
     --leading-base_1270: 16px;
     --leading-h1_1270: 32px;
+    --leading-h2_1270: 18px;
     --leading-big_1270: 23px;
 
 

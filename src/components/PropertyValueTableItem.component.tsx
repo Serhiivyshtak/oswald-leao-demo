@@ -54,7 +54,7 @@ export function PropertyValueTableItemComponent({id, property, value, imageSrc}:
                 {value}
             </span>
             <div 
-                className="image_container absolute bottom-0 left-1/2 -translate-x-1/2 aspect-3/4 bg-indigo-500 border bg-cover bg-center bg-no-repeat"
+                className="image_container absolute bottom-0 left-1/2 -translate-x-1/2 aspect-3/4 bg-cover bg-center bg-no-repeat"
                 style={{backgroundImage: `url(${imageSrc})`}} 
                 >
             </div>
