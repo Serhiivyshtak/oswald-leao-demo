@@ -168,6 +168,12 @@
         }
     },
     "aboutView": {
+        "heroSection": {
+            "mainHeading": "Who am I",
+            "heading": "Fotographer, hiker, your new best friend",
+            "description": "I discovered photography through an old film camera found in my grandfather’s attic. What started as a curiosity quickly turned into a passion for capturing the world as it is—honest, imperfect, and full of quiet stories",
+            "contactMeLink": "Contact me"
+        },
         "satisfyingFactsSection": {
             "heading": "Some Satisfying Facts",
             "description": "From urban streets to quiet landscapes, I find beauty in the everyday. Every project is an opportunity for me to explore emotion, detail, and mood—framing life as art, one shot at a time",
