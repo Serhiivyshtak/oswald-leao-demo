@@ -4,6 +4,9 @@ import {t} from 'i18next';
 import type {JSX} from 'react';
 import {Link} from 'react-router-dom';
 
+// Custom components
+import {RedirectionButtonWithTextAndIconComponent} from '../components/RedirectionButtonWithTextAndIcon.component';
+
 
 export function HeroSection(): JSX.Element {
     const mainHeadingContent: string = t('aboutView.heroSection.mainHeading');
@@ -33,19 +36,10 @@ export function HeroSection(): JSX.Element {
                     >
                     {descriptionContent}
                 </p>
-                <Link 
-                    to="#contact" 
-                    className="
-                        text-light font-semibold uppercase
-                        text-big_1270 leading-big_1270
-                        1440:text-big_1440 1440:leading-big_1440
-                        1920:text-big_1920 1920:leading-big_1920"
-                    >
-                    {contactMeLinkContent}
-                </Link>
+                <RedirectionButtonWithTextAndIconComponent href="" text={contactMeLinkContent} isInternal={true} />
             </div>
             <div className="w-5/12 h-max flex flex-col gap-compact">
-                <div className="hui relative w-3/5 aspect-4/3 bg-cover bg-center bg-no-repeat bg-indigo-500/50">
+                <div className="relative w-3/5 aspect-4/3 bg-cover bg-center bg-no-repeat bg-indigo-500/50">
                     <h1 
                         className="
                             absolute -bottom-compact text-light font-normal font-primary

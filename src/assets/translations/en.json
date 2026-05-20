@@ -210,7 +210,7 @@
                 }
             ]
         },
-        "myEducationSection": {
+        "educationSection": {
             "heading": "My education",
             "description": "Education gave me the tools to express my feelings through my passion",
             "table": [
@@ -240,7 +240,7 @@
                 }
             ]
         },
-        "myExperienceSection": {
+        "experienceSection": {
             "heading": "My experience",
             "description": "My goal is to add one more company to this list called “Leao” — my future global photography agency, bringing together many creative souls under one roof and winning various prestigious awards",
             "table": [
@@ -257,6 +257,14 @@
                     "subheading": "Working with clients all around the globe"
                 }
             ]
+        },
+        "contactSection": {
+            "heading": "Send me a message",
+            "fullnamePlaceholder": "Your full name",
+            "emailPlaceholder": "Your email",
+            "messagePlaceholder": "Your message",
+            "legalNoticeAgreement": "By checking this checkbox you agree with the legal notice of this website",
+            "sendMessageButton": "Send message"
         }
     }
 }

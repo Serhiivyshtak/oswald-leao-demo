@@ -6,15 +6,15 @@ import type {JSX} from 'react';
 import {TimePeriodTableComponent} from '../components/TimePeriodTable.component';
 
 
-export function MyEducationSection(): JSX.Element {
-    const descriptionContent: string = t('aboutView.myEducationSection.description');
-    const headingContent: string = t('aboutView.myEducationSection.heading');
+export function EducationSection(): JSX.Element {
+    const descriptionContent: string = t('aboutView.educationSection.description');
+    const headingContent: string = t('aboutView.educationSection.heading');
 
     return (
         <section className="w-screen h-screen p-huge flex flex-col justify-end bg-no-repeat bg-cover bg-center bg-indigo-500/50">
             <div className="w-full h-max flex gap-compact">
                 <div className="w-7/12 h-max flex flex-col gap-big">
-                    <TimePeriodTableComponent tableDataLocation={'aboutView.myEducationSection.table'} />
+                    <TimePeriodTableComponent tableDataLocation={'aboutView.educationSection.table'} />
                     <p 
                         className=" 
                             text-light font-secondary 

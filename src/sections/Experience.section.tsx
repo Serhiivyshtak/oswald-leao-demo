@@ -6,15 +6,15 @@ import type {JSX} from 'react';
 import {TimePeriodTableComponent} from '../components/TimePeriodTable.component';
 
 
-export function MyExperienceSection(): JSX.Element {
-    const descriptionContent: string = t('aboutView.myExperienceSection.description');
-    const headingContent: string = t('aboutView.myExperienceSection.heading');
+export function ExperienceSection(): JSX.Element {
+    const descriptionContent: string = t('aboutView.experienceSection.description');
+    const headingContent: string = t('aboutView.experienceSection.heading');
 
     return (
         <section className="w-screen h-screen p-huge flex flex-col justify-end bg-no-repeat bg-cover bg-center bg-green-500/50">
             <div className="w-full h-max flex gap-compact">
                 <div className="w-7/12 h-max flex flex-col gap-big">
-                    <TimePeriodTableComponent tableDataLocation={'aboutView.myExperienceSection.table'} />
+                    <TimePeriodTableComponent tableDataLocation={'aboutView.experienceSection.table'} />
                     <p 
                         className=" 
                             text-light font-secondary 

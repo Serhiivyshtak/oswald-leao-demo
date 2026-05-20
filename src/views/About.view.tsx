@@ -3,11 +3,12 @@ import type {JSX} from 'react';
 
 // Custom components
 import {HeaderSection} from '../sections/Header.section';
+import {IntroComponent} from '../components/Intro.component';
 import {HeroSection} from '../sections/Hero.section';
 import {SatisfyingFactsSection} from '../sections/SatisfyingFacts.section';
-import {MyEducationSection} from '../sections/MyEducation.section';
-import {MyExperienceSection} from '../sections/MyExperience.section';
-import {IntroComponent} from '../components/Intro.component';
+import {EducationSection} from '../sections/Education.section';
+import {ExperienceSection} from '../sections/Experience.section';
+import {ContactSection} from '../sections/Contact.section';
 
 
 
@@ -17,9 +18,10 @@ export function AboutView(): JSX.Element {
             <HeaderSection />
             <HeroSection />
             <SatisfyingFactsSection />
-            <MyEducationSection />
-            <MyExperienceSection />
+            <EducationSection />
+            <ExperienceSection />
             <IntroComponent />
+            <ContactSection />
         </div>
     );
 }
