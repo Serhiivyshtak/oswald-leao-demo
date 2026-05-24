@@ -6,6 +6,9 @@ import {t} from 'i18next';
 import {TextInputComponent} from '../components/TextInput.component';
 import {RedirectionButtonWithTextAndIconComponent} from '../components/RedirectionButtonWithTextAndIcon.component';
 
+// Custom types
+import type {IsValueValidObjectType} from '../types/IsValueValidObject.type';
+
 
 export function ContactSection(): JSX.Element {
     const fullnamePlaceholderContent: string = t('aboutView.contactSection.fullnamePlaceholder');
@@ -16,14 +19,69 @@ export function ContactSection(): JSX.Element {
     const sendMessageButtonContent: string = t('aboutView.contactSection.sendMessageButton');
 
 
+    function isFullnameValid(value: string, textInputFocused: boolean): IsValueValidObjectType {
+        if (textInputFocused) {
+            return {valueValid: true, errorMessage: null};
+        }
+
+        if (value.trim().length === 0) {
+            return {valueValid: false, errorMessage: t('aboutView.contactSection.emptyFullnameError')};
+        }
+
+        if (value.trim().length < 3) {
+            return {valueValid: false, errorMessage: t('aboutView.contactSection.shortFullnameError')};
+        }
+
+        if (value.trim().length > 40) {
+            return {valueValid: false, errorMessage: t('aboutView.contactSection.longFullnameError')};
+        }
+
+        return {valueValid: true};
+    }
+
+
+    function isEmailValid(value: string, textInputFocused: boolean): IsValueValidObjectType {
+        if (textInputFocused) {
+            return {valueValid: true};
+        }
+
+        if (value.trim().length === 0) {
+            return {valueValid: false, errorMessage: t('aboutView.contactSection.emptyEmailError')};
+        }
+
+        return {valueValid: true};
+    }
+
+
+    function isMessageValid(value: string, textInputFocused: boolean): IsValueValidObjectType {
+        if (textInputFocused) {
+            return {valueValid: true};
+        }
+
+        if (value.trim().length === 0) {
+            return {valueValid: false, errorMessage: t('aboutView.contactSection.emptyMessageError')};
+        }
+
+        if (value.trim().length < 3) {
+            return {valueValid: false, errorMessage: t('aboutView.contactSection.shortMessageError')};
+        }
+
+        if (value.trim().length > 300) {
+            return {valueValid: false, errorMessage: t('aboutView.contactSection.longMessageError')};
+        }
+
+        return {valueValid: true};
+    }
+
+
     return (
         <section className="w-full h-max p-huge flex gap-compact items-center">
             <div className="w-7/12 h-max flex flex-col items-end gap-middle">
-                <TextInputComponent placeholder={fullnamePlaceholderContent} type="singleline" />
-                <TextInputComponent placeholder={emailPlaceholderContent} type="singleline" />
-                <TextInputComponent placeholder={messagePlaceholderContent} type="multiline" />
+                <TextInputComponent placeholder={fullnamePlaceholderContent} type="singleline" isValueValid={isFullnameValid} />
+                <TextInputComponent placeholder={emailPlaceholderContent} type="singleline" isValueValid={isEmailValid} />
+                <TextInputComponent placeholder={messagePlaceholderContent} type="multiline" isValueValid={isMessageValid} />
                 <div className="flex gap-small w-full">
-                    <input type="checkbox" name="" id="" />
+                    <input type="checkbox" />
                     <p 
                         className="
                             text-light font-secondary font-normal 

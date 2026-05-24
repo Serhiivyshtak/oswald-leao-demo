@@ -264,7 +264,14 @@
             "emailPlaceholder": "Your email",
             "messagePlaceholder": "Your message",
             "legalNoticeAgreement": "By checking this checkbox you agree with the legal notice of this website",
-            "sendMessageButton": "Send message"
+            "sendMessageButton": "Send message",
+            "emptyFullnameError": "Fullname can't be empty",
+            "shortFullnameError": "Fullname should be minimal 3 characters long",
+            "longFullnameError": "Fullname should be maximal 40 characters long",
+            "emptyEmailError": "Email can't be empty",
+            "emptyMessageError": "Message can't be empty",
+            "shortMessageError": "Message should be minimal 3 characters long",
+            "longMessageError": "Message should be maximal 300 characters long"
         }
     }
 }

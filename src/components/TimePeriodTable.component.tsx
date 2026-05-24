@@ -16,6 +16,7 @@ export function TimePeriodTableComponent({tableDataLocation}: AnyTableObjectType
         return tableData.map(tableItem => {
             return (
                 <TimePeriodTableItemComponent 
+                    key={tableItem.id}
                     id={tableItem.id} 
                     timePeriod={tableItem.timePeriod} 
                     heading={tableItem.heading} 
