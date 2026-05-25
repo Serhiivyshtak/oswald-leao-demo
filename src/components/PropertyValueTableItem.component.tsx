@@ -19,7 +19,7 @@ export function PropertyValueTableItemComponent({id, property, value, imageSrc}:
     useEffect(() => {
         gsap.context(() => {
             if (mouseOver) {
-                gsap.to('.image_container', {width: spacingHuge * 2, duration: animationDuration});
+                gsap.to('.image_container', {width: '20%', duration: animationDuration});
             } else {
                 gsap.to('.image_container', {width: 0, duration: animationDuration});
             }

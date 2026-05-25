@@ -182,7 +182,7 @@
                     "id": 1,
                     "property": "Years in business",
                     "value": "4",
-                    "imageSrc": "portfolio_image_6.png"
+                    "imageSrc": "background_image_11.jpg"
                 },
                 {
                     "id": 2,
@@ -194,19 +194,19 @@
                     "id": 3,
                     "property": "Photoshoots done",
                     "value": "+100",
-                    "imageSrc": "portfolio_image_6.png"
+                    "imageSrc": "background_image_12.jpg"
                 },
                 {
                     "id": 4,
                     "property": "Happy customers",
                     "value": "98%",
-                    "imageSrc": "portfolio_image_6.png"
+                    "imageSrc": "background_image_10.jpg"
                 },
                 {
                     "id": 5,
                     "property": "Genres",
                     "value": "Portrait, landscape, fashion & street photography",
-                    "imageSrc": "portfolio_image_6.png"
+                    "imageSrc": "background_image_13.jpg"
                 }
             ]
         },

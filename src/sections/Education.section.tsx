@@ -11,7 +11,7 @@ export function EducationSection(): JSX.Element {
     const headingContent: string = t('aboutView.educationSection.heading');
 
     return (
-        <section className="w-screen h-screen p-huge flex flex-col justify-end bg-no-repeat bg-cover bg-center bg-indigo-500/50">
+        <section className="w-screen h-[120vh] p-huge flex flex-col justify-end bg-no-repeat bg-cover bg-center bg-[url(background_image_3.png)]">
             <div className="w-full h-max flex gap-compact">
                 <div className="w-7/12 h-max flex flex-col gap-big">
                     <TimePeriodTableComponent tableDataLocation={'aboutView.educationSection.table'} />

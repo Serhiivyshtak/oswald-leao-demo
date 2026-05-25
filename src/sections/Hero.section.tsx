@@ -1,8 +1,6 @@
 // External packages
-import {Icon} from '@iconify/react';
 import {t} from 'i18next';
 import type {JSX} from 'react';
-import {Link} from 'react-router-dom';
 
 // Custom components
 import {RedirectionButtonWithTextAndIconComponent} from '../components/RedirectionButtonWithTextAndIcon.component';
@@ -17,7 +15,6 @@ export function HeroSection(): JSX.Element {
 
     return (
         <section className="relative w-full h-max p-huge flex gap-compact items-center">
-            <Icon icon="boxicons:shape-unite" className="absolute top-huge left-huge w-big h-big text-light" />
             <div className="w-7/12 h-max flex flex-col items-start gap-middle">
                 <h2 
                     className="
@@ -39,7 +36,7 @@ export function HeroSection(): JSX.Element {
                 <RedirectionButtonWithTextAndIconComponent href="" text={contactMeLinkContent} isInternal={true} />
             </div>
             <div className="w-5/12 h-max flex flex-col gap-compact">
-                <div className="relative w-3/5 aspect-4/3 bg-cover bg-center bg-no-repeat bg-indigo-500/50">
+                <div className="relative w-3/5 aspect-4/3 bg-cover bg-center bg-no-repeat bg-[url(background_image_6.png)]">
                     <h1 
                         className="
                             absolute -bottom-compact text-light font-normal font-primary
@@ -50,7 +47,7 @@ export function HeroSection(): JSX.Element {
                         {mainHeadingContent}
                     </h1>
                 </div>
-                <div className="w-full aspect-4/3 bg-cover bg-center bg-no-repeat bg-indigo-500/50">
+                <div className="w-full aspect-4/3 bg-cover bg-center bg-no-repeat bg-[url(background_image_5.png)]">
 
                 </div>
             </div>

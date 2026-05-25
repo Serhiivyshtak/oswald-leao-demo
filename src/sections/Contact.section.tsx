@@ -96,10 +96,10 @@ export function ContactSection(): JSX.Element {
             </div>
             <div className="w-5/12 h-max flex flex-col gap-compact">
                 <div className="relative w-full h-max flex gap-compact">
-                    <div className="w-2/5 aspect-3/4 bg-indigo-500/50">
+                    <div className="w-2/5 aspect-3/4 bg-cover bg-center bg-no-repeat bg-[url(background_image_7.png)]">
 
                     </div>
-                    <div className="w-2/5 aspect-3/4 bg-indigo-500/50">
+                    <div className="w-2/5 aspect-3/4 bg-cover bg-center bg-no-repeat bg-[url(background_image_8.jpg)]">
 
                     </div>
                     <h1 
@@ -112,7 +112,7 @@ export function ContactSection(): JSX.Element {
                         {headingContent}
                     </h1>
                 </div>
-                <div className="w-full aspect-4/3 bg-indigo-500/50">
+                <div className="w-full aspect-4/3 bg-indigo-500/50 bg-cover bg-center bg-no-repeatc bg-[url(background_image_9.jpg)]">
 
                 </div>
             </div>
