@@ -57,7 +57,7 @@
 
     --leading-base_1270: 16px;
     --leading-h1_1270: 32px;
-    --leading-h2_1270: 18px;
+    --leading-h2_1270: 22px;
     --leading-big_1270: 23px;
 
 
@@ -68,4 +68,8 @@
     --breakpoint-1024: 973px;
     --breakpoint-768: 730px;
     --breakpoint-430: 408px;
+}
+
+::-webkit-scrollbar {
+    display: none;
 }

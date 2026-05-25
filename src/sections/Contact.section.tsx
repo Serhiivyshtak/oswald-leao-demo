@@ -75,8 +75,27 @@ export function ContactSection(): JSX.Element {
 
 
     return (
-        <section className="w-full h-max p-huge flex gap-compact items-center">
-            <div className="w-7/12 h-max flex flex-col items-end gap-middle">
+        <section 
+            className="
+                w-full h-max flex gap-compact items-center 
+                px-compact py-huge 430:px-big 768:p-huge
+                flex-col 430:flex-row"
+            >
+            <h2 
+                className="
+                    text-light font-normal font-primary mb-[112px]
+                    text-h1_1270 leading-h1_1270
+                    1440:text-h1_1440 1440:leading-h1_1440
+                    1920:text-h1_1920 1920:leading-h1_1920
+                    block 430:hidden"
+                >
+                {headingContent}
+            </h2>
+            <div 
+                className="
+                    h-max flex flex-col items-end gap-middle
+                    w-full 430:w-1/2 768:w-7/12"
+                >
                 <TextInputComponent placeholder={fullnamePlaceholderContent} type="singleline" isValueValid={isFullnameValid} />
                 <TextInputComponent placeholder={emailPlaceholderContent} type="singleline" isValueValid={isEmailValid} />
                 <TextInputComponent placeholder={messagePlaceholderContent} type="multiline" isValueValid={isMessageValid} />
@@ -92,28 +111,40 @@ export function ContactSection(): JSX.Element {
                         {legalNoticeAgreementContent}
                     </p>
                 </div>
-                <RedirectionButtonWithTextAndIconComponent href="" text={sendMessageButtonContent} isInternal={true} />
+                <RedirectionButtonWithTextAndIconComponent href="/about" text={sendMessageButtonContent} isInternal={true} />
             </div>
-            <div className="w-5/12 h-max flex flex-col gap-compact">
+            <div 
+                className="
+                    h-max flex-col gap-compact 
+                    w-1/2 768:w-5/12
+                    hidden 430:flex"
+                >
                 <div className="relative w-full h-max flex gap-compact">
-                    <div className="w-2/5 aspect-3/4 bg-cover bg-center bg-no-repeat bg-[url(background_image_7.png)]">
-
+                    <div 
+                        className="
+                            aspect-3/4 bg-cover bg-center bg-no-repeat bg-[url(background_image_7.png)]
+                            w-1/2 768:w-2/5"
+                        >
                     </div>
-                    <div className="w-2/5 aspect-3/4 bg-cover bg-center bg-no-repeat bg-[url(background_image_8.jpg)]">
-
+                    <div 
+                        className="
+                            aspect-3/4 bg-cover bg-center bg-no-repeat bg-[url(background_image_8.jpg)]
+                            w-1/2 768:w-2/5"
+                        >
                     </div>
-                    <h1 
+                    <h2 
                         className="
                             absolute -bottom-compact text-light font-normal font-primary
                             text-h1_1270 leading-h1_1270
                             1440:text-h1_1440 1440:leading-h1_1440
-                            1920:text-h1_1920 1920:leading-h1_1920"
+                            1920:text-h1_1920 1920:leading-h1_1920
+                            hidden 430:block"
                         >
                         {headingContent}
-                    </h1>
+                    </h2>
                 </div>
-                <div className="w-full aspect-4/3 bg-indigo-500/50 bg-cover bg-center bg-no-repeatc bg-[url(background_image_9.jpg)]">
-
+                <div 
+                    className="w-full aspect-4/3 bg-indigo-500/50 bg-cover bg-center bg-no-repeatc bg-[url(background_image_9.jpg)]">
                 </div>
             </div>
         </section>

@@ -5,14 +5,10 @@ import {gsap} from 'gsap';
 // Custom types
 import type {PropertyValueTableItemObjectType} from '../types/PropertyValueTableItemObject.type';
 
-// Custom hooks
-import {useCssProperty} from '../hooks/useCssPropery.hook';
-
 
 export function PropertyValueTableItemComponent({id, property, value, imageSrc}: PropertyValueTableItemObjectType): JSX.Element {
     const component = useRef<HTMLDivElement|null>(null);
     const [mouseOver, setMouseOver] = useState<boolean>(false);
-    const spacingHuge = useCssProperty('--spacing-huge') as number;
     const animationDuration: number = 0.4;
 
 
@@ -46,7 +42,7 @@ export function PropertyValueTableItemComponent({id, property, value, imageSrc}:
             </span>
             <span 
                 className="
-                    text-light w-max max-w-1/3 text-right font-secondary 
+                    text-light w-max text-right font-secondary max-w-1/2 768:max-w-1/3
                     text-big_1270 leading-big_1270 
                     1440:text-big_1440 1440:leading-big_1440 
                     1920:text-big_1920 1920:leading-big_1920"

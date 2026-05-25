@@ -12,9 +12,26 @@ export function SatisfyingFactsSection(): JSX.Element {
 
     return (
         <>
-            <section className="w-screen h-[120vh] p-huge flex flex-col justify-end bg-no-repeat bg-cover bg-center bg-[url(background_image_2.png)]">
-                <div className="w-full h-max flex gap-compact">
-                    <div className="w-7/12 h-max flex flex-col gap-big">
+            <section 
+                className="
+                    w-screen flex flex-col justify-end 
+                    bg-no-repeat bg-cover bg-center bg-[url(background_image_3.png)] 
+                    h-max 768:h-[120vh]
+                    px-compact py-huge 430:px-big 768:p-huge"
+                >
+                <div className="w-full h-max flex flex-col gap-[128px] 768:flex-row 768:gap-compact">
+                    <div className="w-full h-max block 768:hidden">
+                        <h2 
+                            className="
+                                font-primary font-normal text-light 
+                                text-h1_1270 leading-h1_1270 
+                                1440:text-h1_1440 1440:leading-h1_1440 
+                                1920:text-h1_1920 1920:leading-h1_1920"
+                            >
+                            {headingContent}
+                        </h2>
+                    </div>
+                    <div className="h-max flex flex-col gap-big w-full 768:w-7/12">
                         <PropertyValueTableComponent tableDataLocation="aboutView.satisfyingFactsSection.table" />
                         <p 
                             className=" 
@@ -26,7 +43,7 @@ export function SatisfyingFactsSection(): JSX.Element {
                             {descriptionContent}
                         </p>
                     </div>
-                    <div className="w-5/12 h-max">
+                    <div className="w-5/12 h-max hidden 768:block">
                         <h2 
                             className="
                                 font-primary font-normal text-light 
