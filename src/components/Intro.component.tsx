@@ -1,3 +1,4 @@
+// External packages
 import {useEffect, useLayoutEffect, useRef, useState, type JSX} from 'react';
 import {gsap} from 'gsap';
 import {useCssProperty} from '../hooks/useCssPropery.hook';
@@ -21,8 +22,9 @@ export function IntroComponent(): JSX.Element {
 
 
     useEffect(() => {
-        const gsapTimeline = gsap.timeline();
         if (!showIntro) {
+            const gsapTimeline = gsap.timeline();
+
             gsapTimeline
             .to('.loading_bar', {background: `linear-gradient(90deg, ${colorGray} 100%, ${colorLight} 100%)`})
             .to('.intro', {opacity: 0, display: 'none', delay: 1});

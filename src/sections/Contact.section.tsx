@@ -1,6 +1,8 @@
 // External packages
-import type {JSX} from 'react';
+import {useEffect, useRef, type JSX} from 'react';
 import {t} from 'i18next';
+import {gsap} from 'gsap';
+import {ScrollTrigger} from 'gsap/ScrollTrigger';
 
 // Custom components
 import {TextInputComponent} from '../components/TextInput.component';
@@ -17,6 +19,33 @@ export function ContactSection(): JSX.Element {
     const legalNoticeAgreementContent: string = t('aboutView.contactSection.legalNoticeAgreement');
     const headingContent: string = t('aboutView.contactSection.heading');
     const sendMessageButtonContent: string = t('aboutView.contactSection.sendMessageButton');
+    const component = useRef<HTMLElement|null>(null);
+
+
+    gsap.registerPlugin(ScrollTrigger);
+
+
+    useEffect(() => {
+        gsap.context(() => {
+            gsap.fromTo('.element', {
+                y: 128,
+                opacity: 0
+            }, {
+                y: 0,
+                opacity: 1,
+                duration: 0.3,
+                stagger: 0.1,
+                scrollTrigger: {
+                    trigger: '.trigger_element',
+                    start: 'top 70%',
+                    end: 'top 10%',
+                    toggleActions: 'play none none reverse',
+                    scrub: true,
+                    markers: true
+                }
+            });
+        }, component);
+    }, []);
 
 
     function isFullnameValid(value: string, textInputFocused: boolean): IsValueValidObjectType {
@@ -76,6 +105,7 @@ export function ContactSection(): JSX.Element {
 
     return (
         <section 
+            ref={component}
             className="
                 w-full h-max flex gap-compact items-center 
                 px-compact py-huge 430:px-big 768:p-huge
@@ -83,7 +113,7 @@ export function ContactSection(): JSX.Element {
             >
             <h2 
                 className="
-                    text-light font-normal font-primary mb-[112px]
+                    element text-light font-normal font-primary mb-[112px]
                     text-h1_1270 leading-h1_1270
                     1440:text-h1_1440 1440:leading-h1_1440
                     1920:text-h1_1920 1920:leading-h1_1920
@@ -93,13 +123,13 @@ export function ContactSection(): JSX.Element {
             </h2>
             <div 
                 className="
-                    h-max flex flex-col items-end gap-middle
+                    trigger_element h-max flex flex-col items-end gap-middle
                     w-full 430:w-1/2 768:w-7/12"
                 >
-                <TextInputComponent placeholder={fullnamePlaceholderContent} type="singleline" isValueValid={isFullnameValid} />
-                <TextInputComponent placeholder={emailPlaceholderContent} type="singleline" isValueValid={isEmailValid} />
-                <TextInputComponent placeholder={messagePlaceholderContent} type="multiline" isValueValid={isMessageValid} />
-                <div className="flex gap-small w-full">
+                <TextInputComponent className="element" placeholder={fullnamePlaceholderContent} type="singleline" isValueValid={isFullnameValid} />
+                <TextInputComponent className="element" placeholder={emailPlaceholderContent} type="singleline" isValueValid={isEmailValid} />
+                <TextInputComponent className="element" placeholder={messagePlaceholderContent} type="multiline" isValueValid={isMessageValid} />
+                <div className="element flex gap-small w-full">
                     <input type="checkbox" />
                     <p 
                         className="
@@ -111,7 +141,7 @@ export function ContactSection(): JSX.Element {
                         {legalNoticeAgreementContent}
                     </p>
                 </div>
-                <RedirectionButtonWithTextAndIconComponent href="/about" text={sendMessageButtonContent} isInternal={true} />
+                <RedirectionButtonWithTextAndIconComponent className="element" href="/about" text={sendMessageButtonContent} isInternal={true} />
             </div>
             <div 
                 className="
@@ -122,19 +152,19 @@ export function ContactSection(): JSX.Element {
                 <div className="relative w-full h-max flex gap-compact">
                     <div 
                         className="
-                            aspect-3/4 bg-cover bg-center bg-no-repeat bg-[url(background_image_7.png)]
+                            element aspect-3/4 bg-cover bg-center bg-no-repeat bg-[url(background_image_7.png)]
                             w-1/2 768:w-2/5"
                         >
                     </div>
                     <div 
                         className="
-                            aspect-3/4 bg-cover bg-center bg-no-repeat bg-[url(background_image_8.jpg)]
+                            element aspect-3/4 bg-cover bg-center bg-no-repeat bg-[url(background_image_8.jpg)]
                             w-1/2 768:w-2/5"
                         >
                     </div>
                     <h2 
                         className="
-                            absolute -bottom-compact text-light font-normal font-primary
+                            absolute element -bottom-compact text-light font-normal font-primary
                             text-h1_1270 leading-h1_1270
                             1440:text-h1_1440 1440:leading-h1_1440
                             1920:text-h1_1920 1920:leading-h1_1920
@@ -144,7 +174,7 @@ export function ContactSection(): JSX.Element {
                     </h2>
                 </div>
                 <div 
-                    className="w-full aspect-4/3 bg-indigo-500/50 bg-cover bg-center bg-no-repeatc bg-[url(background_image_9.jpg)]">
+                    className="element w-full aspect-4/3 bg-cover bg-center bg-no-repeatc bg-[url(background_image_9.jpg)]">
                 </div>
             </div>
         </section>

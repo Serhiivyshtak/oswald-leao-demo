@@ -1,6 +1,8 @@
 // External packages
 import {t} from 'i18next';
-import type {JSX} from 'react';
+import {useEffect, useRef, type JSX} from 'react';
+import {gsap} from 'gsap';
+import {ScrollTrigger} from 'gsap/ScrollTrigger';
 
 // Custom components
 import {PropertyValueTableComponent} from '../components/PropertyValueTable.component';
@@ -9,21 +11,50 @@ import {PropertyValueTableComponent} from '../components/PropertyValueTable.comp
 export function SatisfyingFactsSection(): JSX.Element {
     const headingContent: string = t('aboutView.satisfyingFactsSection.heading');
     const descriptionContent: string = t('aboutView.satisfyingFactsSection.description');
+    const component = useRef<HTMLElement|null>(null);
+
+
+    gsap.registerPlugin(ScrollTrigger);
+
+
+    useEffect(() => {
+        gsap.context(() => {
+            gsap.fromTo('.element', {
+                y: 128,
+                opacity: 0
+            }, {
+                y: 0,
+                opacity: 1,
+                duration: 0.3,
+                stagger: 0.1,
+                scrollTrigger: {
+                    trigger: '.trigger_element',
+                    start: 'top 70%',
+                    end: 'top 10%',
+                    toggleActions: 'play none none reverse',
+                    scrub: true,
+                    markers: true
+                }
+            });
+        }, component);
+    }, []);
+
 
     return (
         <>
             <section 
+                ref={component}
                 className="
                     w-screen flex flex-col justify-end 
                     bg-no-repeat bg-cover bg-center bg-[url(background_image_3.png)] 
                     h-max 768:h-[120vh]
                     px-compact py-huge 430:px-big 768:p-huge"
                 >
-                <div className="w-full h-max flex flex-col gap-[128px] 768:flex-row 768:gap-compact">
+                <div className="trigger_element w-full h-max flex flex-col gap-[128px] 768:flex-row 768:gap-compact">
                     <div className="w-full h-max block 768:hidden">
                         <h2 
                             className="
-                                font-primary font-normal text-light 
+                                element font-primary font-normal text-light 
                                 text-h1_1270 leading-h1_1270 
                                 1440:text-h1_1440 1440:leading-h1_1440 
                                 1920:text-h1_1920 1920:leading-h1_1920"
@@ -32,10 +63,10 @@ export function SatisfyingFactsSection(): JSX.Element {
                         </h2>
                     </div>
                     <div className="h-max flex flex-col gap-big w-full 768:w-7/12">
-                        <PropertyValueTableComponent tableDataLocation="aboutView.satisfyingFactsSection.table" />
+                        <PropertyValueTableComponent className="element" tableDataLocation="aboutView.satisfyingFactsSection.table" />
                         <p 
                             className=" 
-                                text-light font-secondary 
+                                element text-light font-secondary 
                                 text-base_1270 leading-base_1270 
                                 1440:text-base_1440 1440:leading-base_1440 
                                 1920:text-base_1920 1920:leading-base_1920"
@@ -46,7 +77,7 @@ export function SatisfyingFactsSection(): JSX.Element {
                     <div className="w-5/12 h-max hidden 768:block">
                         <h2 
                             className="
-                                font-primary font-normal text-light 
+                                element font-primary font-normal text-light 
                                 text-h1_1270 leading-h1_1270 
                                 1440:text-h1_1440 1440:leading-h1_1440 
                                 1920:text-h1_1920 1920:leading-h1_1920"

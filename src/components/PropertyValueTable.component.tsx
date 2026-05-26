@@ -8,7 +8,7 @@ import type {PropertyValueTableItemObjectType} from '../types/PropertyValueTable
 import {PropertyValueTableItemComponent} from './PropertyValueTableItem.component';
 
 
-export function PropertyValueTableComponent({tableDataLocation}: AnyTableObjectType): JSX.Element {
+export function PropertyValueTableComponent({tableDataLocation, className}: AnyTableObjectType): JSX.Element {
     const tableData = t(tableDataLocation, {returnObjects: true}) as Array<PropertyValueTableItemObjectType>;
 
 
@@ -28,7 +28,7 @@ export function PropertyValueTableComponent({tableDataLocation}: AnyTableObjectT
 
 
     return (
-        <div>
+        <div className={className}>
             {renderTableItems()}
         </div>
     );

@@ -8,7 +8,7 @@ import type {TimePeroidTableItemObjectType} from '../types/TimePeriodTableItemOb
 import {TimePeriodTableItemComponent} from './TimePeriodTableItem.component';
 
 
-export function TimePeriodTableComponent({tableDataLocation}: AnyTableObjectType): JSX.Element {
+export function TimePeriodTableComponent({tableDataLocation, className}: AnyTableObjectType): JSX.Element {
     const tableData = t(tableDataLocation, {returnObjects: true}) as Array<TimePeroidTableItemObjectType>;
 
 
@@ -28,7 +28,7 @@ export function TimePeriodTableComponent({tableDataLocation}: AnyTableObjectType
 
 
     return (
-        <div>
+        <div className={className}>
             {renderTableItems()}
         </div>
     );

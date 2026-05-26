@@ -10,7 +10,7 @@ import type {TextInputObjectType} from '../types/TextInputObject.type';
 import {useCssProperty} from '../hooks/useCssPropery.hook';
 
 
-export function TextInputComponent({placeholder, type, isValueValid}: TextInputObjectType): JSX.Element {
+export function TextInputComponent({placeholder, type, isValueValid, className}: TextInputObjectType): JSX.Element {
     const component = useRef<HTMLDivElement|null>(null);
     const [value, setValue] = useState<string>('');
     const [textInputFocused, setTextInputFocused] = useState<boolean>(true);
@@ -21,7 +21,7 @@ export function TextInputComponent({placeholder, type, isValueValid}: TextInputO
     const smallSpacing: number = useCssProperty('--spacing-small') as number;
     const dangerousColor: string = useCssProperty('--color-dangerous') as string;
     const [textInputStylings, setTextInputStylings] = useState<React.CSSProperties>();
-    const textInputClassList: string = 'w-full border-b py-small text-light font-secondary font-normal outline-none resize-none focus:pl-compact duration-150 text-base_1270 leading-base_1270 1440:text-base_1440 1440:leading-base_1440 1920:text-base_1920 1920:leading-base_1920';
+    const textInputClassList: string = className + ' ' + 'w-full border-b py-small text-light font-secondary font-normal outline-none resize-none focus:pl-compact duration-150 text-base_1270 leading-base_1270 1440:text-base_1440 1440:leading-base_1440 1920:text-base_1920 1920:leading-base_1920';
 
 
     useEffect(() => {

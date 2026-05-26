@@ -12,10 +12,10 @@ import type { DomInfoObjectType } from '../types/DomInfoObject.type';
 import {useDomInfo} from '../hooks/useDomInfo';
 
 
-export function RedirectionButtonWithTextAndIconComponent({href, text, isInternal}: RedirectionButtonWithTextAndIconObjectType): JSX.Element {
+export function RedirectionButtonWithTextAndIconComponent({href, text, isInternal, className}: RedirectionButtonWithTextAndIconObjectType): JSX.Element {
     const component = useRef<HTMLAnchorElement|null>(null);
     const redirectionButtonSignleLine = useRef<HTMLDivElement|null>(null);
-    const redirectionButtonClassList: string = 'text-light font-semibold uppercase cursor-pointer text-big_1270 leading-big_1270 1440:text-big_1440 1440:leading-big_1440 1920:text-big_1920 1920:leading-big_1920 overflow-hidden';
+    const redirectionButtonClassList: string = className + ' ' + 'text-light font-semibold uppercase cursor-pointer text-big_1270 leading-big_1270 1440:text-big_1440 1440:leading-big_1440 1920:text-big_1920 1920:leading-big_1920 overflow-hidden';
     const [mouseOver, setMouseOver] = useState<boolean>(false);
     const [redirectionButtonHeight, setRedirectionButtonHeight] = useState<number>(0);
     const {windowWidth, isMobile} = useDomInfo() as DomInfoObjectType;

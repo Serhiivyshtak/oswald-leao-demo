@@ -1,3 +1,4 @@
 export type AnyTableObjectType = {
-    tableDataLocation: string
+    tableDataLocation: string,
+    className?: string,
 }
