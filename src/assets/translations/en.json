@@ -70,6 +70,18 @@
         "whoAmILink": "Who Am I",
         "myPortfolioLink": "My Portfolio"
     },
+    "footerSection": {
+        "description": "From urban streets to quiet landscapes, I find beauty in the everyday",
+        "copyright": "Copyright Oswald Leao",
+        "credit": "Website powered by",
+        "whoAmILink": "Who Am I",
+        "myPortfolioLink": "My Portfolio",
+        "legalNoticeLink": "Legal Notice",
+        "websiteCreator": {
+            "name": "Serhii Vyshtak",
+            "link": "https://serhiivyshtak.com"
+        }
+    },
     "mainView": {
         "mainSection": {
             "whatDoIDoComponent": {

@@ -9,6 +9,7 @@ import {SatisfyingFactsSection} from '../sections/SatisfyingFacts.section';
 import {EducationSection} from '../sections/Education.section';
 import {ExperienceSection} from '../sections/Experience.section';
 import {ContactSection} from '../sections/Contact.section';
+import {FooterSection} from '../sections/Footer.section';
 
 
 
@@ -22,6 +23,7 @@ export function AboutView(): JSX.Element {
             <ExperienceSection />
             <IntroComponent />
             <ContactSection />
+            <FooterSection />
         </div>
     );
 }

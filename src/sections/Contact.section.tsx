@@ -41,7 +41,6 @@ export function ContactSection(): JSX.Element {
                     end: 'top 10%',
                     toggleActions: 'play none none reverse',
                     scrub: true,
-                    markers: true
                 }
             });
         }, component);
