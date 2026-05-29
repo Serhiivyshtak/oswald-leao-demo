@@ -34,13 +34,13 @@ export function FooterSection(): JSX.Element {
                     {descriptionContent}
                 </p>
                 <nav className="w-max h-max flex gap-compact">
-                    <Link to="" className="w-max h-max text-light/30 font-additional uppercase font-light hover:text-light duration-150">
+                    <Link to="" className="w-max h-max text-light/30 font-additional uppercase font-light hover:text-light duration-(--duration-fast)">
                         {whoAmILinkContent}
                     </Link>
-                    <Link to="" className="w-max h-max text-light/30 font-additional uppercase font-light hover:text-light duration-150">
+                    <Link to="" className="w-max h-max text-light/30 font-additional uppercase font-light hover:text-light duration-(--duration-fast)">
                         {myPortfolioLinkContent}
                     </Link>
-                    <Link to="" className="w-max h-max text-light/30 font-additional uppercase font-light hover:text-light duration-150">
+                    <Link to="" className="w-max h-max text-light/30 font-additional uppercase font-light hover:text-light duration-(--duration-fast)">
                         {legalNoticeLinkContent}
                     </Link>
                 </nav>

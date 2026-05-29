@@ -36,7 +36,8 @@ export function IntroComponent(): JSX.Element {
         <div ref={component} className="intro fixed top-0 left-0 w-screen h-screen bg-gray z-20 flex justify-center items-center">
             <div className="h-max w-max flex flex-col items-end gap-small">
                 <div style={loadingBarStylings} className="loading_bar w-70 h-3.5 border border-light"></div>
-                <p className="text-light font-secondary text-base_1270 leading-base_1270 1440:text-base_1440 1440:leading-base_1440 1920:text-base_1920 1920:leading-base_1920">
+                <p 
+                    className="text-light font-secondary text-base_1270 leading-base_1270 1440:text-base_1440 1440:leading-base_1440 1920:text-base_1920 1920:leading-base_1920">
                     {textContent}...
                 </p>
             </div>

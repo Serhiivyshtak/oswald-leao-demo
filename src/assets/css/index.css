@@ -61,6 +61,12 @@
     --leading-big_1270: 23px;
 
 
+    /*  */
+    --duration-fast: 0.15s;
+    --duration-middle: 0.4s;
+    --duration-slow: 0.6s;
+
+
     /* Breakpoints are calculated by substracting 5% of the screen size */
     --breakpoint-1920: 1824px;
     --breakpoint-1440: 1368px;

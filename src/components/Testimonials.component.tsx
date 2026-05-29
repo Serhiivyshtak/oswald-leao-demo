@@ -15,7 +15,7 @@ export function TestimonialsComponent({mouseOver}: CardChildObjectType): JSX.Ele
     const testimonials = t('mainView.mainSection.testimonialsComponent.testimonials', {returnObjects: true}) as Array<TestimonialObjectType>;
     const component = useRef<HTMLDivElement | null>(null);
     const spacingBig: number = useCssProperty('--spacing-big') as number;
-    const animationDuration: number = 0.6;
+    const slowDuration: number = useCssProperty('--duration-slow') as number;
     const [testimonialIndex, setTestimonialIndex] = useState<number>(0);
 
 
@@ -30,7 +30,7 @@ export function TestimonialsComponent({mouseOver}: CardChildObjectType): JSX.Ele
 
     useEffect(() => {
         gsap.context(() => {
-            gsap.fromTo('.text', {opacity: 0}, {opacity: 1, duration: animationDuration});
+            gsap.fromTo('.text', {opacity: 0}, {opacity: 1, duration: slowDuration});
         }, component);
     }, [testimonialIndex]);
 
@@ -38,9 +38,9 @@ export function TestimonialsComponent({mouseOver}: CardChildObjectType): JSX.Ele
     useEffect(() => {
         gsap.context(() => {
             if (mouseOver) {
-                gsap.to('.text', {xPercent: 0, x: 0, duration: animationDuration});
+                gsap.to('.text', {xPercent: 0, x: 0, duration: slowDuration});
             } else {
-                gsap.to('.text', {xPercent: 100, x: spacingBig, duration: animationDuration});
+                gsap.to('.text', {xPercent: 100, x: spacingBig, duration: slowDuration});
             }
         }, component);
     }, [mouseOver]);

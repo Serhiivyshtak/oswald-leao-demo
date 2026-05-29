@@ -7,7 +7,7 @@ import {t} from 'i18next';
 import {LogoComponent} from '../components/Logo.component';
 
 export function HeaderSection(): JSX.Element {
-    const navigationLinkClassList: string = 'w-max h-max font-additional uppercase font-light hover:text-light duration-150 hidden 768:block';
+    const navigationLinkClassList: string = 'w-max h-max font-additional uppercase font-light hover:text-light duration-(--duration-fast) hidden 768:block';
     const whoAmILinkContent: string = t('headerSection.whoAmILink');
     const myPortfolioLinkContent: string = t('headerSection.myPortfolioLink');
     

@@ -5,11 +5,12 @@ import {gsap} from 'gsap';
 
 // Custom hooks
 import {useDomInfo} from '../hooks/useDomInfo';
+import {useCssProperty} from '../hooks/useCssPropery.hook';
 
 // Custom types
 import type {RedirectionLinkObjectType} from '../types/RedirectionLinkWithIconObject.type';
 import type {DomInfoObjectType} from '../types/DomInfoObject.type';
-import { NavLink } from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 
 
 export const RedirectionLinkWithIconComponent = forwardRef(({href, icon, size, className, isInternal}: RedirectionLinkObjectType, forwardRef): JSX.Element => {
@@ -17,7 +18,7 @@ export const RedirectionLinkWithIconComponent = forwardRef(({href, icon, size, c
     const redirectionLinkStylings: React.CSSProperties = {height: `${size}px`, width: `${size}px`};
     const [mouseOver, setMouseOver] = useState<boolean>(false);
     const component = useRef<HTMLAnchorElement|null>(null);
-    const animationDuration: number = 0.4;
+    const middleDuration = useCssProperty('--duration-middle') as number;
     const {isMobile} = useDomInfo() as DomInfoObjectType;
 
 
@@ -37,9 +38,9 @@ export const RedirectionLinkWithIconComponent = forwardRef(({href, icon, size, c
     useEffect(() => {
         gsap.context(() => {
             if (mouseOver && !isMobile) {
-                gsap.to('.icon', {yPercent: 100 as number * -1, duration: animationDuration});
+                gsap.to('.icon', {yPercent: 100 as number * -1, duration: middleDuration});
             } else {
-                gsap.to('.icon', {yPercent: 0, duration: animationDuration});
+                gsap.to('.icon', {yPercent: 0, duration: middleDuration});
             }
         }, component)
     }, [mouseOver]);

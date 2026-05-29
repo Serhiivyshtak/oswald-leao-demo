@@ -21,7 +21,8 @@ export function TextInputComponent({placeholder, type, isValueValid, className}:
     const smallSpacing: number = useCssProperty('--spacing-small') as number;
     const dangerousColor: string = useCssProperty('--color-dangerous') as string;
     const [textInputStylings, setTextInputStylings] = useState<React.CSSProperties>();
-    const textInputClassList: string = className + ' ' + 'w-full border-b py-small text-light font-secondary font-normal outline-none resize-none focus:pl-compact duration-150 text-base_1270 leading-base_1270 1440:text-base_1440 1440:leading-base_1440 1920:text-base_1920 1920:leading-base_1920';
+    const textInputClassList: string = className + ' ' + 'w-full border-b py-small text-light font-secondary font-normal outline-none resize-none focus:pl-compact duration-(--duration-fast) text-base_1270 leading-base_1270 1440:text-base_1440 1440:leading-base_1440 1920:text-base_1920 1920:leading-base_1920';
+    const fastDuration = useCssProperty('--duration-fast') as number;
 
 
     useEffect(() => {
@@ -43,9 +44,9 @@ export function TextInputComponent({placeholder, type, isValueValid, className}:
     useEffect(() => {
         gsap.context(() => {
             if (showErrorMessage) {
-                gsap.to('.error_text', {yPercent: 0, y: 0});
+                gsap.to('.error_text', {yPercent: 0, y: 0, duration: fastDuration});
             } else {
-                gsap.to('.error_text', {yPercent: 100, y: smallSpacing});
+                gsap.to('.error_text', {yPercent: 100, y: smallSpacing, duration: fastDuration});
             }
         }, component);
     }, [showErrorMessage]);

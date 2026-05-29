@@ -16,19 +16,19 @@ import {RedirectionLinkWithIconComponent} from './RedirectionLinkWithIcon.compon
 export function WhoAmIComponent({mouseOver}: CardChildObjectType): JSX.Element {
     const textContent: string = t('mainView.mainSection.whoAmIComponent.text');
     const component = useRef<HTMLDivElement|null>(null);
-    const spacingBig: number = useCssProperty('--spacing-big') as number;
-    const spacingLarge: number = useCssProperty('--spacing-large') as number;
-    const animationDuration: number = 0.6;
+    const bigSpacing: number = useCssProperty('--spacing-big') as number;
+    const largeSpacing: number = useCssProperty('--spacing-large') as number;
+    const slowDuration = useCssProperty('--duration-slow') as number;
 
     
     useEffect(() => {
         gsap.context(() => {
             if (mouseOver) {
-                gsap.to('.text', {xPercent: 0, x: 0, duration: animationDuration});
-                gsap.to('.redirection_link', {yPercent: 0, y: 0, duration: animationDuration});
+                gsap.to('.text', {xPercent: 0, x: 0, duration: slowDuration});
+                gsap.to('.redirection_link', {yPercent: 0, y: 0, duration: slowDuration});
             } else {
-                gsap.to('.text', {xPercent: -100, x: spacingBig * -1, duration: animationDuration});
-                gsap.to('.redirection_link', {yPercent: 100, y: spacingBig, duration: animationDuration});
+                gsap.to('.text', {xPercent: -100, x: bigSpacing * -1, duration: slowDuration});
+                gsap.to('.redirection_link', {yPercent: 100, y: bigSpacing, duration: slowDuration});
             }
         }, component);
     }, [mouseOver]);
@@ -48,7 +48,7 @@ export function WhoAmIComponent({mouseOver}: CardChildObjectType): JSX.Element {
             <RedirectionLinkWithIconComponent
                 href="/about" 
                 isInternal={true}
-                size={spacingLarge}
+                size={largeSpacing}
                 icon="guidance:left-arrow"
                 className="redirection_link absolute right-big bottom-big" 
             />

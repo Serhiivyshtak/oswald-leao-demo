@@ -27,13 +27,12 @@ export function CardComponent({id, title, positioningStylings, childComponentNam
     const [cardHeight, setCardHeight] = useState<number>(0);
     const [headHeight, setHeadHeight] = useState<number>(0);
     const {windowWidth, windowHeight, isMobile} = useDomInfo() as DomInfoObjectType;
-    const spacingBig: number = useCssProperty('--spacing-big') as number;
+    const spacingBig = useCssProperty('--spacing-big') as number;
     const breakpoint768 = useCssProperty('--breakpoint-768') as number;
-    const componentClassList: string = `relative ring-[0.5px] ring-gray overflow-hidden duration-300 ${positioningStylings}`;
-    const animationDuration: number = 0.4;
+    const componentClassList: string = `relative ring-[0.5px] ring-gray overflow-hidden ${positioningStylings}`;
+    const middleDuration = useCssProperty('--duration-middle') as number;
 
 
-    //region main heading return
     function renderMainHeading(): JSX.Element {
         return (
             <h2
@@ -50,7 +49,6 @@ export function CardComponent({id, title, positioningStylings, childComponentNam
     }
 
 
-    //region head return
     function renderHead(): JSX.Element {
         return (
             <div ref={head} className="h-max w-full flex flex-col gap-small px-big pt-big">
@@ -76,7 +74,6 @@ export function CardComponent({id, title, positioningStylings, childComponentNam
     }
 
 
-    //region child component return
     function renderChildComponent(): JSX.Element {
         const childComponents: Record<string, JSX.Element> = {
             whoAmI: <WhoAmIComponent mouseOver={mouseOver}/>,
@@ -96,7 +93,6 @@ export function CardComponent({id, title, positioningStylings, childComponentNam
     }
 
 
-    //region logo return
     function renderLogo(): JSX.Element|null {
         if (!hasLogo || windowWidth <= breakpoint768) {
             return null;
@@ -119,27 +115,26 @@ export function CardComponent({id, title, positioningStylings, childComponentNam
 
         gsap.context(() => {
             if (mouseOver) {
-                gsap.to('.head__first_heading', {yPercent: 0, y: 0, duration: animationDuration});
-                gsap.to('.head__second_heading', {xPercent: 0, x: 0, duration: animationDuration});
-                gsap.to('.main_heading', {yPercent: 100, y: spacingBig * 2, duration: animationDuration});
+                gsap.to('.head__first_heading', {yPercent: 0, y: 0, duration: middleDuration});
+                gsap.to('.head__second_heading', {xPercent: 0, x: 0, duration: middleDuration});
+                gsap.to('.main_heading', {yPercent: 100, y: spacingBig * 2, duration: middleDuration});
 
                 if (hasLogo && windowWidth >= breakpoint768) {
-                    gsap.to('.logo', {yPercent: -100, y: spacingBig * -1, duration: animationDuration});
+                    gsap.to('.logo', {yPercent: -100, y: spacingBig * -1, duration: middleDuration});
                 }
             } else {
-                gsap.to('.main_heading', {yPercent: 0, y: 0, duration: animationDuration});
-                gsap.to('.head__first_heading', {yPercent: -100, y: spacingBig * -2, duration: animationDuration});
-                gsap.to('.head__second_heading', {xPercent: -100, x: spacingBig * -2, duration: animationDuration});
+                gsap.to('.main_heading', {yPercent: 0, y: 0, duration: middleDuration});
+                gsap.to('.head__first_heading', {yPercent: -100, y: spacingBig * -2, duration: middleDuration});
+                gsap.to('.head__second_heading', {xPercent: -100, x: spacingBig * -2, duration: middleDuration});
 
                 if (hasLogo && windowWidth >= breakpoint768) {
-                    gsap.to('.logo', {yPercent: 0, y: spacingBig, duration: animationDuration});
+                    gsap.to('.logo', {yPercent: 0, y: spacingBig, duration: middleDuration});
                 }
             }
         }, component)
     }, [mouseOver]);
 
 
-    //region component return
     return (
         <div ref={component} className={componentClassList} onMouseEnter={() => setMouseOver(true)} onMouseLeave={() => isMobile ? setMouseOver(true) : setMouseOver(false)}>
             {renderLogo()}

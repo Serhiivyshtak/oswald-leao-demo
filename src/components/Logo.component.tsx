@@ -5,6 +5,7 @@ import {gsap} from 'gsap';
 
 // Custom hooks
 import {useDomInfo} from '../hooks/useDomInfo';
+import {useCssProperty} from '../hooks/useCssPropery.hook';
 
 // Custom types
 import type {LogoObjectType} from '../types/LogoObject.type';
@@ -18,7 +19,7 @@ export function LogoComponent({className}: LogoObjectType): JSX.Element {
     const logoClassList: string = 'font-primary font-normal text-light flex flex-col overflow-hidden w-max text-h1_1270 leading-h1_1270 1440:text-h1_1440 1440:leading-h1_1440 1920:text-h1_1920 1920:leading-h1_1920' + ' ' + className;
     const [logoHeight, setLogoHeight] = useState<number>(0);
     const [mouseOver, setMouseOver] = useState<boolean>(false);
-    const animationDuration: number = 0.4;
+    const middleDuration = useCssProperty('--duration-middle') as number;
     const {windowWidth, isMobile} = useDomInfo() as DomInfoObjectType;
 
     
@@ -35,9 +36,9 @@ export function LogoComponent({className}: LogoObjectType): JSX.Element {
     useEffect(() => {
         gsap.context(() => {
             if (mouseOver && !isMobile) {
-                gsap.to('.logo_text', {yPercent: -100, duration: animationDuration});
+                gsap.to('.logo_text', {yPercent: -100, duration: middleDuration});
             } else {
-                gsap.to('.logo_text', {yPercent: 0, duration: animationDuration});
+                gsap.to('.logo_text', {yPercent: 0, duration: middleDuration});
             }
         }, component)
     }, [mouseOver]);

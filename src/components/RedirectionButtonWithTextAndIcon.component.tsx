@@ -10,6 +10,7 @@ import type { DomInfoObjectType } from '../types/DomInfoObject.type';
 
 // Custom hooks
 import {useDomInfo} from '../hooks/useDomInfo';
+import {useCssProperty} from '../hooks/useCssPropery.hook';
 
 
 export function RedirectionButtonWithTextAndIconComponent({href, text, isInternal, className}: RedirectionButtonWithTextAndIconObjectType): JSX.Element {
@@ -19,7 +20,7 @@ export function RedirectionButtonWithTextAndIconComponent({href, text, isInterna
     const [mouseOver, setMouseOver] = useState<boolean>(false);
     const [redirectionButtonHeight, setRedirectionButtonHeight] = useState<number>(0);
     const {windowWidth, isMobile} = useDomInfo() as DomInfoObjectType;
-    const animationDuration: number = 0.4;
+    const middleDuration = useCssProperty('--duration-middle') as number;
 
 
     useLayoutEffect(() => {
@@ -35,9 +36,9 @@ export function RedirectionButtonWithTextAndIconComponent({href, text, isInterna
     useEffect(() => {
         gsap.context(() => {
             if (mouseOver && !isMobile) {
-                gsap.to('.redirection_button_single_line', {yPercent: -100, duration: animationDuration});
+                gsap.to('.redirection_button_single_line', {yPercent: -100, duration: middleDuration});
             } else {
-                gsap.to('.redirection_button_single_line', {yPercent: 0, duration: animationDuration});
+                gsap.to('.redirection_button_single_line', {yPercent: 0, duration: middleDuration});
             }
         }, component)
     }, [mouseOver]);

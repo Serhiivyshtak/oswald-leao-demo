@@ -15,15 +15,15 @@ export function MyAwardsComponent({mouseOver}: CardChildObjectType): JSX.Element
     const awards: Array<AwardObjectType> = t('mainView.mainSection.myAwardsComponent.awards', {returnObjects: true}) as Array<AwardObjectType>;
     const component = useRef<HTMLDivElement|null>(null);
     const spacingBig: number = useCssProperty('--spacing-big') as number;
-    const animationDuration: number = 0.6;
+    const slowDuration = useCssProperty('--duration-slow') as number;
 
 
     useEffect(() => {
         gsap.context(() => {
             if (mouseOver) {
-                gsap.to('.container', {xPercent: 0, x: 0, duration: animationDuration});
+                gsap.to('.container', {xPercent: 0, x: 0, duration: slowDuration});
             } else {
-                gsap.to('.container', {xPercent: -100, x: spacingBig * -1, duration: animationDuration});
+                gsap.to('.container', {xPercent: -100, x: spacingBig * -1, duration: slowDuration});
             }
         }, component);
     }, [mouseOver]);

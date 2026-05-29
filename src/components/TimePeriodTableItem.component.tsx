@@ -8,7 +8,7 @@ import type {TimePeroidTableItemObjectType} from '../types/TimePeriodTableItemOb
 export function TimePeriodTableItemComponent({id, timePeriod, heading, subheading}: TimePeroidTableItemObjectType): JSX.Element {
     return (
         <div 
-            className="w-full border-b border-light flex flex-col gap-small py-compact hover:bg-light/30 duration-150"
+            className="w-full border-b border-light flex flex-col gap-small py-compact hover:bg-light/30 duration-(--duration-fast)"
             key={id}
             >
             <span 

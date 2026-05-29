@@ -25,7 +25,7 @@ export function MyPortfolioComponent({mouseOver, cardHeight, windowWidth, headHe
     const spacingLarge: number = useCssProperty('--spacing-large') as number;
     const spacingHuge: number = useCssProperty('--spacing-huge') as number;
     const breakpoint768 = useCssProperty('--breakpoint-768') as number;
-    const animationDuration: number = 0.6;
+    const slowDuration = useCssProperty('--duration-slow') as number;
     const portfolioImages = t('globalScope.portfolioImages', {returnObjects: true}) as Array<PortfolioImageObjectType>;
     const [selectedPortfolioImages, setSelectedPortfolioImages] = useState<Array<PortfolioImageObjectType>>([]);
     const {nextUniqueRandom} = useRandom(0, portfolioImages.length - 1);
@@ -78,11 +78,11 @@ export function MyPortfolioComponent({mouseOver, cardHeight, windowWidth, headHe
     useEffect(() => {
         gsap.context(() => {
             if (mouseOver) {
-                gsap.to('.redirection_link', {yPercent: 0, y: 0, duration: animationDuration});
-                gsap.to('.images_container', {xPercent: 0, x: 0, duration: animationDuration});
+                gsap.to('.redirection_link', {yPercent: 0, y: 0, duration: slowDuration});
+                gsap.to('.images_container', {xPercent: 0, x: 0, duration: slowDuration});
             } else {
-                gsap.to('.redirection_link', {yPercent: 100, y: spacingBig, duration: animationDuration});
-                gsap.to('.images_container', {xPercent: -100, x: spacingBig * - 1, duration: animationDuration});
+                gsap.to('.redirection_link', {yPercent: 100, y: spacingBig, duration: slowDuration});
+                gsap.to('.images_container', {xPercent: -100, x: spacingBig * - 1, duration: slowDuration});
             }
         }, component);
     }, [mouseOver]);

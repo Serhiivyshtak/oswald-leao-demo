@@ -4,20 +4,21 @@ import {gsap} from 'gsap';
 
 // Custom types
 import type {PropertyValueTableItemObjectType} from '../types/PropertyValueTableItemObject.type';
+import {useCssProperty} from '../hooks/useCssPropery.hook';
 
 
 export function PropertyValueTableItemComponent({id, property, value, imageSrc}: PropertyValueTableItemObjectType): JSX.Element {
     const component = useRef<HTMLDivElement|null>(null);
     const [mouseOver, setMouseOver] = useState<boolean>(false);
-    const animationDuration: number = 0.4;
+    const middleDuration: number = useCssProperty('--duration-middle') as number;
 
 
     useEffect(() => {
         gsap.context(() => {
             if (mouseOver) {
-                gsap.to('.image_container', {width: '20%', duration: animationDuration});
+                gsap.to('.image_container', {width: '20%', duration: middleDuration});
             } else {
-                gsap.to('.image_container', {width: 0, duration: animationDuration});
+                gsap.to('.image_container', {width: 0, duration: middleDuration});
             }
         }, component);
     }, [mouseOver])
@@ -29,7 +30,7 @@ export function PropertyValueTableItemComponent({id, property, value, imageSrc}:
             key={id} 
             onMouseEnter={() => setMouseOver(true)}
             onMouseLeave={() => setMouseOver(false)}
-            className="relative border-b border-light py-compact flex justify-between hover:bg-light/30 duration-150"
+            className="relative border-b border-light py-compact flex justify-between hover:bg-light/30 duration-(--duration-fast)"
             >
             <span 
                 className="

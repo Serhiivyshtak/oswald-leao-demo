@@ -18,15 +18,15 @@ export function WhereToFindMeComponent({mouseOver}: CardChildObjectType): JSX.El
     const socialMediaLinks: Array<SocialMediaLinkObjectType> = t('globalScope.socialMediaLinks', {returnObjects: true}) as Array<SocialMediaLinkObjectType>;
     const component = useRef<HTMLDivElement|null>(null);
     const spacingBig: number = useCssProperty('--spacing-big') as number;
-    const animationDuration: number = 0.6;
+    const slowDuration = useCssProperty('--duration-slow') as number;
 
     
     useEffect(() => {
         gsap.context(() => {
             if (mouseOver) {
-                gsap.to('.container', {xPercent: 0, x: 0, duration: animationDuration});
+                gsap.to('.container', {xPercent: 0, x: 0, duration: slowDuration});
             } else {
-                gsap.to('.container', {xPercent: 100, x: spacingBig, duration: animationDuration});
+                gsap.to('.container', {xPercent: 100, x: spacingBig, duration: slowDuration});
             }
         }, component);
     }, [mouseOver]);
