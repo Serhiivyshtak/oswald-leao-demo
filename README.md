@@ -72,8 +72,8 @@ Open **http://localhost:3000** (configured in `vite.config.ts`).
 | Command | Description |
 |---------|-------------|
 | `npm run dev` | Start development server with HMR |
-| `npm run build` | Type-check and production build → `dist/` |
-| `npm run preview` | Serve the production build locally |
+| `npm run build` | Type-check and production build → `docs/` (GitHub Pages) |
+| `npm run preview` | Serve the production build locally (open `/oswald-leao-demo/`) |
 | `npm run lint` | Run ESLint |
 
 ---
@@ -85,7 +85,7 @@ Open **http://localhost:3000** (configured in `vite.config.ts`).
 3. **Edit content** — Most text and structured data live in `src/assets/translations/en.json`. Add locales by extending `src/services/i18n.service.ts` and new JSON files.
 4. **Adjust layout** — Card grid positions are Tailwind classes in `mainView.mainSection.cards` inside `en.json`. Section styling is in `sections/` and `components/`.
 5. **Wire a real contact form** — Replace the demo validation in `Contact.section.tsx` with your API, Formspree, Netlify Forms, etc.
-6. **Deploy** — Build with `npm run build` and host `dist/` on any static host (Vercel, Netlify, GitHub Pages, Cloudflare Pages). Configure SPA fallback to `index.html` for client-side routes.
+6. **Deploy (GitHub Pages)** — Run `npm run build`, commit and push the `docs/` folder, and enable Pages with source **Deploy from branch → `/docs`**. The site is served at `https://<user>.github.io/oswald-leao-demo/`. For other hosts, change `base` in `vite.config.ts` or set `base: '/'` for a root domain.
 
 ### Adding portfolio images
 

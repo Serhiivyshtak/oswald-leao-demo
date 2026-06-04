@@ -37,10 +37,11 @@ export function MyAwardsComponent({mouseOver}: CardChildObjectType): JSX.Element
     return (
         <div ref={component} className="px-big pt-compact pb-big">
             <ul 
-                className="container block text-light font-secondary list-decimal list-inside list-image-[url(/list_bullet.png)]
+                className="container block text-light font-secondary list-decimal list-inside
                     text-base_1270 leading-base_1270 
                     1440:text-base_1440 1440:leading-base_1440 
                     1920:text-base_1920 1920:leading-base_1920"
+                style={{listStyleImage: `url(${import.meta.env.BASE_URL}list_bullet.png)`}}
                 >
                 {renderAwards()}
             </ul>

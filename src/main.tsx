@@ -15,6 +15,7 @@ import {PortfolioView} from './views/Portfolio.view';
 
 
 const root: HTMLElement | null = document.getElementById('root');
+const routerBasename = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 
 if (!root) {
@@ -24,7 +25,7 @@ if (!root) {
 
 ReactDOM.createRoot(root).render(
     <ErrorBoundary FallbackComponent={ErrorView}>
-        <BrowserRouter>
+        <BrowserRouter basename={routerBasename || undefined}>
             <Routes>
                 <Route path="/" element={<MainView />} />
                 <Route path="/about" element={<AboutView />} />

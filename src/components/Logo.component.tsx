@@ -2,6 +2,7 @@
 import {useEffect, useLayoutEffect, useRef, useState, type JSX} from 'react';
 import {t} from 'i18next';
 import {gsap} from 'gsap';
+import {Link} from 'react-router-dom';
 
 // Custom hooks
 import {useDomInfo} from '../hooks/useDomInfo';
@@ -46,8 +47,8 @@ export function LogoComponent({className}: LogoObjectType): JSX.Element {
 
     return (
         <>
-            <a 
-                href="/"
+            <Link 
+                to="/"
                 ref={component}  
                 className={logoClassList} 
                 style={{height: `${logoHeight}px`}}
@@ -56,7 +57,7 @@ export function LogoComponent({className}: LogoObjectType): JSX.Element {
                 >
                 <p ref={singleLineLogoText} className="logo_text">{textContent}</p>
                 <p className="logo_text">{textContent}</p>
-            </a>
+            </Link>
         </>
     );
 }
