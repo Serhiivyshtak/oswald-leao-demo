@@ -10,6 +10,7 @@ import {useCssProperty} from '../hooks/useCssPropery.hook';
 
 // Custom types
 import type {ImageViwerObjectType} from '../types/ImageViewerObject.type';
+import {assetUrl} from '../services/assetUrl.service';
 
 
 export function ImageViewerComponent({showImageViewer, imageSrc, onCloseHandler}: ImageViwerObjectType): JSX.Element {
@@ -32,7 +33,7 @@ export function ImageViewerComponent({showImageViewer, imageSrc, onCloseHandler}
             >
             <img 
                 onClick={e => e.stopPropagation()}
-                src={imageSrc}
+                src={assetUrl(imageSrc)}
                 alt="Portfolio piece"
                 className="object-contain" 
             />

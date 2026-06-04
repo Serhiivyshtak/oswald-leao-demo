@@ -5,6 +5,7 @@ import {gsap} from 'gsap';
 // Custom types
 import type {PropertyValueTableItemObjectType} from '../types/PropertyValueTableItemObject.type';
 import {useCssProperty} from '../hooks/useCssPropery.hook';
+import {cssBackgroundImage} from '../services/assetUrl.service';
 
 
 export function PropertyValueTableItemComponent({id, property, value, imageSrc}: PropertyValueTableItemObjectType): JSX.Element {
@@ -52,7 +53,7 @@ export function PropertyValueTableItemComponent({id, property, value, imageSrc}:
             </span>
             <div 
                 className="image_container absolute bottom-0 left-1/2 -translate-x-1/2 aspect-3/4 bg-cover bg-center bg-no-repeat"
-                style={{backgroundImage: `url(${imageSrc})`}} 
+                style={{backgroundImage: cssBackgroundImage(imageSrc)}} 
                 >
             </div>
         </div>

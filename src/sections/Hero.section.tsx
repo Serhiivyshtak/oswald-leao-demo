@@ -8,6 +8,7 @@ import {RedirectionButtonWithTextAndIconComponent} from '../components/Redirecti
 
 // Custom hooks
 import {useCssProperty} from '../hooks/useCssPropery.hook';
+import {cssBackgroundImage} from '../services/assetUrl.service';
 
 
 export function HeroSection(): JSX.Element {
@@ -76,8 +77,9 @@ export function HeroSection(): JSX.Element {
                     flex-row 430:flex-col">
                 <div 
                     className="
-                        element relative aspect-4/3 bg-cover bg-center bg-no-repeat bg-[url(background_image_6.png)]
+                        element relative aspect-4/3 bg-cover bg-center bg-no-repeat
                         w-5/12 430:w-3/5"
+                    style={{backgroundImage: cssBackgroundImage('background_image_6.png')}}
                     >
                     <h1 
                         className="
@@ -92,8 +94,9 @@ export function HeroSection(): JSX.Element {
                 </div>
                 <div 
                     className="
-                        element aspect-4/3 bg-cover bg-center bg-no-repeat bg-[url(background_image_5.png)]
+                        element aspect-4/3 bg-cover bg-center bg-no-repeat
                         w-7/12 430:w-full"
+                    style={{backgroundImage: cssBackgroundImage('background_image_5.png')}}
                     >
 
                 </div>

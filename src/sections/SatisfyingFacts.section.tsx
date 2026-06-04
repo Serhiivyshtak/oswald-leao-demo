@@ -6,6 +6,7 @@ import {ScrollTrigger} from 'gsap/ScrollTrigger';
 
 // Custom components
 import {PropertyValueTableComponent} from '../components/PropertyValueTable.component';
+import {cssBackgroundImage} from '../services/assetUrl.service';
 
 
 export function SatisfyingFactsSection(): JSX.Element {
@@ -45,9 +46,10 @@ export function SatisfyingFactsSection(): JSX.Element {
                 ref={component}
                 className="
                     w-screen flex flex-col justify-end 
-                    bg-no-repeat bg-cover bg-center bg-[url(background_image_3.png)] 
+                    bg-no-repeat bg-cover bg-center
                     h-max 768:h-[120vh]
                     px-compact py-huge 430:px-big 768:p-huge"
+                style={{backgroundImage: cssBackgroundImage('background_image_3.png')}}
                 >
                 <div className="trigger_element w-full h-max flex flex-col gap-[128px] 768:flex-row 768:gap-compact">
                     <div className="w-full h-max block 768:hidden">

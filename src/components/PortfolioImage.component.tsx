@@ -3,10 +3,11 @@ import {type JSX} from 'react';
 
 // Custom types
 import type {PortfolioImageObjectType} from '../types/PortfolioImageObject.type';
+import {cssBackgroundImage} from '../services/assetUrl.service';
 
 
 export function PortfolioImageComponent({srcCompressed, orientation, onClick}: PortfolioImageObjectType): JSX.Element {
-    const selectedPortfolioImageStylings: React.CSSProperties = {backgroundImage: `url(${srcCompressed})`};
+    const selectedPortfolioImageStylings: React.CSSProperties = {backgroundImage: cssBackgroundImage(srcCompressed)};
     let selectedPortfolioImageClassList: string = 'row-span-1 bg-cover bg-center bg-no-repeat cursor-pointer';
 
 

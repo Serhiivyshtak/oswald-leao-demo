@@ -13,6 +13,7 @@ import type {PortfolioImageObjectType} from '../types/PortfolioImageObject.type'
 
 // Custom components
 import {RedirectionLinkWithIconComponent} from './RedirectionLinkWithIcon.component';
+import {cssBackgroundImage} from '../services/assetUrl.service';
 
 
 export function MyPortfolioComponent({mouseOver, cardHeight, windowWidth, headHeight}: CardChildObjectType): JSX.Element {
@@ -91,7 +92,7 @@ export function MyPortfolioComponent({mouseOver, cardHeight, windowWidth, headHe
 
     function renderSelectedPortfolioImages(): JSX.Element[] {
         return selectedPortfolioImages.map(selectedPortfolioImage => {
-            const selectedPortfolioImageStylings: React.CSSProperties = {backgroundImage: `url(${selectedPortfolioImage.srcCompressed})`};
+            const selectedPortfolioImageStylings: React.CSSProperties = {backgroundImage: cssBackgroundImage(selectedPortfolioImage.srcCompressed)};
             let selectedPortfolioImageClassList: string = 'bg-cover bg-center bg-no-repeat';
 
             if (selectedPortfolioImage.orientation === 'landscape') {

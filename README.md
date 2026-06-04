@@ -31,6 +31,7 @@ Shared across inner pages: loading intro, header navigation, contact section, fo
 | Icons | [Iconify](https://iconify.design/) (`@iconify/react`) |
 | Resilience | [react-error-boundary](https://github.com/bvaughn/react-error-boundary) |
 | Quality | ESLint 9, Prettier |
+| AI Agent | [Cursor](https://cursor.com/) — helped write this `README.md` and prepare the project for [GitHub Pages](https://pages.github.com/) deployment (Vite `base` path, `docs/` build output, SPA `404.html` fallback, router `basename`, and static asset URLs via `assetUrl.service.ts`) |
 
 Fonts (Google Fonts): Playfair Display SC, Julius Sans One, Kanit.
 
@@ -65,7 +66,7 @@ npm install
 npm run dev
 ```
 
-Open **http://localhost:3000** (configured in `vite.config.ts`).
+Open **http://localhost:3000/oswald-leao-demo/** (matches the GitHub Pages base path in `vite.config.ts`).
 
 ### Other scripts
 

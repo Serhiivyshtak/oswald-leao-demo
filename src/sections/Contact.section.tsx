@@ -11,6 +11,7 @@ import {RedirectionButtonWithTextAndIconComponent} from '../components/Redirecti
 // Custom types
 import type {IsValueValidObjectType} from '../types/IsValueValidObject.type';
 import type {AnySectionOnjectType} from '../types/AnySection.type';
+import {cssBackgroundImage} from '../services/assetUrl.service';
 
 
 export function ContactSection({className}: AnySectionOnjectType): JSX.Element {
@@ -150,14 +151,16 @@ export function ContactSection({className}: AnySectionOnjectType): JSX.Element {
                 <div className="relative w-full h-max flex gap-compact">
                     <div 
                         className="
-                            element aspect-3/4 bg-cover bg-center bg-no-repeat bg-[url(background_image_7.png)]
+                            element aspect-3/4 bg-cover bg-center bg-no-repeat
                             w-1/2 768:w-2/5"
+                        style={{backgroundImage: cssBackgroundImage('background_image_7.png')}}
                         >
                     </div>
                     <div 
                         className="
-                            element aspect-3/4 bg-cover bg-center bg-no-repeat bg-[url(background_image_8.jpg)]
+                            element aspect-3/4 bg-cover bg-center bg-no-repeat
                             w-1/2 768:w-2/5"
+                        style={{backgroundImage: cssBackgroundImage('background_image_8.jpg')}}
                         >
                     </div>
                     <h2 
@@ -172,7 +175,9 @@ export function ContactSection({className}: AnySectionOnjectType): JSX.Element {
                     </h2>
                 </div>
                 <div 
-                    className="element w-full aspect-4/3 bg-cover bg-center bg-no-repeatc bg-[url(background_image_9.jpg)]">
+                    className="element w-full aspect-4/3 bg-cover bg-center bg-no-repeat"
+                    style={{backgroundImage: cssBackgroundImage('background_image_9.jpg')}}
+                    >
                 </div>
             </div>
         </section>

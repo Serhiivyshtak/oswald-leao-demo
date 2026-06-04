@@ -9,6 +9,7 @@ import {useCssProperty} from '../hooks/useCssPropery.hook';
 // Custom types
 import type {CardChildObjectType} from '../types/CardChildObject.type';
 import type {AwardObjectType} from '../types/AwardObject.type';
+import {cssBackgroundImage} from '../services/assetUrl.service';
 
 
 export function MyAwardsComponent({mouseOver}: CardChildObjectType): JSX.Element {
@@ -41,7 +42,7 @@ export function MyAwardsComponent({mouseOver}: CardChildObjectType): JSX.Element
                     text-base_1270 leading-base_1270 
                     1440:text-base_1440 1440:leading-base_1440 
                     1920:text-base_1920 1920:leading-base_1920"
-                style={{listStyleImage: `url(${import.meta.env.BASE_URL}list_bullet.png)`}}
+                style={{listStyleImage: cssBackgroundImage('list_bullet.png')}}
                 >
                 {renderAwards()}
             </ul>
