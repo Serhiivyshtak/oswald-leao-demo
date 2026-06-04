@@ -26,7 +26,7 @@ export function MainSection(): JSX.Element {
     return (
         <section 
             className="
-                w-full h-full grid grid-rows-6 grid-cols-1
+                w-screen h-max grid grid-rows-6 grid-cols-1
                 768:portrait:grid-rows-3 768:portrait:grid-cols-12 768:h-screen
                 768:landscape:grid-rows-2 768:landscape:grid-cols-12"
             >
