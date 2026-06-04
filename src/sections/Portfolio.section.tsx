@@ -1,10 +1,13 @@
 // External packages
 import {useEffect, useRef, useState, type JSX} from 'react';
 import {t} from 'i18next';
+import {gsap} from 'gsap';
+import {ScrollTrigger} from 'gsap/ScrollTrigger';
 
 // Custom components
 import {RedirectionButtonWithTextAndIconComponent} from '../components/RedirectionButtonWithTextAndIcon.component';
 import {ImageViewerComponent} from '../components/ImageViewer.component';
+import {PortfolioImageComponent} from '../components/PortfolioImage.component';
 
 // Custom types
 import type {PortfolioImageObjectType} from '../types/PortfolioImageObject.type';
@@ -25,6 +28,10 @@ export function PortfolioSection(): JSX.Element {
     const gridRowsTaken = useRef<number>(0);
     const [showImageViewer, setShowImageViewer] = useState<boolean>(false);
     const [clickedImageSrc, setClickedImageSrc] = useState<string>('');
+    const component = useRef<HTMLElement|null>(null);
+
+
+    gsap.registerPlugin(ScrollTrigger);
 
 
     function fillSelectedPortfolioImages(): void {
@@ -71,23 +78,15 @@ export function PortfolioSection(): JSX.Element {
 
     function renderSelectedPortfolioImages(): JSX.Element[] {
         return selectedPortfolioImages.map(selectedPortfolioImage => {
-            const selectedPortfolioImageStylings: React.CSSProperties = {backgroundImage: `url(${selectedPortfolioImage.srcCompressed})`};
-            let selectedPortfolioImageClassList: string = 'row-span-1 bg-cover bg-center bg-no-repeat cursor-pointer';
-
-            if (selectedPortfolioImage.orientation === 'landscape') {
-                selectedPortfolioImageClassList += ' ' + 'col-span-12 430:col-span-6 aspect-4/3';
-            } else {
-                selectedPortfolioImageClassList += ' ' + 'col-span-12 430:col-span-3 aspect-3/4 430:aspect-auto';
-            }
-
             return (
-                <div 
+                <PortfolioImageComponent 
                     onClick={() => {setShowImageViewer(true); setClickedImageSrc(selectedPortfolioImage.srcHighQuality)}}
-                    className={selectedPortfolioImageClassList} 
-                    style={selectedPortfolioImageStylings}
                     key={selectedPortfolioImage.id}
-                    >
-                </div>
+                    id={selectedPortfolioImage.id} 
+                    srcCompressed={selectedPortfolioImage.srcCompressed} 
+                    srcHighQuality={selectedPortfolioImage.srcHighQuality} 
+                    orientation={selectedPortfolioImage.orientation} 
+                />
             );
         });
     }
@@ -98,8 +97,31 @@ export function PortfolioSection(): JSX.Element {
     }, [gridRows]);
 
 
+    useEffect(() => {
+        gsap.context(() => {
+            gsap.fromTo('.element', {
+                y: 128,
+                opacity: 0
+            }, {
+                y: 0,
+                opacity: 1,
+                duration: 0.3,
+                stagger: 0.1,
+                scrollTrigger: {
+                    trigger: '.element',
+                    start: 'top 70%',
+                    end: 'top 10%',
+                    toggleActions: 'play none none reverse',
+                    scrub: true,
+                }
+            });
+        }, component);
+    }, []);
+
+
     return (
         <section 
+            ref={component}
             className="
                 w-full h-max flex flex-col items-center gap-big
                 px-compact py-huge 430:px-big 768:p-huge"

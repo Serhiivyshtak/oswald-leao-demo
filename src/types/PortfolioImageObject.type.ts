@@ -3,4 +3,5 @@ export type PortfolioImageObjectType = {
     srcCompressed: string,
     srcHighQuality: string,
     orientation: "portrait" | "landscape",
+    onClick?: () => void
 }

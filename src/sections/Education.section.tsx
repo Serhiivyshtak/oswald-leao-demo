@@ -21,7 +21,7 @@ export function EducationSection(): JSX.Element {
         gsap.context(() => {
             gsap.fromTo('.element', {
                 y: 128,
-                opacity: 0
+                opacity: 0,
             }, {
                 y: 0,
                 opacity: 1,
@@ -33,7 +33,7 @@ export function EducationSection(): JSX.Element {
                     end: 'top 10%',
                     toggleActions: 'play none none reverse',
                     scrub: true,
-                }
+                },
             });
         }, component);
     }, []);
