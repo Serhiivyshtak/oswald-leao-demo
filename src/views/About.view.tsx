@@ -16,12 +16,12 @@ import {FooterSection} from '../sections/Footer.section';
 export function AboutView(): JSX.Element {
     return (
         <div className="w-screen h-max min-h-screen bg-gray">
+            <IntroComponent />
             <HeaderSection />
             <HeroSection />
             <SatisfyingFactsSection />
             <EducationSection />
             <ExperienceSection />
-            <IntroComponent />
             <ContactSection />
             <FooterSection />
         </div>

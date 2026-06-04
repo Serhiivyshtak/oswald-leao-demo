@@ -25,37 +25,320 @@
         "portfolioImages": [
             {
                 "id": 1,
-                "src": "portfolio_image_1.png",
+                "srcCompressed": "portfolio_image_1.compressed.jpg",
+                "srcHighQuality": "portfolio_image_1.jpg",
                 "orientation": "portrait"
             },
             {
                 "id": 2,
-                "src": "portfolio_image_2.png",
+                "srcCompressed": "portfolio_image_2.compressed.jpg",
+                "srcHighQuality": "portfolio_image_2.jpg",
                 "orientation": "portrait"
             },
             {
                 "id": 3,
-                "src": "portfolio_image_3.png",
+                "srcCompressed": "portfolio_image_3.compressed.jpg",
+                "srcHighQuality": "portfolio_image_3.jpg",
                 "orientation": "landscape"
             },
             {
                 "id": 4,
-                "src": "portfolio_image_4.png",
+                "srcCompressed": "portfolio_image_4.compressed.png",
+                "srcHighQuality": "portfolio_image_4.png",
                 "orientation": "portrait"
             },
             {
                 "id": 5,
-                "src": "portfolio_image_5.png",
+                "srcCompressed": "portfolio_image_5.compressed.png",
+                "srcHighQuality": "portfolio_image_5.png",
                 "orientation": "portrait"
             },
             {
                 "id": 6,
-                "src": "portfolio_image_6.png",
+                "srcCompressed": "portfolio_image_6.compressed.png",
+                "srcHighQuality": "portfolio_image_6.png",
                 "orientation": "portrait"
             },
             {
                 "id": 7,
-                "src": "portfolio_image_7.png",
+                "srcCompressed": "portfolio_image_7.compressed.jpg",
+                "srcHighQuality": "portfolio_image_7.jpg",
+                "orientation": "landscape"
+            },
+            {
+                "id": 8,
+                "srcCompressed": "portfolio_image_8.compressed.jpg",
+                "srcHighQuality": "portfolio_image_8.jpg",
+                "orientation": "portrait"
+            },
+            {
+                "id": 9,
+                "srcCompressed": "portfolio_image_9.compressed.jpg",
+                "srcHighQuality": "portfolio_image_9.jpg",
+                "orientation": "portrait"
+            },
+            {
+                "id": 10,
+                "srcCompressed": "portfolio_image_10.compressed.jpg",
+                "srcHighQuality": "portfolio_image_10.jpg",
+                "orientation": "portrait"
+            },
+            {
+                "id": 11,
+                "srcCompressed": "portfolio_image_11.compressed.jpg",
+                "srcHighQuality": "portfolio_image_11.jpg",
+                "orientation": "portrait"
+            },
+            {
+                "id": 12,
+                "srcCompressed": "portfolio_image_12.compressed.jpg",
+                "srcHighQuality": "portfolio_image_12.jpg",
+                "orientation": "portrait"
+            },
+            {
+                "id": 13,
+                "srcCompressed": "portfolio_image_13.compressed.jpg",
+                "srcHighQuality": "portfolio_image_13.jpg",
+                "orientation": "portrait"
+            },
+            {
+                "id": 14,
+                "srcCompressed": "portfolio_image_14.compressed.jpg",
+                "srcHighQuality": "portfolio_image_14.jpg",
+                "orientation": "portrait"
+            },
+            {
+                "id": 15,
+                "srcCompressed": "portfolio_image_15.compressed.jpg",
+                "srcHighQuality": "portfolio_image_15.jpg",
+                "orientation": "portrait"
+            },
+            {
+                "id": 16,
+                "srcCompressed": "portfolio_image_16.compressed.jpg",
+                "srcHighQuality": "portfolio_image_16.jpg",
+                "orientation": "portrait"
+            },
+            {
+                "id": 17,
+                "srcCompressed": "portfolio_image_17.compressed.jpg",
+                "srcHighQuality": "portfolio_image_17.jpg",
+                "orientation": "portrait"
+            },
+            {
+                "id": 18,
+                "srcCompressed": "portfolio_image_18.compressed.jpg",
+                "srcHighQuality": "portfolio_image_18.jpg",
+                "orientation": "portrait"
+            },
+            {
+                "id": 19,
+                "srcCompressed": "portfolio_image_19.compressed.jpg",
+                "srcHighQuality": "portfolio_image_19.jpg",
+                "orientation": "landscape"
+            },
+            {
+                "id": 20,
+                "srcCompressed": "portfolio_image_20.compressed.jpg",
+                "srcHighQuality": "portfolio_image_20.jpg",
+                "orientation": "portrait"
+            },
+            {
+                "id": 21,
+                "srcCompressed": "portfolio_image_21.compressed.jpg",
+                "srcHighQuality": "portfolio_image_21.jpg",
+                "orientation": "landscape"
+            },
+            {
+                "id": 22,
+                "srcCompressed": "portfolio_image_22.compressed.jpg",
+                "srcHighQuality": "portfolio_image_22.jpg",
+                "orientation": "landscape"
+            },
+            {
+                "id": 23,
+                "srcCompressed": "portfolio_image_23.compressed.jpg",
+                "srcHighQuality": "portfolio_image_23.jpg",
+                "orientation": "portrait"
+            },
+            {
+                "id": 24,
+                "srcCompressed": "portfolio_image_24.compressed.jpg",
+                "srcHighQuality": "portfolio_image_24.jpg",
+                "orientation": "portrait"
+            },
+            {
+                "id": 25,
+                "srcCompressed": "portfolio_image_25.compressed.jpg",
+                "srcHighQuality": "portfolio_image_25.jpg",
+                "orientation": "portrait"
+            },
+            {
+                "id": 26,
+                "srcCompressed": "portfolio_image_26.compressed.jpg",
+                "srcHighQuality": "portfolio_image_26.jpg",
+                "orientation": "portrait"
+            },
+            {
+                "id": 27,
+                "srcCompressed": "portfolio_image_27.compressed.jpg",
+                "srcHighQuality": "portfolio_image_27.jpg",
+                "orientation": "portrait"
+            },
+            {
+                "id": 28,
+                "srcCompressed": "portfolio_image_28.compressed.jpg",
+                "srcHighQuality": "portfolio_image_28.jpg",
+                "orientation": "portrait"
+            },
+            {
+                "id": 29,
+                "srcCompressed": "portfolio_image_29.compressed.jpg",
+                "srcHighQuality": "portfolio_image_29.jpg",
+                "orientation": "portrait"
+            },
+            {
+                "id": 30,
+                "srcCompressed": "portfolio_image_30.compressed.jpg",
+                "srcHighQuality": "portfolio_image_30.jpg",
+                "orientation": "portrait"
+            },
+            {
+                "id": 31,
+                "srcCompressed": "portfolio_image_31.compressed.jpg",
+                "srcHighQuality": "portfolio_image_31.jpg",
+                "orientation": "portrait"
+            },
+            {
+                "id": 32,
+                "srcCompressed": "portfolio_image_32.compressed.jpg",
+                "srcHighQuality": "portfolio_image_32.jpg",
+                "orientation": "portrait"
+            },
+            {
+                "id": 33,
+                "srcCompressed": "portfolio_image_33.compressed.jpg",
+                "srcHighQuality": "portfolio_image_33.jpg",
+                "orientation": "portrait"
+            },
+            {
+                "id": 34,
+                "srcCompressed": "portfolio_image_34.compressed.jpg",
+                "srcHighQuality": "portfolio_image_34.jpg",
+                "orientation": "portrait"
+            },
+            {
+                "id": 35,
+                "srcCompressed": "portfolio_image_35.compressed.jpg",
+                "srcHighQuality": "portfolio_image_35.jpg",
+                "orientation": "portrait"
+            },
+            {
+                "id": 36,
+                "srcCompressed": "portfolio_image_36.compressed.jpg",
+                "srcHighQuality": "portfolio_image_36.jpg",
+                "orientation": "landscape"
+            },
+            {
+                "id": 37,
+                "srcCompressed": "portfolio_image_37.compressed.jpg",
+                "srcHighQuality": "portfolio_image_37.jpg",
+                "orientation": "portrait"
+            },
+            {
+                "id": 38,
+                "srcCompressed": "portfolio_image_38.compressed.jpg",
+                "srcHighQuality": "portfolio_image_38.jpg",
+                "orientation": "landscape"
+            },
+            {
+                "id": 39,
+                "srcCompressed": "portfolio_image_39.compressed.jpg",
+                "srcHighQuality": "portfolio_image_39.jpg",
+                "orientation": "landscape"
+            },
+            {
+                "id": 40,
+                "srcCompressed": "portfolio_image_40.compressed.jpg",
+                "srcHighQuality": "portfolio_image_40.jpg",
+                "orientation": "portrait"
+            },
+            {
+                "id": 41,
+                "srcCompressed": "portfolio_image_41.compressed.jpg",
+                "srcHighQuality": "portfolio_image_41.jpg",
+                "orientation": "portrait"
+            },
+            {
+                "id": 42,
+                "srcCompressed": "portfolio_image_42.compressed.jpg",
+                "srcHighQuality": "portfolio_image_42.jpg",
+                "orientation": "landscape"
+            },
+            {
+                "id": 43,
+                "srcCompressed": "portfolio_image_43.compressed.jpg",
+                "srcHighQuality": "portfolio_image_43.jpg",
+                "orientation": "landscape"
+            },
+            {
+                "id": 44,
+                "srcCompressed": "portfolio_image_44.compressed.jpg",
+                "srcHighQuality": "portfolio_image_44.jpg",
+                "orientation": "landscape"
+            },
+            {
+                "id": 45,
+                "srcCompressed": "portfolio_image_45.compressed.jpg",
+                "srcHighQuality": "portfolio_image_45.jpg",
+                "orientation": "portrait"
+            },
+            {
+                "id": 46,
+                "srcCompressed": "portfolio_image_46.compressed.jpg",
+                "srcHighQuality": "portfolio_image_46.jpg",
+                "orientation": "landscape"
+            },
+            {
+                "id": 47,
+                "srcCompressed": "portfolio_image_47.compressed.jpg",
+                "srcHighQuality": "portfolio_image_47.jpg",
+                "orientation": "landscape"
+            },
+            {
+                "id": 48,
+                "srcCompressed": "portfolio_image_48.compressed.jpg",
+                "srcHighQuality": "portfolio_image_48.jpg",
+                "orientation": "portrait"
+            },
+            {
+                "id": 49,
+                "srcCompressed": "portfolio_image_49.compressed.jpg",
+                "srcHighQuality": "portfolio_image_49.jpg",
+                "orientation": "portrait"
+            },
+            {
+                "id": 50,
+                "srcCompressed": "portfolio_image_50.compressed.jpg",
+                "srcHighQuality": "portfolio_image_50.jpg",
+                "orientation": "portrait"
+            },
+            {
+                "id": 51,
+                "srcCompressed": "portfolio_image_51.compressed.jpg",
+                "srcHighQuality": "portfolio_image_51.jpg",
+                "orientation": "landscape"
+            },
+            {
+                "id": 52,
+                "srcCompressed": "portfolio_image_52.compressed.jpg",
+                "srcHighQuality": "portfolio_image_52.jpg",
+                "orientation": "portrait"
+            },
+            {
+                "id": 53,
+                "srcCompressed": "portfolio_image_53.compressed.jpg",
+                "srcHighQuality": "portfolio_image_53.jpg",
                 "orientation": "landscape"
             }
         ]
@@ -284,6 +567,11 @@
             "emptyMessageError": "Message can't be empty",
             "shortMessageError": "Message should be minimal 3 characters long",
             "longMessageError": "Message should be maximal 300 characters long"
+        }
+    },
+    "portfolioView": {
+        "portfolioSection": {
+            "showMoreButton": "Show more"
         }
     }
 }

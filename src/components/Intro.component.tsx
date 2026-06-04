@@ -1,8 +1,10 @@
 // External packages
 import {useEffect, useLayoutEffect, useRef, useState, type JSX} from 'react';
 import {gsap} from 'gsap';
-import {useCssProperty} from '../hooks/useCssPropery.hook';
 import {t} from 'i18next';
+
+// Custom hooks
+import {useCssProperty} from '../hooks/useCssPropery.hook';
 
 
 export function IntroComponent(): JSX.Element {

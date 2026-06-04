@@ -33,6 +33,7 @@ export function MyPortfolioComponent({mouseOver, cardHeight, windowWidth, headHe
 
     function fillSelectedPortfolioImages(): void {
         const gridColumns: number = 12;
+        
         let gridColumnsTaken: number = 0;
 
         const localArray: Array<PortfolioImageObjectType> = [];
@@ -90,7 +91,7 @@ export function MyPortfolioComponent({mouseOver, cardHeight, windowWidth, headHe
 
     function renderSelectedPortfolioImages(): JSX.Element[] {
         return selectedPortfolioImages.map(selectedPortfolioImage => {
-            const selectedPortfolioImageStylings: React.CSSProperties = {backgroundImage: `url(${selectedPortfolioImage.src})`};
+            const selectedPortfolioImageStylings: React.CSSProperties = {backgroundImage: `url(${selectedPortfolioImage.srcCompressed})`};
             let selectedPortfolioImageClassList: string = 'bg-cover bg-center bg-no-repeat';
 
             if (selectedPortfolioImage.orientation === 'landscape') {
@@ -120,7 +121,7 @@ export function MyPortfolioComponent({mouseOver, cardHeight, windowWidth, headHe
                     {renderSelectedPortfolioImages()}
             </div>
             <RedirectionLinkWithIconComponent
-                href="/about" 
+                href="/portfolio" 
                 isInternal={true}
                 ref={redirectionButton}
                 size={spacingLarge}

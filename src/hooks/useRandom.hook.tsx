@@ -1,59 +1,40 @@
-import {useEffect} from 'react';
+import { useRef, useCallback } from 'react';
+
 
 export function useRandom(lowerBound: number, upperBound: number) {
-    const possibleValues: Array<number> = [];
-    const usedValues: Array<number> = [];
+    const pool = useRef<number[]>([]);
+    const isInitialized = useRef(false);
 
 
-    function fillPossibleValues(): void {
+    const initializePool = useCallback(() => {
+        const newPool: number[] = [];
+
         for (let i = lowerBound; i <= upperBound; i++) {
-            possibleValues.push(i);
+            newPool.push(i);
         }
+
+        pool.current = newPool;
+        isInitialized.current = true;
+    }, [lowerBound, upperBound]);
+
+
+    if (!isInitialized.current) {
+        initializePool();
     }
 
 
-    function arraysEqual(firstArray: Array<any>, secondArray: Array<any>): boolean {
-        if (firstArray.length !== secondArray.length) {
-            return false;
-        }
-
-        for (let i = 0; i < firstArray.length; i++) {
-            if (firstArray[i] !== secondArray[i]) {
-                return false;
-            }
-        }
-
-        return true;
-    }
-
-
-    function nextRandom(): number {
-        return Math.floor(Math.random() * (upperBound - lowerBound + 1) + lowerBound);
-    }
-
-
-    function nextUniqueRandom(): number {
-        let newRandom: number = nextRandom();
-        const allValuesUsed: boolean = arraysEqual(usedValues.sort(), possibleValues.sort());
-
-        if (allValuesUsed) {
+    const nextUniqueRandom = useCallback((): number => {
+        if (pool.current.length === 0) {
             throw new Error('All unique values used');
         }
 
-        while (usedValues.includes(newRandom)) {
-            newRandom = nextRandom();
-        }
+        const randomIndex = Math.floor(Math.random() * pool.current.length);
 
-        usedValues.push(newRandom);
+        const value = pool.current.splice(randomIndex, 1)[0];
 
-        return newRandom;
-    }
+        return value;
+    }, [initializePool]);
 
 
-    useEffect(() => {
-        fillPossibleValues();
-    }, []);
-
-
-    return {nextRandom, nextUniqueRandom};
+    return { nextUniqueRandom };
 }

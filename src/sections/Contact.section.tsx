@@ -10,9 +10,10 @@ import {RedirectionButtonWithTextAndIconComponent} from '../components/Redirecti
 
 // Custom types
 import type {IsValueValidObjectType} from '../types/IsValueValidObject.type';
+import type {AnySectionOnjectType} from '../types/AnySection.type';
 
 
-export function ContactSection(): JSX.Element {
+export function ContactSection({className}: AnySectionOnjectType): JSX.Element {
     const fullnamePlaceholderContent: string = t('aboutView.contactSection.fullnamePlaceholder');
     const emailPlaceholderContent: string = t('aboutView.contactSection.emailPlaceholder');
     const messagePlaceholderContent: string = t('aboutView.contactSection.messagePlaceholder');
@@ -20,6 +21,7 @@ export function ContactSection(): JSX.Element {
     const headingContent: string = t('aboutView.contactSection.heading');
     const sendMessageButtonContent: string = t('aboutView.contactSection.sendMessageButton');
     const component = useRef<HTMLElement|null>(null);
+    const componentClassName: string = className + ' ' + 'w-full h-max flex gap-compact items-center px-compact py-huge 430:px-big 768:p-huge flex-col 430:flex-row';
 
 
     gsap.registerPlugin(ScrollTrigger);
@@ -105,10 +107,7 @@ export function ContactSection(): JSX.Element {
     return (
         <section 
             ref={component}
-            className="
-                w-full h-max flex gap-compact items-center 
-                px-compact py-huge 430:px-big 768:p-huge
-                flex-col 430:flex-row"
+            className={componentClassName}
             >
             <h2 
                 className="

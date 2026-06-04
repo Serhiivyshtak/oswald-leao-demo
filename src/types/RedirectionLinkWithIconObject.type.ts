@@ -4,4 +4,5 @@ export type RedirectionLinkObjectType = {
     size: number,
     isInternal: boolean
     className?: string,
+    onClick?: () => void,
 }

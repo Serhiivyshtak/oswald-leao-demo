@@ -20,7 +20,7 @@ export function FooterSection(): JSX.Element {
 
 
     return (
-        <footer className="w-screen h-max border-t border-light py-compact px-huge flex flex-col items-center gap-middle">
+        <footer className="w-screen h-max border-t border-light py-huge px-huge flex flex-col items-center gap-middle">
             <LogoComponent />
             <div className="w-full h-max flex flex-col items-center gap-middle 768:flex-row 768:justify-between 768:items-start 768:gap-compact">
                 <p 
@@ -34,10 +34,10 @@ export function FooterSection(): JSX.Element {
                     {descriptionContent}
                 </p>
                 <nav className="w-max h-max flex gap-compact">
-                    <Link to="" className="w-max h-max text-light/30 font-additional uppercase font-light hover:text-light duration-(--duration-fast)">
+                    <Link to="/about" className="w-max h-max text-light/30 font-additional uppercase font-light hover:text-light duration-(--duration-fast)">
                         {whoAmILinkContent}
                     </Link>
-                    <Link to="" className="w-max h-max text-light/30 font-additional uppercase font-light hover:text-light duration-(--duration-fast)">
+                    <Link to="/portfolio" className="w-max h-max text-light/30 font-additional uppercase font-light hover:text-light duration-(--duration-fast)">
                         {myPortfolioLinkContent}
                     </Link>
                     <Link to="" className="w-max h-max text-light/30 font-additional uppercase font-light hover:text-light duration-(--duration-fast)">

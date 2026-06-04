@@ -44,9 +44,9 @@ export function HeroSection(): JSX.Element {
         <section 
             ref={component}
             className="
-                relative w-full h-max flex items-center px-compact gap-compact
+                relative w-full h-max flex items-center gap-compact
                 flex-col 430:flex-row
-                py-huge 430:px-big 768:p-huge"
+                px-compact py-huge 430:px-big 768:p-huge"
             >
             <div className="h-max flex flex-col items-start gap-middle w-full 430:w-1/2 768:w-7/12">
                 <h2 

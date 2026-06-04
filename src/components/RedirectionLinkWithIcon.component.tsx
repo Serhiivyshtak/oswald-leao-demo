@@ -13,7 +13,7 @@ import type {DomInfoObjectType} from '../types/DomInfoObject.type';
 import {NavLink} from 'react-router-dom';
 
 
-export const RedirectionLinkWithIconComponent = forwardRef(({href, icon, size, className, isInternal}: RedirectionLinkObjectType, forwardRef): JSX.Element => {
+export const RedirectionLinkWithIconComponent = forwardRef(({href, icon, size, className, isInternal, onClick}: RedirectionLinkObjectType, forwardRef): JSX.Element => {
     const redirectionLinkClassList: string = 'text-light overflow-hidden' + ' ' + className;
     const redirectionLinkStylings: React.CSSProperties = {height: `${size}px`, width: `${size}px`};
     const [mouseOver, setMouseOver] = useState<boolean>(false);
@@ -55,6 +55,7 @@ export const RedirectionLinkWithIconComponent = forwardRef(({href, icon, size, c
                 style={redirectionLinkStylings}
                 onMouseEnter={() => setMouseOver(true)}
                 onMouseLeave={() => setMouseOver(false)}
+                onClick={onClick}
                 >
                 {renderIcon()}
             </NavLink>
@@ -68,6 +69,7 @@ export const RedirectionLinkWithIconComponent = forwardRef(({href, icon, size, c
                 style={redirectionLinkStylings}
                 onMouseEnter={() => setMouseOver(true)}
                 onMouseLeave={() => setMouseOver(false)}
+                onClick={onClick}
                 >
                 {renderIcon()}
             </a>

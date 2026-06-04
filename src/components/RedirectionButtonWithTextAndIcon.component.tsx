@@ -13,7 +13,7 @@ import {useDomInfo} from '../hooks/useDomInfo';
 import {useCssProperty} from '../hooks/useCssPropery.hook';
 
 
-export function RedirectionButtonWithTextAndIconComponent({href, text, isInternal, className}: RedirectionButtonWithTextAndIconObjectType): JSX.Element {
+export function RedirectionButtonWithTextAndIconComponent({href, text, isInternal, className, onClick}: RedirectionButtonWithTextAndIconObjectType): JSX.Element {
     const component = useRef<HTMLAnchorElement|null>(null);
     const redirectionButtonSignleLine = useRef<HTMLDivElement|null>(null);
     const redirectionButtonClassList: string = className + ' ' + 'text-light font-semibold uppercase cursor-pointer text-big_1270 leading-big_1270 1440:text-big_1440 1440:leading-big_1440 1920:text-big_1920 1920:leading-big_1920 overflow-hidden';
@@ -53,6 +53,7 @@ export function RedirectionButtonWithTextAndIconComponent({href, text, isInterna
                 to={href}
                 onMouseEnter={() => setMouseOver(true)} 
                 onMouseLeave={() => setMouseOver(false)}
+                onClick={onClick}
                 >
                 <div ref={redirectionButtonSignleLine} className="redirection_button_single_line flex gap-small items-center">
                     <p>{text}</p>

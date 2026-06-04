@@ -1,11 +1,17 @@
+// External packages
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Route, Routes } from 'react-router';
 import { ErrorBoundary } from "react-error-boundary";
+
+// Custom services
 import './services/i18n.service';
 import './assets/css/index.css';
+
+// Custom components
 import {MainView} from './views/Main.view';
 import {AboutView} from './views/About.view';
 import {ErrorView} from './views/Error.view';
+import {PortfolioView} from './views/Portfolio.view';
 
 
 const root: HTMLElement | null = document.getElementById('root');
@@ -22,6 +28,7 @@ ReactDOM.createRoot(root).render(
             <Routes>
                 <Route path="/" element={<MainView />} />
                 <Route path="/about" element={<AboutView />} />
+                <Route path="/portfolio" element={<PortfolioView />} />
             </Routes>
         </BrowserRouter>
     </ErrorBoundary>
